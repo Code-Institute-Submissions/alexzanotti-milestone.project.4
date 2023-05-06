@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Plans{% endblock %}
+
+{% block content %}
+<h1>Plans</h1>
+<div>
+    {% for plan in plans %}
+    <div class="card">
+        {% if plan.image %}
+        <img src="{{ plan.image.url }}" class="card-img-top" alt="{{ plan.name }}">
+        {% else %}
+        <img src="" class="card-img-top" alt="{{ plan.name }}">
+        {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">{{ plan.name }}</h5>
+            <p class="card-text">{{ plan.description }}</p>
+            <p class="card-text">{{ plan.price }}</p>
+            <a href="{% url 'plan_sales_page' plan.id %}" class="btn btn-primary">Learn More</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

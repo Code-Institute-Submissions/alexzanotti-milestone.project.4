@@ -1,8 +1,19 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}HOME TEST{% endblock %}
+{% block title %}Fitness{% endblock %}
 
 {% block content %}
-<h1>INDEX.HTML WORKS</h1>
+<h1>About</h1>
+
+
+
+<h2>Plans</h2>
+<p>Discover an array of expertly-crafted fitness plans tailored to suit your unique goals and preferences. Whether
+    you're a
+    beginner looking to embark on your fitness journey or an experienced athlete seeking new challenges, our diverse
+    selection of fitness plans has something for everyone. Purchase the plan that best fits your needs and get ready to
+    transform your body and mind</p>
+<a class="btn btn-primary" href="{% url 'plans' %}" role="button">View Plans</a>
+
 {% endblock %}
