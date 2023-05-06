@@ -46,39 +46,40 @@
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="{% url 'home' %}">Home </a>
+                    <a class="nav-item nav-link" href="{% url 'home' %}">Home</a>
+                    <a class="nav-item nav-link" href="{% url 'plans' %}">Plans</a>
+                    <a class="nav-item nav-link" href="{% url 'community' %}">Community</a>
+                    <a class="nav-item nav-link" href="{% url 'contact' %}">Contact</a>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Account
+                        </button>
+                        <ul class="dropdown-menu">
+                            {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                            <li><a href="" class="dropdown-item">Plan Management</a></li>
+                            <li><a href="" class="dropdown-item">Community Management</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            {% endif %}
+                            <li><a href="" class="dropdown-item">Profile</a></li>
+                            <li><a href="" class="dropdown-item">Plans</a></li>
+                            <li><a href="" class="dropdown-item">Posts</a></li>
+                            <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
+                            {% else %}
+                            <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
+                            <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
-
-
-    <!-- account function -->
-    <div class="btn-group">
-        <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            Account
-        </button>
-        <ul class="dropdown-menu">
-            {% if request.user.is_authenticated %}
-            {% if request.user.is_superuser %}
-            <li><a href="" class="dropdown-item">Plan Management</a></li>
-            <li><a href="" class="dropdown-item">Community Management</a></li>
-            <li>
-                <hr class="dropdown-divider">
-            </li>
-            {% endif %}
-            <li><a href="" class="dropdown-item">Profile</a></li>
-            <li><a href="" class="dropdown-item">Plans</a></li>
-            <li><a href="" class="dropdown-item">Posts</a></li>
-            <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
-            {% else %}
-            <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
-            <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
-            {% endif %}
-        </ul>
-    </div>
 
 
     {% block content %}
@@ -106,17 +107,19 @@
                         <p><a href="" class="">TEST</a></p>
                         <p><a href="" class="">TEST</a></p>
                         <p><a href="" class="">TEST</a></p>
-                        <!-- column 3 -->
-                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                            <!-- column header -->
-                            <h6 class="text-uppercase fw-bold mb-4"></h6>
-                            <!--  column content-->
-                            <p>TEST</p>
-                            <p>TEST</p>
-                            <p>TEST</p>
-                            <p>TEST</p>
-                        </div>
                     </div>
+                    <!-- column 3 -->
+
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- column header -->
+                        <h6 class="text-uppercase fw-bold mb-4">TEST</h6>
+                        <!--  column content-->
+                        <p>TEST</p>
+                        <p>TEST</p>
+                        <p>TEST</p>
+                        <p>TEST</p>
+                    </div>
+
                 </div>
         </section>
         <!-- Footer bottom -->
