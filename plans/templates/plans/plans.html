@@ -15,6 +15,25 @@
     </div>
 </form>
 
+<form method="GET" action="{% url 'plans' %}">
+    <div class="input-group">
+        <label for="sort_by">Sort by:</label>
+        <select name="sort_by" id="sort_by" onchange="this.form.submit()">
+            <option value="default" {% if current_sort_by  == "default" %}selected{% endif %}>Default</option>
+            <option value="name_asc" {% if current_sort_by  == "name_asc" %}selected{% endif %}>Name (A-Z)</option>
+            <option value="name_desc" {% if current_sort_by  == "name_desc" %}selected{% endif %}>Name (Z-A)</option>
+            <option value="category_asc" {% if current_sort_by  == "category_asc" %}selected{% endif %}>Category (A-Z)
+            </option>
+            <option value="category_desc" {% if current_sort_by  == "category_desc" %}selected{% endif %}>Category (Z-A)
+            </option>
+            <option value="price_asc" {% if current_sort_by  == "price_asc" %}selected{% endif %}>Price (low to high)
+            </option>
+            <option value="price_desc" {% if current_sort_by  == "price_desc" %}selected{% endif %}>Price (high to low)
+            </option>
+        </select>
+    </div>
+</form>
+
 <div>
     {% for plan in plans %}
     <div class="card">
@@ -28,6 +47,7 @@
             <p class="card-text">{{ plan.description }}</p>
             <p class="card-text">{{ plan.price }}</p>
             <a href="{% url 'plan_sales_page' plan.id %}" class="btn btn-primary">Learn More</a>
+            <p class="card-text">{{ plan.category }}</p>
         </div>
     </div>
     {% endfor %}
