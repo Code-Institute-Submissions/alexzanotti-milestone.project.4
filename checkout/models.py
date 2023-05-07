@@ -15,5 +15,11 @@ class Order(models.Model):
     total = models.DecimalField(
         max_digits=6, decimal_places=2, null=False, default=0)
 
+    def create_order_number(self):
+        """
+        create a order number using UUID
+        """
+        return uuid.uuid4().hex.upper()
+
     def __str__(self):
         return f'Order {self.order_number}'

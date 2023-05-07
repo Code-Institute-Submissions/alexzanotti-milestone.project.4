@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+
+
+<h1>Please complete the following form to complete your order</h1>
+
+
+
+{% csrf_token %}
+{{ order_form.as_p }}
+
+{% endblock %}
