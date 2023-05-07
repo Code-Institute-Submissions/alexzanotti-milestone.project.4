@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 
 from .forms import OrderForm
-from plans.models import Plan  # Assuming your Plan model is in the 'plans' app
+from plans.models import Plan  
 
 
 def checkout(request, plan_id):
@@ -13,8 +13,8 @@ def checkout(request, plan_id):
         if order_form.is_valid():
             order = order_form.save()
             messages.success(request, 'Order successfully placed!')
-            # Replace 'success_page' with the actual name of your success page's URL pattern
-            return redirect(reverse('success_page'))
+            
+            return redirect(reverse('home'))
         else:
             messages.error(
                 request, 'There was an error with your submission. Please check your information and try again.')
@@ -24,7 +24,7 @@ def checkout(request, plan_id):
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
-        'plan': plan,  # Add the plan to the context
+        'plan': plan,
     }
 
     return render(request, template, context)
