@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 
 from .forms import OrderForm
-from plans.models import Plan  
+from plans.models import Plan
 
 
 def checkout(request, plan_id):
@@ -13,11 +13,10 @@ def checkout(request, plan_id):
         if order_form.is_valid():
             order = order_form.save()
             messages.success(request, 'Order successfully placed!')
-            
             return redirect(reverse('home'))
         else:
             messages.error(
-                request, 'There was an error with your submission. Please check your information and try again.')
+                request, 'There was an error with your submission.')
     else:
         order_form = OrderForm()
 
