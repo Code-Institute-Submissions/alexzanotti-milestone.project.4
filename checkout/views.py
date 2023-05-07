@@ -1,12 +1,13 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 
 from .forms import OrderForm
+from plans.models import Plan  # Assuming your Plan model is in the 'plans' app
 
-# Create your views here.
 
+def checkout(request, plan_id):
+    plan = get_object_or_404(Plan, id=plan_id)
 
-def checkout(request):
     if request.method == 'POST':
         order_form = OrderForm(request.POST)
         if order_form.is_valid():
@@ -23,6 +24,7 @@ def checkout(request):
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
+        'plan': plan,  # Add the plan to the context
     }
 
     return render(request, template, context)

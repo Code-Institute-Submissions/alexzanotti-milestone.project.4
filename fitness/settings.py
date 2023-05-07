@@ -75,6 +75,10 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'plans.context_processors.categories',
             ],
+            'builtins':[
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field'
+            ]
         },
     },
 ]

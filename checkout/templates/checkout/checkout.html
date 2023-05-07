@@ -7,11 +7,43 @@
 {% block content %}
 
 
-<h1>Please complete the following form to complete your order</h1>
+<h1>Checkout</h1>
 
 
+
+<h1>PLAN DETAILS</h1>
+<div class="card">
+    {% if plan.image %}
+    <img src="{{ plan.image.url }}" class="card-img-top" alt="{{ plan.name }}">
+    {% else %}
+    <img src="" class="card-img-top" alt="{{ plan.name }}">
+    {% endif %}
+    <div class="card-body">
+        <h5 class="card-title">{{ plan.name }}</h5>
+        <p class="card-text">{{ plan.description }}</p>
+        <p class="card-text">{{ plan.price }}</p>
+        <p class="card-text">{{ plan.category }}</p>
+    </div>
+</div>
+
+{% if not user.is_authenticated %}
+<h1>Already have an account?</h1>
+<a class="text-info" href="{% url 'account_login' %}">Login</a>
+{% endif %}
+
+<form action="" method="POST" id="payment-form">
+<h1>YOUR DETAILS</h1>
 
 {% csrf_token %}
 {{ order_form.as_p }}
+
+<h1>PAYMENT DETAILS</h1>
+
+<button id="submit-button" class="btn btn-primary">Place Order</button>
+
+<h2>TOTAL: ${{ plan.price }}</span>
+</form>
+
+
 
 {% endblock %}
