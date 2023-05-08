@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .forms import ContactForm
 from django.contrib import messages
+from .models import Contact
+
 
 # Create your views here.
 
@@ -18,3 +20,9 @@ def contact(request):
 
     context = {'form': form}
     return render(request, 'contact/contact.html', context)
+
+
+def contact_management(request):
+    contact_forms = Contact.objects.all()
+    return render(request, 'contact/contact_management.html', {'contact_forms': contact_forms})
+
