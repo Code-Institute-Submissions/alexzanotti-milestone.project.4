@@ -82,7 +82,7 @@
                         <div class="dropdown-menu">
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
-                            <a href="" class="dropdown-item">Plan Management</a>
+                            <a href="{% url 'plan_management' %}" class="dropdown-item">Plan Management</a>
                             <a href="" class="dropdown-item">Community Management</a>
                             <div class="dropdown-divider"></div>
                             {% endif %}

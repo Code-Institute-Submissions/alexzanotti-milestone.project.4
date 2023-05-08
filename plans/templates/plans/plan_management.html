@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Plan Management{% endblock %}
+
+{% block content %}
+
+
+<h1>Plan Management</h1>
+
+
+
+
+
+
+
+
+<h1>Categories</h1>
+
+
+{% for category in categories %}
+
+<h2>Category Name</h2>
+<p>{{ category.name }}</p>
+<h2>Category Description</h2>
+<p>{{ category.description }}</p>
+
+
+{% endfor %}
+
+
+
+
+
+
+<h1>Plans</h1>
+
+
+
+{% endblock %}

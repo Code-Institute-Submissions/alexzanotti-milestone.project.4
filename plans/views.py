@@ -61,3 +61,10 @@ def plan_sales_page(request, plan_id):
     }
 
     return render(request, 'plans/plan_sales_page.html/', context)
+
+
+def plan_management(request):
+    categories = Category.objects.all()
+    plans = Plan.objects.all()
+    
+    return render(request, 'plans/plan_management.html', {'categories': categories, 'plans': plans})
