@@ -24,7 +24,7 @@
             <td>{{ contact_form.message }}</td>
             <td>
                 <a href="">Update</a>
-                <a href="">Delete</a>
+                <a href="{% url 'delete_contact_form' contact_form.id %}">Delete</a>
 
             </td>
         </tr>
