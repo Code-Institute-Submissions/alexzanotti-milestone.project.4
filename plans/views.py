@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from .models import Plan, Category
-from .forms import CategoryForm
+from .forms import CategoryForm, PlanForm
 
 # Create your views here.
 
@@ -104,3 +104,19 @@ def delete_category(request, category_id):
             request, f'Category "{category.name}" has been deleted!')
         return redirect('plan_management')
     return redirect('plan_management')
+
+
+def add_plan(request):
+    if request.method == 'POST':
+        form = PlanForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Plan added successfully!')
+            return redirect('plan_management')
+    else:
+        form = PlanForm()
+
+    context = {
+        'form': form,
+    }
+    return render(request, 'plans/add_plan.html', context)

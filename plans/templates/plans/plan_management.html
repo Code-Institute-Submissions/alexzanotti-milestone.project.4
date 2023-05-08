@@ -22,7 +22,6 @@
 
 
 {% for category in categories %}
-
 <h2>Category Name</h2>
 <p>{{ category.name }}</p>
 <h2>Category Description</h2>
@@ -33,17 +32,29 @@
     {% csrf_token %}
     <button type="submit" class="btn btn-danger">Delete Category</button>
 </form>
-
-
 {% endfor %}
-
-
 
 
 
 
 <h1>Plans</h1>
 
+<a href="{% url 'add_plan' %}" class="btn btn-primary">Add Plan</a>
 
+{% for plan in plans %}
+<div class="card">
+    {% if plan.image %}
+        <img src="{{ plan.image.url }}" class="card-img-top" alt="{{ plan.name }}">
+    {% else %}
+        <img src="" class="card-img-top" alt="{{ plan.name }}">
+    {% endif %}
+    <div class="card-body">
+        <h5 class="card-title">{{ plan.name }}</h5>
+        <p class="card-text">{{ plan.description }}</p>
+        <p class="card-text">{{ plan.price }}</p>
+        <p class="card-text">{{ plan.category }}</p>
+    </div>
+</div>
+{% endfor %}
 
 {% endblock %}
