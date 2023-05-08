@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from .models import Plan, Category
+from .forms import CategoryForm
 
 # Create your views here.
 
@@ -68,3 +69,15 @@ def plan_management(request):
     plans = Plan.objects.all()
     
     return render(request, 'plans/plan_management.html', {'categories': categories, 'plans': plans})
+
+
+def add_category(request):
+    if request.method == 'POST':
+        form = CategoryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('plan_management')
+    else:
+        form = CategoryForm()
+
+    return render(request, 'plans/add_category.html', {'form': form})
