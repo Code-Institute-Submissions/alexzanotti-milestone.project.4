@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from .forms import ContactForm
+from .forms import ContactForm, UpdateContactForm
 from django.contrib import messages
 from .models import Contact
 
@@ -25,6 +25,21 @@ def contact(request):
 def contact_management(request):
     contact_forms = Contact.objects.all()
     return render(request, 'contact/contact_management.html', {'contact_forms': contact_forms})
+
+
+def update_contact_form(request, contact_id):
+    contact = get_object_or_404(Contact, id=contact_id)
+
+    if request.method == 'POST':
+        form = UpdateContactForm(request.POST, instance=contact)
+        if form.is_valid():
+            form.save()
+            return redirect('contact_management')
+    else:
+        form = UpdateContactForm(instance=contact)
+
+    context = {'form': form, 'contact': contact}
+    return render(request, 'contact/update_contact_form.html', context)
 
 
 def delete_contact_form(request, form_id):
