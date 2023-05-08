@@ -5,11 +5,25 @@
 {% block title %}Update Contact Form{% endblock %}
 
 {% block content %}
-<h1>Contact Management</h1>
 <h2>Update Contact Form</h2>
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="btn btn-primary">Update Contact</button>
+</form>
+<a href="{% url 'contact_management' %}" class="btn btn-primary">Return to Contact Management</a>
+
+<h3>Comments</h3>
+{% for comment in comments %}
+<div>
+    <strong>{{ comment.author.username }}</strong> ({{ comment.created_at }}): {{ comment.text }}
+</div>
+{% endfor %}
+
+<h4>Add Comment</h4>
+<form method="POST">
+    {% csrf_token %}
+    {{ comment_form.as_p }}
+    <button type="submit" class="btn btn-primary">Add Comment</button>
 </form>
 {% endblock %}

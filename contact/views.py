@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from .forms import ContactForm, UpdateContactForm
+from .forms import ContactForm, UpdateContactForm, CommentForm
 from django.contrib import messages
-from .models import Contact
+from .models import Contact, Comment
 
 
 # Create your views here.
@@ -29,16 +29,28 @@ def contact_management(request):
 
 def update_contact_form(request, contact_id):
     contact = get_object_or_404(Contact, id=contact_id)
+    comments = Comment.objects.filter(contact=contact)
 
     if request.method == 'POST':
         form = UpdateContactForm(request.POST, instance=contact)
+        comment_form = CommentForm(request.POST)
+
         if form.is_valid():
             form.save()
-            return redirect('contact_management')
+
+        if comment_form.is_valid() and request.user.is_superuser:
+            comment = comment_form.save(commit=False)
+            comment.contact = contact
+            comment.author = request.user
+            comment.save()
+
+        return redirect('update_contact_form', contact_id=contact.id)
     else:
         form = UpdateContactForm(instance=contact)
+        comment_form = CommentForm()
 
-    context = {'form': form, 'contact': contact}
+    context = {'form': form, 'comment_form': comment_form,
+               'contact': contact, 'comments': comments}
     return render(request, 'contact/update_contact_form.html', context)
 
 
