@@ -81,3 +81,16 @@ def add_category(request):
         form = CategoryForm()
 
     return render(request, 'plans/add_category.html', {'form': form})
+
+
+def edit_category(request, category_id):
+    category = get_object_or_404(Category, pk=category_id)
+    if request.method == 'POST':
+        form = CategoryForm(request.POST, instance=category)
+        if form.is_valid():
+            form.save()
+            return redirect('plan_management')
+    else:
+        form = CategoryForm(instance=category)
+
+    return render(request, 'plans/edit_category.html', {'form': form, 'category': category})

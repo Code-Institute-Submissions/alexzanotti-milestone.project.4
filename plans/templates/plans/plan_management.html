@@ -27,6 +27,7 @@
 <p>{{ category.name }}</p>
 <h2>Category Description</h2>
 <p>{{ category.description }}</p>
+<a href="{% url 'edit_category' category.id %}" class="btn btn-primary">Edit Category</a>
 
 
 {% endfor %}
