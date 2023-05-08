@@ -139,3 +139,10 @@ def edit_plan(request, plan_id):
         'plan': plan,
     }
     return render(request, 'plans/edit_plan.html', context)
+
+
+def delete_plan(request, plan_id):
+    plan = get_object_or_404(Plan, pk=plan_id)
+    plan.delete()
+    messages.success(request, 'Plan deleted successfully!')
+    return redirect('plan_management')
