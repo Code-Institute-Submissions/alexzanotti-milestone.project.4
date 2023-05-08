@@ -54,6 +54,7 @@
         <p class="card-text">{{ plan.price }}</p>
         <p class="card-text">{{ plan.category }}</p>
     </div>
+    <a href="{% url 'edit_plan' plan.id %}" class="btn btn-primary">Edit Plan</a>
 </div>
 {% endfor %}
 

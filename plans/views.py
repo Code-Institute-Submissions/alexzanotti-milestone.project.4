@@ -120,3 +120,22 @@ def add_plan(request):
         'form': form,
     }
     return render(request, 'plans/add_plan.html', context)
+
+
+def edit_plan(request, plan_id):
+    plan = get_object_or_404(Plan, pk=plan_id)
+
+    if request.method == 'POST':
+        form = PlanForm(request.POST, request.FILES, instance=plan)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Plan updated successfully!')
+            return redirect('plan_management')
+    else:
+        form = PlanForm(instance=plan)
+
+    context = {
+        'form': form,
+        'plan': plan,
+    }
+    return render(request, 'plans/edit_plan.html', context)
