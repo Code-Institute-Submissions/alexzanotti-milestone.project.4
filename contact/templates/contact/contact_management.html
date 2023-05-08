@@ -7,28 +7,21 @@
 {% block content %}
 <h1>Contact Management</h1>
 
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Message</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for contact_form in contact_forms %}
-        <tr>
-            <td>{{ contact_form.name }}</td>
-            <td>{{ contact_form.email }}</td>
-            <td>{{ contact_form.message }}</td>
-            <td>
-                <a href="">Update</a>
-                <a href="{% url 'delete_contact_form' contact_form.id %}">Delete</a>
+{% for contact_form in contact_forms %}
+    <h2>Name</h2>
+    <p>{{ contact_form.name }}</p>
+    <h2>Email</h2>
+    <p>{{ contact_form.email }}</p>
+    <h2>Message</h2>
+    <p>{{ contact_form.message }}</p>
+    <h2>Created</h2>
+    <p>{{ contact_form.created_at }}</p>
+    <h2>Updated</h2>
+    <p>{{ contact_form.updated_at }}</p>
+    <h2>Status</h2>
+    <p>{{ contact_form.status }}</p>
+    <a href="">Update</a>
+    <a href="{% url 'delete_contact_form' contact_form.id %}">Delete</a>
+{% endfor %}
 
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
 {% endblock %}
