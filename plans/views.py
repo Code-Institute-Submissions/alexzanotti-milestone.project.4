@@ -94,3 +94,13 @@ def edit_category(request, category_id):
         form = CategoryForm(instance=category)
 
     return render(request, 'plans/edit_category.html', {'form': form, 'category': category})
+
+
+def delete_category(request, category_id):
+    if request.method == 'POST':
+        category = get_object_or_404(Category, pk=category_id)
+        category.delete()
+        messages.success(
+            request, f'Category "{category.name}" has been deleted!')
+        return redirect('plan_management')
+    return redirect('plan_management')
