@@ -26,6 +26,23 @@ def post_detail(request, post_id):
     return render(request, 'community/post_detail.html', {'post': post, 'comments': comments})
 
 
+def add_post(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user.profile
+            post.save()
+            return redirect('post_detail', post_id=post.id)
+    else:
+        form = PostForm()
+
+    context = {
+        'form': form,
+    }
+    return render(request, 'community/add_post.html', context)
+
+
 def add_comment(request, post_id):
     post = get_object_or_404(Post, id=post_id)
 
