@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ post.title }} | My Community{% endblock %}
+
+{% block content %}
+<h1>{{ post.title }}</h1>
+<p>Category: {{ post.category.name }}</p>
+<p>Author: {{ post.author.profile_user.username }}</p>
+<p>Date: {{ post.created_at|date:'Y-m-d H:i' }}</p>
+
+<h2>Post Content</h2>
+<p>{{ post.content }}</p>
+
+<h2>Comments</h2>
+{% if comments %}
+<ul>
+    {% for comment in comments %}
+    <li>
+        <p>{{ comment.author.profile_user.username }} - {{ comment.created_at|date:'Y-m-d H:i' }}</p>
+        <p>{{ comment.content }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No comments yet.</p>
+{% endif %}
+
+{% if user.is_authenticated %}
+<a href="{% url 'add_comment' post_id=post.id %}" class="btn btn-primary">Add Comment</a>
+{% endif %}
+{% endblock %}
