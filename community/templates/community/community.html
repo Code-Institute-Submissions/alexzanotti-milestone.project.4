@@ -4,30 +4,28 @@
 {% block title %}Post List | My Community{% endblock %}
 
 {% block content %}
-<h1>Post List</h1>
-
-
+<h1>Categories</h1>
 
 <table>
     <thead>
         <tr>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Author</th>
-            <th>Date</th>
+            <th>Category Name</th>
+            <th>Description</th>
+            <th>Number of Posts</th>
+            <th>Latest Post</th>
         </tr>
     </thead>
     <tbody>
-        {% for post in posts %}
+        {% for category in categories %}
         <tr>
-            <td>{{ post.title }}</a></td>
-            <td>{{ post.category }}</td>
-            <td>{{ post.author.profile_user.username }}</td>
-            <td>{{ post.created_at|date:'Y-m-d H:i' }}</td>
+            <td><a href="{% url 'community_category' category.id %}">{{ category.name }}</a></td>
+            <td>{{ category.description }}</td>
+            <td>{{ category.num_posts }}</td>
+            <td>{{ category.latest_post_date|default:'N/A'|date:'Y-m-d H:i' }}</td>
         </tr>
         {% empty %}
         <tr>
-            <td colspan="4">No posts available.</td>
+            <td colspan="4">No categories available.</td>
         </tr>
         {% endfor %}
     </tbody>
