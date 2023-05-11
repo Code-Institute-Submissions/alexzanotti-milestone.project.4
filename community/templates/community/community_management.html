@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Community Management{% endblock %}
+
+{% block content %}
+<h1>Community Management</h1>
+
+<h2>Categories</h2>
+<a href="{% url 'community:add_category' %}">Add Category</a>
+<ul>
+    {% for category in categories %}
+    <li>
+        {{ category.name }}
+        <a href="{% url 'community:edit_category' category.id %}">Edit</a>
+        <a href="{% url 'community:delete_category' category.id %}">Delete</a>
+    </li>
+    {% empty %}
+    <li>No categories available.</li>
+    {% endfor %}
+</ul>
+
+<h2>Posts</h2>
+<ul>
+    {% for post in posts %}
+    <li>(Category: {{ post.category.name }})</li>
+    <li>
+        {{ post.title }}
+        <a href="{% url 'community:edit_post' post.id %}">Edit</a>
+        <a href="{% url 'community:delete_post' post.id %}">Delete</a>
+    </li>
+    {% empty %}
+    <li>No posts available.</li>
+    {% endfor %}
+</ul>
+
+<h2>Comments</h2>
+<ul>
+    {% for comment in comments %}
+    <li>(Post: {{ comment.post.title }})</li>
+    <li>
+        {{ comment.content }}
+        <a href="{% url 'community:edit_comment' comment.id %}">Edit</a>
+        <a href="{% url 'community:delete_comment' comment.id %}">Delete</a>
+    </li>
+    {% empty %}
+    <li>No comments available.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

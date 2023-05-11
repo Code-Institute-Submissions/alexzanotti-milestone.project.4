@@ -46,7 +46,7 @@
                         <a class="nav-link" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'community' %}">Community</a>
+                        <a class="nav-link" href="{% url 'community:community' %}">Community</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
@@ -72,7 +72,7 @@
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
                             <a href="{% url 'plan_management' %}" class="dropdown-item">Plan Management</a>
-                            <a href="" class="dropdown-item">Community Management</a>
+                            <a href="{% url 'community:community_management' %}" class="dropdown-item">Community Management</a>
                             <a href="{% url 'contact_management' %}" class="dropdown-item">Contact Management</a>
                             <div class="dropdown-divider"></div>
                             {% endif %}

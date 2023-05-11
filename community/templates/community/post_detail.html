@@ -27,6 +27,6 @@
 {% endif %}
 
 {% if user.is_authenticated %}
-<a href="{% url 'add_comment' post_id=post.id %}" class="btn btn-primary">Add Comment</a>
+<a href="{% url 'community:add_comment' post_id=post.id %}" class="btn btn-primary">Add Comment</a>
 {% endif %}
 {% endblock %}
