@@ -28,6 +28,8 @@
     </tbody>
 </table>
 
+<a href="{% url 'community:add_post' %}" class="btn btn-primary">Add Post</a>
+
 <h2>My Comments</h2>
 <ul>
     {% for comment in comments %}
@@ -39,4 +41,5 @@
     <li>You haven't made any comments yet.</li>
     {% endfor %}
 </ul>
+
 {% endblock %}

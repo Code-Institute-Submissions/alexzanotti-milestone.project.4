@@ -39,7 +39,7 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
+    
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
@@ -72,7 +72,8 @@
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
                             <a href="{% url 'plan_management' %}" class="dropdown-item">Plan Management</a>
-                            <a href="{% url 'community:community_management' %}" class="dropdown-item">Community Management</a>
+                            <a href="{% url 'community:community_management' %}" class="dropdown-item">Community
+                                Management</a>
                             <a href="{% url 'contact_management' %}" class="dropdown-item">Contact Management</a>
                             <div class="dropdown-divider"></div>
                             {% endif %}
@@ -84,15 +85,20 @@
                             <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                             <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                             {% endif %}
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+                            </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                            </li>
+                            </ul>
+                            </div>
+                            </nav>
+                            </header>
+                            
+                        
+
+
+    
     {% block content %}
     {% endblock %}
 
@@ -103,14 +109,17 @@
                 <div class="row mt-3 main-footer">
 
                     <!-- column 1 -->
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <div class="col-md-12 col-lg-4 mx-auto mb-4">
                         <!-- column header -->
                         <h6 class="text-uppercase fw-bold mb-4">TEST</h6>
                         <!--  column content-->
                         <p>TESTESTESTTESTESTESTTESTESTESTTESTESTEST</p>
+                        <p>TESTESTESTTESTESTESTTESTESTESTTESTESTEST</p>
+                        <p>TESTESTESTTESTESTESTTESTESTESTTESTESTEST</p>
+                        <p>TESTESTESTTESTESTESTTESTESTESTTESTESTEST</p>
                     </div>
                     <!-- column 2 -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <div class="col-md-12 col-lg-4 mx-auto mb-4">
                         <!-- column header -->
                         <h6 class="text-uppercase fw-bold mb-4">TESTESTEST</h6>
                         <!--  column content-->
@@ -121,7 +130,7 @@
                     </div>
                     <!-- column 3 -->
 
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <div class="col-md-12 col-lg-4 mx-auto mb-md-0 mb-4">
                         <!-- column header -->
                         <h6 class="text-uppercase fw-bold mb-4">TEST</h6>
                         <!--  column content-->
@@ -136,6 +145,10 @@
         <!-- Footer bottom -->
         <div class="text-center p-4 footer-bottom">TEST</div>
     </footer>
+
+
+
+
 
     <!-- bootstrap script-->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"

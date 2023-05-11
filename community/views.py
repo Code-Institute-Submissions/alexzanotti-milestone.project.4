@@ -28,6 +28,7 @@ def post_detail(request, post_id):
     return render(request, 'community/post_detail.html', {'post': post, 'comments': comments})
 
 
+@login_required
 def add_post(request):
     if request.method == "POST":
         form = PostForm(request.POST)
@@ -45,6 +46,7 @@ def add_post(request):
     return render(request, 'community/add_post.html', context)
 
 
+@login_required
 def add_comment(request, post_id):
     post = get_object_or_404(Post, id=post_id)
 
@@ -104,7 +106,7 @@ def edit_category(request, category_id):
     return render(request, 'community/edit_category.html', {'form': form, 'category': category})
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@login_required
 def edit_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     if request.method == 'POST':
@@ -137,14 +139,14 @@ def delete_category(request, category_id):
     return redirect('community:community_management')
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@login_required
 def delete_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     post.delete()
     return redirect('community:community_management')
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@login_required
 def delete_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
     comment.delete()
@@ -156,3 +158,4 @@ def my_posts(request):
     user_posts = Post.objects.filter(author=request.user.profile)
     user_comments = Comment.objects.filter(author=request.user.profile)
     return render(request, 'community/my_posts.html', {'posts': user_posts, 'comments': user_comments})
+
