@@ -149,3 +149,10 @@ def delete_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
     comment.delete()
     return redirect('community:community_management')
+
+
+@login_required
+def my_posts(request):
+    user_posts = Post.objects.filter(author=request.user.profile)
+    user_comments = Comment.objects.filter(author=request.user.profile)
+    return render(request, 'community/my_posts.html', {'posts': user_posts, 'comments': user_comments})

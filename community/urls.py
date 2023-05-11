@@ -29,4 +29,5 @@ urlpatterns = [
          views.delete_comment, name='delete_comment'),
     path('community_management/edit_comment/<int:comment_id>/',
          views.edit_comment, name='edit_comment'),
+    path('my_posts/', views.my_posts, name='my_posts'),
 ]
