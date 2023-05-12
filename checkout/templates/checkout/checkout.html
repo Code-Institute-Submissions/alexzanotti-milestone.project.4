@@ -31,7 +31,7 @@
 <a class="text-info" href="{% url 'account_login' %}">Login</a>
 {% endif %}
 
-<form action="" method="POST" id="payment-form">
+<form action="{% url 'checkout' plan.id %}" method="POST" id="payment-form">
 <h1>YOUR DETAILS</h1>
 
 {% csrf_token %}
