@@ -13,7 +13,6 @@ def profile(request):
 
         if form.is_valid():
             form.save()
-            # Add a success message or redirect as needed
 
     else:
         form = ProfileUpdateForm(instance=profile)
