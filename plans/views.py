@@ -52,7 +52,7 @@ def plans(request):
     return render(request, 'plans/plans.html', context)
 
 
-def plan_sales_page(request, plan_id):
+def plan_description(request, plan_id):
     """ A view to show the sales page for each individual plan """
 
     plan = get_object_or_404(Plan, pk=plan_id)
@@ -61,13 +61,13 @@ def plan_sales_page(request, plan_id):
         'plan': plan,
     }
 
-    return render(request, 'plans/plan_sales_page.html/', context)
+    return render(request, 'plans/plan_description.html/', context)
 
 
 def plan_management(request):
     categories = Category.objects.all()
     plans = Plan.objects.all()
-    
+
     return render(request, 'plans/plan_management.html', {'categories': categories, 'plans': plans})
 
 

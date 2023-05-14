@@ -12,6 +12,5 @@
 {% endif %}
 <p class="card-text">{{ plan.description }}</p>
 <p class="card-text">{{ plan.price }}</p>
-<a href="{% url 'checkout:checkout' plan.id %}" class="btn btn-primary">Purchase Plan</a>
 
 {% endblock %}
