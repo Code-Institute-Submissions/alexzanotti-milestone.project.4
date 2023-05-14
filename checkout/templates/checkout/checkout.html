@@ -32,16 +32,16 @@
 {% endif %}
 
 <form action="{% url 'checkout' plan.id %}" method="POST" id="payment-form">
-<h1>YOUR DETAILS</h1>
+    <h1>YOUR DETAILS</h1>
 
-{% csrf_token %}
-{{ order_form.as_p }}
+    {% csrf_token %}
+    {{ order_form.as_p }}
 
-<h1>PAYMENT DETAILS</h1>
+    <h1>PAYMENT DETAILS</h1>
 
-<button id="submit-button" class="btn btn-primary">Place Order</button>
+    <button id="submit-button" class="btn btn-primary">Place Order</button>
 
-<h2>Total: ${{ plan.price }}</span>
+    <h2>Total: ${{ plan.price }}</h2>
 </form>
 
 {% endblock %}

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-#0p9ky2(j*vm51@n(+4tg!zb1so&&nj(o37kni&z8aos739ucz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-alexzanotti-milestonepr-3wvltbfczk.us2.codeanyapp.com']
+ALLOWED_HOSTS = ['8000-alexzanotti-milestonepr-0gago5uvhz.us2.codeanyapp.com']
 
 
 # Application definition
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'profiles',
     'contact',
     'community',
+    'bag',
 ]
 
 MIDDLEWARE = [
@@ -78,6 +79,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 'plans.context_processors.categories',
+                'bag.contexts.bag_contents',
             ],
             'builtins':[
                 'crispy_forms.templatetags.crispy_forms_tags',
