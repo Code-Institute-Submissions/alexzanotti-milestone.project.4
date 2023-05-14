@@ -39,7 +39,7 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-    
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
@@ -85,20 +85,22 @@
                             <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                             <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                             {% endif %}
-                            </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-                            </li>
-                            </ul>
-                            </div>
-                            </nav>
-                            </header>
-                            
-                        
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
 
-    
+
+
+    {{ bag_items }}
+
+
     {% block content %}
     {% endblock %}
 

@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'profiles',
     'contact',
     'community',
-    'bag',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +78,6 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 'plans.context_processors.categories',
-                'bag.contexts.bag_contents',
             ],
             'builtins':[
                 'crispy_forms.templatetags.crispy_forms_tags',
