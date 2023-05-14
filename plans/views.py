@@ -115,7 +115,7 @@ def add_plan(request):
             plan = form.save(commit=False)
             plan.author = request.user.profile
             plan.save()
-            return redirect(reverse('plans:plan_detail', args=[plan.id]))
+            return redirect(reverse('plans:plan_description', args=[plan.id]))
     else:
         form = PlanForm()
 
@@ -156,7 +156,7 @@ def add_comment(request, plan_id):
             comment.author = request.user.profile
             comment.plan = plan
             comment.save()
-            return redirect(reverse('plans:plan_detail', args=[plan.id]))
+            return redirect(reverse('plans:plan_description', args=[plan.id]))
     else:
         form = CommentForm()
 

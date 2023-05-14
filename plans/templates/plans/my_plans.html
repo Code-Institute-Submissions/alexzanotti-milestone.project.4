@@ -16,9 +16,9 @@
     <tbody>
         {% for plan in plans %}
         <tr>
-            <td><a href="{% url 'plans:plan_description' plan.id %}">{{ plan.title }}</a></td>
+            <td><a href="{% url 'plans:plan_description' plan.id %}">{{ plan.name }}</a></td>
             <td>{{ plan.category.name }}</td>
-            <td>{{ plan.created_at|date:'Y-m-d H:i' }}</td>
+            <td>{{ plan.date_posted|date:'Y-m-d H:i' }}</td>
         </tr>
         {% empty %}
         <tr>

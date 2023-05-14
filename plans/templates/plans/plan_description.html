@@ -5,8 +5,8 @@
 
 {% block content %}
 <h1>{{ plan.name }}</h1>
-{% if plan.image %}
-<img src="{{ plan.image.url }}" class="card-img-top" alt="{{ plan.name }}">
+{% if plan.image_field %}
+<img src="{{ plan.image_field.url }}" class="card-img-top" alt="{{ plan.name }}">
 {% else %}
 <img src="" class="card-img-top" alt="{{ plan.name }}">
 {% endif %}

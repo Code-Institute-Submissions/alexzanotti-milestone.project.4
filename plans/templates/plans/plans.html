@@ -37,8 +37,8 @@
 <div>
     {% for plan in plans %}
     <div class="card">
-        {% if plan.image %}
-        <img src="{{ plan.image_field }}" class="card-img-top" alt="{{ plan.name }}">
+        {% if plan.image_field %}
+        <img src="{{ plan.image_field.url }}" class="card-img-top" alt="{{ plan.name }}">
         {% else %}
         <img src="" class="card-img-top" alt="{{ plan.name }}">
         {% endif %}
