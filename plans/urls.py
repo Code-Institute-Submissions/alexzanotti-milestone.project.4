@@ -1,6 +1,10 @@
 from django.urls import path
 from . import views
 
+
+app_name = 'plans'
+
+
 urlpatterns = [
     path('', views.plans, name='plans'),
     path('plan_management/', views.plan_management, name='plan_management'),
@@ -12,5 +16,10 @@ urlpatterns = [
     path('add_plan/', views.add_plan, name='add_plan'),
     path('edit_plan/<int:plan_id>/', views.edit_plan, name='edit_plan'),
     path('delete_plan/<int:plan_id>/', views.delete_plan, name='delete_plan'),
-    path('<plan_id>/', views.plan_description, name='plan_description'),
+    path('my_plans/', views.my_plans, name='my_plans'),
+    path('<int:plan_id>/', views.plan_description, name='plan_description'),
+    path('delete_comment/<int:comment_id>/',
+         views.delete_comment, name='delete_comment'),
+    path('edit_comment/<int:comment_id>/',
+         views.edit_comment, name='edit_comment'),
 ]

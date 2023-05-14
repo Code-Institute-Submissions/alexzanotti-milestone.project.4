@@ -1,4 +1,7 @@
+from django.contrib.auth.models import User
 from django.db import models
+from profiles.models import Profile
+
 
 # Create your models here.
 
@@ -21,9 +24,21 @@ class Plan(models.Model):
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
     description = models.TextField(null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    image_urlfield = models.URLField(max_length=1000, null=True, blank=True)
     image_field = models.ImageField(null=True, blank=True)
+    author = models.ForeignKey(Profile, on_delete=models.CASCADE)
     date_posted = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
+
+
+class Comment(models.Model):
+    content = models.TextField()
+    plan = models.ForeignKey(
+        Plan, related_name='comments', on_delete=models.CASCADE)
+    author = models.ForeignKey(
+        Profile, related_name='plan_comments', on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'Comment by {self.author.user.username} on {self.plan.name}'

@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Plan, Category, Comment
-from .forms import CategoryForm, PlanForm, CommentForm
-from django.contrib.auth.decorators import login_required, user_passes_test
+from .models import Plan, Category
+from .forms import CategoryForm, PlanForm
 
 # Create your views here.
 
@@ -62,7 +61,7 @@ def plan_description(request, plan_id):
         'plan': plan,
     }
 
-    return render(request, 'plans/plan_description.html', context)
+    return render(request, 'plans/plan_description.html/', context)
 
 
 def plan_management(request):
@@ -107,15 +106,13 @@ def delete_category(request, category_id):
     return redirect('plan_management')
 
 
-@login_required
 def add_plan(request):
-    if request.method == "POST":
+    if request.method == 'POST':
         form = PlanForm(request.POST, request.FILES)
         if form.is_valid():
-            plan = form.save(commit=False)
-            plan.author = request.user.profile
-            plan.save()
-            return redirect(reverse('plans:plan_detail', args=[plan.id]))
+            form.save()
+            messages.success(request, 'Plan added successfully!')
+            return redirect('plan_management')
     else:
         form = PlanForm()
 
@@ -125,17 +122,23 @@ def add_plan(request):
     return render(request, 'plans/add_plan.html', context)
 
 
-@login_required
 def edit_plan(request, plan_id):
-    plan = get_object_or_404(Plan, id=plan_id)
+    plan = get_object_or_404(Plan, pk=plan_id)
+
     if request.method == 'POST':
         form = PlanForm(request.POST, request.FILES, instance=plan)
         if form.is_valid():
             form.save()
-            return redirect('plans:plan_management')
+            messages.success(request, 'Plan updated successfully!')
+            return redirect('plan_management')
     else:
         form = PlanForm(instance=plan)
-    return render(request, 'plans/edit_plan.html', {'form': form, 'plan': plan})
+
+    context = {
+        'form': form,
+        'plan': plan,
+    }
+    return render(request, 'plans/edit_plan.html', context)
 
 
 def delete_plan(request, plan_id):
@@ -143,52 +146,3 @@ def delete_plan(request, plan_id):
     plan.delete()
     messages.success(request, 'Plan deleted successfully!')
     return redirect('plan_management')
-
-
-@login_required
-def add_comment(request, plan_id):
-    plan = get_object_or_404(Plan, id=plan_id)
-
-    if request.method == "POST":
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.author = request.user.profile
-            comment.plan = plan
-            comment.save()
-            return redirect(reverse('plans:plan_detail', args=[plan.id]))
-    else:
-        form = CommentForm()
-
-    context = {
-        'form': form,
-        'plan': plan,
-    }
-    return render(request, 'plans/add_comment.html', context)
-
-
-@login_required
-def edit_comment(request, comment_id):
-    comment = get_object_or_404(Comment, id=comment_id)
-    if request.method == 'POST':
-        form = CommentForm(request.POST, instance=comment)
-        if form.is_valid():
-            form.save()
-            return redirect('plans:plan_management')
-    else:
-        form = CommentForm(instance=comment)
-    return render(request, 'plans/edit_comment.html', {'form': form, 'comment': comment})
-
-
-@login_required
-def delete_comment(request, comment_id):
-    comment = get_object_or_404(Comment, id=comment_id)
-    comment.delete()
-    return redirect('plans:plan_management')
-
-
-@login_required
-def my_plans(request):
-    user_plans = Plan.objects.filter(author=request.user.profile)
-    user_comments = Comment.objects.filter(author=request.user.profile)
-    return render(request, 'plans/my_plans.html', {'plans': user_plans, 'comments': user_comments})

@@ -18,7 +18,7 @@
 
 <h1>Categories</h1>
 
-<a href="{% url 'add_category' %}" class="btn btn-primary">Add Category</a>
+<a href="{% url 'plans:add_category' %}" class="btn btn-primary">Add Category</a>
 
 
 {% for category in categories %}
@@ -26,9 +26,9 @@
 <p>{{ category.name }}</p>
 <h2>Category Description</h2>
 <p>{{ category.description }}</p>
-<a href="{% url 'edit_category' category.id %}" class="btn btn-primary">Edit Category</a>
+<a href="{% url 'plans:edit_category' category.id %}" class="btn btn-primary">Edit Category</a>
 
-<form method="POST" action="{% url 'delete_category' category.id %}" class="d-inline">
+<form method="POST" action="{% url 'plans:delete_category' category.id %}" class="d-inline">
     {% csrf_token %}
     <button type="submit" class="btn btn-danger">Delete Category</button>
 </form>
@@ -39,7 +39,7 @@
 
 <h1>Plans</h1>
 
-<a href="{% url 'add_plan' %}" class="btn btn-primary">Add Plan</a>
+<a href="{% url 'plans:add_plan' %}" class="btn btn-primary">Add Plan</a>
 
 {% for plan in plans %}
 <div class="card">
@@ -56,8 +56,8 @@
     </div>
 </div>
 
-<a href="{% url 'edit_plan' plan.id %}" class="btn btn-primary">Edit Plan</a>
-<a href="{% url 'delete_plan' plan.id %}" class="btn btn-danger">Delete Plan</a>
+<a href="{% url 'plans:edit_plan' plan.id %}" class="btn btn-primary">Edit Plan</a>
+<a href="{% url 'plans:delete_plan' plan.id %}" class="btn btn-danger">Delete Plan</a>
 
 {% endfor %}
 

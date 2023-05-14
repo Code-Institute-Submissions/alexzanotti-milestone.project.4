@@ -28,8 +28,9 @@ class Comment(models.Model):
     content = models.TextField()
     post = models.ForeignKey(
         Post, related_name='comments', on_delete=models.CASCADE)
-    author = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    author = models.ForeignKey(
+        Profile, related_name='post_comments', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'Comment by {self.author.username} on {self.post.title}'
+        return f'Comment by {self.author.user.username} on {self.post.title}'

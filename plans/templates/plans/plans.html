@@ -6,7 +6,7 @@
 {% block content %}
 <h1>Plans</h1>
 
-<form method="GET" action="{% url 'plans' %}">
+<form method="GET" action="{% url 'plans:plans' %}">
     <div class="input-group">
         <input class="form-control" type="text" name="q" placeholder="Search for Plans">
         <button class="btn" type="submit">
@@ -15,7 +15,7 @@
     </div>
 </form>
 
-<form method="GET" action="{% url 'plans' %}">
+<form method="GET" action="{% url 'plans:plans' %}">
     <div class="input-group">
         <label for="sort_by">Sort by:</label>
         <select name="sort_by" id="sort_by" onchange="this.form.submit()">
@@ -46,7 +46,7 @@
             <h5 class="card-title">{{ plan.name }}</h5>
             <p class="card-text">{{ plan.description }}</p>
             <p class="card-text">{{ plan.price }}</p>
-            <a href="{% url 'plan_description' plan.id %}" class="btn btn-primary">Learn More</a>
+            <a href="{% url 'plans:plan_description' plan.id %}" class="btn btn-primary">Learn More</a>
             <p class="card-text">{{ plan.category }}</p>
         </div>
     </div>

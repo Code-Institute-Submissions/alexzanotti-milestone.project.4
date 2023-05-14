@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
     """
-    model to hold user details, plans and community data 
+    model to hold user details
     """
     profile_user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_user_name = models.CharField(max_length=50, null=True, blank=True)

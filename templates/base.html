@@ -56,11 +56,11 @@
                         <div class="dropdown-menu">
                             <p>Categories:</p>
                             {% for category in categories %}
-                            <a href="{% url 'plans' %}?category={{ category.name }}" class="dropdown-item">
+                            <a href="{% url 'plans:plans' %}?category={{ category.name }}" class="dropdown-item">
                                 {{ category.name }}</a>
                             {% endfor %}
                             <div class="dropdown-divider"></div>
-                            <a href="{% url 'plans' %}" class="dropdown-item">All Plans</a>
+                            <a href="{% url 'plans:plans' %}" class="dropdown-item">All Plans</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -71,14 +71,14 @@
                         <div class="dropdown-menu">
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
-                            <a href="{% url 'plan_management' %}" class="dropdown-item">Plan Management</a>
+                            <a href="{% url 'plans:plan_management' %}" class="dropdown-item">Plan Management</a>
                             <a href="{% url 'community:community_management' %}" class="dropdown-item">Community
                                 Management</a>
                             <a href="{% url 'contact_management' %}" class="dropdown-item">Contact Management</a>
                             <div class="dropdown-divider"></div>
                             {% endif %}
-                            <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>
-                            <a href="#" class="dropdown-item">My Plans</a>
+                            <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                            <a href="{% url 'plans:my_plans' %}" class="dropdown-item">My Plans</a>
                             <a href="{% url 'community:my_posts' %}" class="dropdown-item">My Posts</a>
                             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
