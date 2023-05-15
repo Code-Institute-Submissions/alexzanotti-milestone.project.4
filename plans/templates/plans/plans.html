@@ -30,22 +30,25 @@
     </div>
 </form>
 
-<div>
+<div class="row">
     {% for plan in plans %}
-    <div class="card">
-        {% if plan.image_field %}
-        <img src="{{ plan.image_field.url }}" class="card-img-top" alt="{{ plan.name }}">
-        {% else %}
-        <img src="" class="card-img-top" alt="{{ plan.name }}">
-        {% endif %}
-        <div class="card-body">
-            <h5 class="card-title">{{ plan.name }}</h5>
-            <p class="card-text">{{ plan.description }}</p>
-            <a href="{% url 'plans:plan_description' plan.id %}" class="btn btn-primary">Learn More</a>
-            <p class="card-text">{{ plan.category }}</p>
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card">
+            {% if plan.image_field %}
+            <img src="{{ plan.image_field.url }}" class="card-img-top" alt="{{ plan.name }}">
+            {% else %}
+            <img src="" class="card-img-top" alt="{{ plan.name }}">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ plan.name }}</h5>
+                <p class="card-text">{{ plan.description }}</p>
+                <a href="{% url 'plans:plan_description' plan.id %}" class="btn btn-primary">Learn More</a>
+                <p class="card-text">{{ plan.category }}</p>
+            </div>
         </div>
     </div>
     {% endfor %}
 </div>
+
 
 {% endblock %}

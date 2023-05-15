@@ -29,8 +29,6 @@ def donate(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        print(intent)
-
         # Redirect to the success page
         return redirect('donate_success')
     else:
@@ -38,8 +36,6 @@ def donate(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
-
-        print(intent)
 
         template = 'donate/donate.html'
         context = {

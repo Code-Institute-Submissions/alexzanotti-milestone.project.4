@@ -4,16 +4,58 @@
 {% block title %}Fitness{% endblock %}
 
 {% block content %}
-<h1>About</h1>
 
+<!-- Image with title -->
+<div class="container">
+    <img src="{{ MEDIA_URL }}health.jpeg" alt="Fitness" style="width:100%;">
+    <div class="centered">Centered</div>
+  </div>
+  
 
+<!-- About section -->
+<section id="about">
+    <h1>About</h1>
+    <p>This website is a hub for fitness enthusiasts to share posts, comments, and plans about various health and fitness categories. Whether you're a beginner or an experienced athlete, this community is for you.</p>
+</section>
 
-<h2>Plans</h2>
-<p>Discover an array of expertly-crafted fitness plans tailored to suit your unique goals and preferences. Whether
-    you're a
-    beginner looking to embark on your fitness journey or an experienced athlete seeking new challenges, our diverse
-    selection of fitness plans has something for everyone. Purchase the plan that best fits your needs and get ready to
-    transform your body and mind</p>
-<a class="btn btn-primary" href="{% url 'plans:plans' %}" role="button">View Plans</a>
+<!-- Sections -->
+<section id="sections">
+    <div class="row">
+        <!-- Community section -->
+        <div class="col-sm-3 col-md-6 col-lg-12">
+            <h2>Community</h2>
+            <p>Join our community of fitness enthusiasts. Share posts, interact with other members, and grow together.</p>
+            <a class="btn btn-primary" href="{% url 'community:community' %}" role="button">Join Community</a>
+        </div>
+
+        <!-- Plans section -->
+        <div class="col-sm-3 col-md-6 col-lg-12">
+            <h2>Plans</h2>
+            <p>Discover an array of expertly-crafted fitness plans tailored to suit your unique goals and preferences. Whether you're a beginner looking to embark on your fitness journey or an experienced athlete seeking new challenges, our diverse selection of fitness plans has something for everyone. Purchase the plan that best fits your needs and get ready to transform your body and mind.</p>
+            <a class="btn btn-primary" href="{% url 'plans:plans' %}" role="button">View Plans</a>
+        </div>
+
+        <!-- Profile section -->
+        <div class="col-sm-3 col-md-6 col-lg-12">
+            <h2>Profile</h2>
+            <p>Manage your account, track your progress, and more in your profile section.</p>
+            <a class="btn btn-primary" href="{% url 'profile' %}" role="button">View Profile</a>
+        </div>
+
+        <!-- Contact section -->
+        <div class="col-sm-3 col-md-6 col-lg-12">
+            <h2>Contact</h2>
+            <p>If you have any questions, comments, or feedback, feel free to reach out. We'd love to hear from you.</p>
+            <a class="btn btn-primary" href="{% url 'contact' %}" role="button">Contact Us</a>
+        </div>
+
+        <!-- Donate section -->
+        <div class="col-sm-3 col-md-6 col-lg-12">
+            <h2>Donate</h2>
+            <p>Support our mission to make fitness accessible for everyone. Your donations help keep our community running.</p>
+            <a class="btn btn-primary" href="{% url 'donate' %}" role="button">Donate</a>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
