@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.conf import settings
 from profiles.models import Profile
 import stripe
 
@@ -9,12 +10,24 @@ import stripe
 
 
 def donate(request):
-    bag = request.session.get('bag', {})
+
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
+
+    stripe_total = 10000
+
+    stripe.api_key = stripe_secret_key
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY,
+    )
+
+    print(intent)
 
     template = 'donate/donate.html'
     context = {
-        'stripe_public_key': 'pk_test_51N6fG5HqHvT2PvVfoDyps16JYahKvD5EWT5r9pJJuxB5LvRCoqUrWa97j1AFxXEYbk6rVhIRKJmV3FVNSmbIcFe100qZsIuw07',
-        'client_secret': 'test client secret',
+        'stripe_public_key': stripe_public_key,
+        'client_secret': intent.client_secret,
     }
 
     return render(request, template, context)
