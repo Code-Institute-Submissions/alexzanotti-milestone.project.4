@@ -11,8 +11,7 @@ class CategoryForm(forms.ModelForm):
 class PlanForm(forms.ModelForm):
     class Meta:
         model = Plan
-        fields = ['name', 'category', 'description',
-                  'price', 'image_field']
+        fields = ['name', 'category', 'description', 'image_field']
 
 
 class CommentForm(forms.ModelForm):

@@ -25,7 +25,7 @@ def plans(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                return redirect(reverse('plans'))
+                return redirect(reverse('plans:plans'))
 
             queries = Q(name__icontains=query) | Q(
                 description__icontains=query) | Q(
@@ -40,7 +40,7 @@ def plans(request):
                 sort_field, order = sort_parts[0], sort_parts[1]
                 if order == 'desc':
                     sort_field = f'-{sort_field}'
-                if sort_field in ['category', '-category', 'price', '-price', 'name', '-name']:
+                if sort_field in ['category', '-category', 'name', '-name']:
                     plans = plans.order_by(sort_field)
 
     context = {
@@ -77,7 +77,7 @@ def add_category(request):
         form = CategoryForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('plan_management')
+            return redirect('plans:plan_management')
     else:
         form = CategoryForm()
 
@@ -90,7 +90,7 @@ def edit_category(request, category_id):
         form = CategoryForm(request.POST, instance=category)
         if form.is_valid():
             form.save()
-            return redirect('plan_management')
+            return redirect('plans:plan_management')
     else:
         form = CategoryForm(instance=category)
 
@@ -103,8 +103,8 @@ def delete_category(request, category_id):
         category.delete()
         messages.success(
             request, f'Category "{category.name}" has been deleted!')
-        return redirect('plan_management')
-    return redirect('plan_management')
+        return redirect('plans:plan_management')
+    return redirect('plans:plan_management')
 
 
 @login_required
@@ -142,7 +142,7 @@ def delete_plan(request, plan_id):
     plan = get_object_or_404(Plan, pk=plan_id)
     plan.delete()
     messages.success(request, 'Plan deleted successfully!')
-    return redirect('plan_management')
+    return redirect('plans:plan_management')
 
 
 @login_required

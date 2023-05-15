@@ -23,7 +23,6 @@ class Plan(models.Model):
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
     description = models.TextField(null=True, blank=True)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
     image_field = models.ImageField(null=True, blank=True)
     author = models.ForeignKey(Profile, on_delete=models.CASCADE)
     date_posted = models.DateTimeField(auto_now_add=True)

@@ -26,10 +26,6 @@
             </option>
             <option value="category_desc" {% if current_sort_by == "category_desc" %}selected{% endif %}>Category (Z-A)
             </option>
-            <option value="price_asc" {% if current_sort_by == "price_asc" %}selected{% endif %}>Price (low to high)
-            </option>
-            <option value="price_desc" {% if current_sort_by == "price_desc" %}selected{% endif %}>Price (high to low)
-            </option>
         </select>
     </div>
 </form>
@@ -45,7 +41,6 @@
         <div class="card-body">
             <h5 class="card-title">{{ plan.name }}</h5>
             <p class="card-text">{{ plan.description }}</p>
-            <p class="card-text">{{ plan.price }}</p>
             <a href="{% url 'plans:plan_description' plan.id %}" class="btn btn-primary">Learn More</a>
             <p class="card-text">{{ plan.category }}</p>
         </div>

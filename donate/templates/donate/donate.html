@@ -11,17 +11,30 @@
 {% block content %}
 
 
-
-<fieldset class="px-3">
+{% if request.user.is_authenticated %}
+{% if request.user.profile.donated %}
+<!-- Authenticated and donated -->
+<p>Thank you for your donation! Please find the additional content below!</p>
+{% else %}
+<!-- Authenticated but not donated -->
+<p>Welcome, {{ request.user.username }}!</p>
+<p>Please consider making a donation to access more features.</p>
+<form action="{% url 'donate' %}" method="POST" id="payment-form">
+    {% csrf_token %}
     <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
     <!-- A Stripe card element will go here -->
     <div class="mb-3" id="card-element"></div>
 
     <!-- Used to display form errors -->
     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
-</fieldset>
-
-
+    <input type="submit" value="Submit">
+</form>
+{% endif %}
+{% else %}
+<!-- Not authenticated -->
+<p>Welcome, guest!</p>
+<p>Please log in or register to donate</p>
+{% endif %}
 
 
 {% endblock %}
