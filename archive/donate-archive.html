@@ -11,6 +11,33 @@
 {% block content %}
 
 
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+</ul>
+{% endif %}
+
+
+
+
+{% if request.user.is_authenticated %}
+{% if request.user.profile.donated %}
+<!-- Authenticated and donated -->
+<p>Thank you for your donation!</p>
+{% else %}
+<!-- Authenticated but not donated -->
+<p>Welcome, {{ request.user.username }}!</p>
+<p>Please consider making a donation to access more features.</p>
+{% endif %}
+{% else %}
+<!-- Not authenticated -->
+<p>Welcome, guest!</p>
+<p>Please log in or register to access more features.</p>
+{% endif %}
+
+
 
 <fieldset class="px-3">
     <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
