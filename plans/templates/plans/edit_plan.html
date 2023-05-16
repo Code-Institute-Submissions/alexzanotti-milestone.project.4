@@ -2,13 +2,16 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-{% block title %}Plan Management{% endblock %}
+{% block title %}Edit Plan{% endblock %}
+{% block title %}Edit Plan{% endblock %}
 
 {% block content %}
+
 <h1>Edit Plan</h1>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="btn btn-primary">Update Plan</button>
 </form>
+
 {% endblock %}

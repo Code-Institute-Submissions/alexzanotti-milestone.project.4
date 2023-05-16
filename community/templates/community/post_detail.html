@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}{{ post.title }} | My Community{% endblock %}
+{% block title %}{{ post.title }} Post{% endblock %}
+{% block image %}{{ post.title }} Post{% endblock %}
 
 {% block content %}
 <h1>{{ post.title }}</h1>
