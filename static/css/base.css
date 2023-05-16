@@ -89,3 +89,23 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+
+
+.header_image {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.header_central {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+}
+
+.header_image img {
+    width: 100%;
+}

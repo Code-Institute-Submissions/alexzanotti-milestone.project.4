@@ -38,7 +38,7 @@
                 {% if plan.image_field %}
                 <img src="{{ plan.image_field.url }}" class="card-img-top" alt="{{ plan.name }}">
                 {% else %}
-                <img src="" class="card-img-top" alt="{{ plan.name }}">
+                <img src="{{ MEDIA_URL }}health.jpeg" class="card-img-top" alt="{{ plan.name }}">
                 {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ plan.name }}</h5>
@@ -51,4 +51,5 @@
     {% endfor %}
 </div>
 
+<a href="{% url 'plans:add_plan' %}" class="btn btn-primary mb-3">Add Plan</a>
 {% endblock %}

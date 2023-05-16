@@ -100,9 +100,16 @@
     </header>
 
 
+    <!-- Image with title -->
+    <div class="header_image">
+        <img src="{{ MEDIA_URL }}health.jpeg" alt="Fitness">
+        <div class="header_central">
+            <h1>{% block image %}{% endblock %}</h1>
+        </div>
+    </div>
 
 
-    {{ bag_items }}
+
 
 
     {% block content %}

@@ -57,12 +57,17 @@ def plan_description(request, plan_id):
     """ A view to show the sales page for each individual plan """
 
     plan = get_object_or_404(Plan, pk=plan_id)
+    comments = Comment.objects.filter(plan=plan)
+    form = CommentForm()
 
     context = {
         'plan': plan,
+        'comments': comments,
+        'form': form
     }
 
     return render(request, 'plans/plan_description.html', context)
+
 
 
 def plan_management(request):
