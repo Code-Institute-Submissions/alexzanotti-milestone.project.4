@@ -17,40 +17,66 @@
 <section id="sections">
     <div class="row">
         <!-- Community section -->
-        <div class="col-sm-3 col-md-6 col-lg-12">
-            <h2>Community</h2>
-            <p>Join our community of fitness enthusiasts. Share posts, interact with other members, and grow together.</p>
-            <a class="btn btn-primary" href="{% url 'community:community' %}" role="button">Join Community</a>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+                <img src="{{ MEDIA_URL }}health.jpeg" class="card-img-top" alt="Community">
+                <div class="card-body">
+                    <h2 class="card-title">Community</h2>
+                    <p class="card-text">Join our community of fitness enthusiasts. Share posts, interact with other members, and grow together.</p>
+                    <a class="btn btn-primary" href="{% url 'community:community' %}" role="button">View Posts</a>
+                </div>
+            </div>
         </div>
 
         <!-- Plans section -->
-        <div class="col-sm-3 col-md-6 col-lg-12">
-            <h2>Plans</h2>
-            <p>Discover an array of expertly-crafted fitness plans tailored to suit your unique goals and preferences. Whether you're a beginner looking to embark on your fitness journey or an experienced athlete seeking new challenges, our diverse selection of fitness plans has something for everyone. Purchase the plan that best fits your needs and get ready to transform your body and mind.</p>
-            <a class="btn btn-primary" href="{% url 'plans:plans' %}" role="button">View Plans</a>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+                <img src="{{ MEDIA_URL }}health.jpeg" class="card-img-top" alt="Plans">
+                <div class="card-body">
+                    <h2 class="card-title">Plans</h2>
+                    <p class="card-text">Discover an array of expertly-crafted fitness plans tailored to suit your unique goals and preferences. </p>
+                    <a class="btn btn-primary" href="{% url 'plans:plans' %}" role="button">View Plans</a>
+                </div>
+            </div>
         </div>
 
         <!-- Profile section -->
-        <div class="col-sm-3 col-md-6 col-lg-12">
-            <h2>Profile</h2>
-            <p>Manage your account, track your progress, and more in your profile section.</p>
-            <a class="btn btn-primary" href="{% url 'profile' %}" role="button">View Profile</a>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+                <img src="{{ MEDIA_URL }}health.jpeg" class="card-img-top" alt="Profile">
+                <div class="card-body">
+                    <h2 class="card-title">Profile</h2>
+                    <p class="card-text">Manage your account, track your progress, and more in your profile section.</p>
+                    <a class="btn btn-primary" href="{% url 'profile' %}" role="button">View Profile</a>
+                </div>
+            </div>
         </div>
 
         <!-- Contact section -->
-        <div class="col-sm-3 col-md-6 col-lg-12">
-            <h2>Contact</h2>
-            <p>If you have any questions, comments, or feedback, feel free to reach out. We'd love to hear from you.</p>
-            <a class="btn btn-primary" href="{% url 'contact' %}" role="button">Contact Us</a>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+                <img src="{{ MEDIA_URL }}health.jpeg" class="card-img-top" alt="Contact">
+                <div class="card-body">
+                    <h2 class="card-title">Contact</h2>
+                    <p class="card-text">If you have any questions, comments, or feedback, feel free to reach out. We'd love to hear from you.</p>
+                    <a class="btn btn-primary" href="{% url 'contact' %}" role="button">Contact Us</a>
+                </div>
+            </div>
         </div>
-
+        
         <!-- Donate section -->
-        <div class="col-sm-3 col-md-6 col-lg-12">
-            <h2>Donate</h2>
-            <p>Support our mission to make fitness accessible for everyone. Your donations help keep our community running.</p>
-            <a class="btn btn-primary" href="{% url 'donate' %}" role="button">Donate</a>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card">
+                <img src="{{ MEDIA_URL }}health.jpeg" class="card-img-top" alt="Donate">
+                <div class="card-body">
+                    <h2 class="card-title">Donate</h2>
+                    <p class="card-text">Support our mission to make fitness accessible for everyone. Your donations help keep our community running.</p>
+                    <a class="btn btn-primary" href="{% url 'donate' %}" role="button">Donate</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
-
-{% endblock %}
+        
+        {% endblock %}
+        
