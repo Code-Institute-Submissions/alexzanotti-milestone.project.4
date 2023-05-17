@@ -5,9 +5,61 @@
 {% block image %}Contact{% endblock %}
 
 {% block content %}
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Send Message</button>
-</form>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post" class="needs-validation" novalidate>
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="id_name">Your Name</label>
+                            <input type="text" class="form-control" id="id_name" name="{{ form.name.name }}" value="{{ form.name.value|default:'' }}" required>
+                            <div class="invalid-feedback">
+                                {{ form.name.errors }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_email">Your Email</label>
+                            <input type="email" class="form-control" id="id_email" name="{{ form.email.name }}" value="{{ form.email.value|default:'' }}" required>
+                            <div class="invalid-feedback">
+                                {{ form.email.errors }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_message">Your Message</label>
+                            <textarea class="form-control" id="id_message" name="{{ form.message.name }}" rows="3" required>{{ form.message.value|default:'' }}</textarea>
+                            <div class="invalid-feedback">
+                                {{ form.message.errors }}
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
+
+
+{% block endscripts %}
+<script>
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        var forms = document.getElementsByClassName('needs-validation');
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+</script>
+{% endblock %}
+    
