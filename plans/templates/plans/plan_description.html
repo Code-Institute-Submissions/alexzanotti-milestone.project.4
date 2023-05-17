@@ -5,27 +5,53 @@
 {% block image %}{{ plan.name }} Plan{% endblock %}
 
 {% block content %}
-<h1>{{ plan.name }}</h1>
-{% if plan.image_field %}
-<img src="{{ plan.image_field.url }}" class="card-img-top" alt="{{ plan.name }}">
-{% else %}
-<img src="" class="card-img-top" alt="{{ plan.name }}">
-{% endif %}
-<p class="card-text">{{ plan.description }}</p>
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+        <h1 class="display-4">{{ plan.name }}</h1>
+        <p class="lead my-3">Category: {{ plan.category.name }}</p>
+        <p class="lead mb-0">Author: {{ plan.author }} | Posted: {{ plan.date_posted|date:'Y-m-d H:i' }}</p>
+    </div>
+</div>
 
-<h2>Comments</h2>
-{% for comment in comments %}
-<p>
-    <strong>{{ comment.author.user.username }}</strong>
-    {{ comment.created_at }}
-    {{ comment.content }}
-</p>
-{% empty %}
-<p>No comments yet.</p>
-{% endfor %}
+{% if plan.image_field %}
+<div class="card mb-4 shadow-sm">
+    <div class="card-body">
+        <img src="{{ plan.image_field.url }}" class="card-img-top" alt="{{ plan.name }}">
+    </div>
+</div>
+{% endif %}
+
+<div class="card mb-4 shadow-sm">
+    <div class="card-body">
+        <h2>Plan Description:</h2>
+        <p class="card-text">{{ plan.description }}</p>
+    </div>
+</div>
+
+<div class="card mt-3">
+    <div class="card-header" id="commentsHeading" data-toggle="collapse" data-target="#commentsCollapse" aria-expanded="false" aria-controls="commentsCollapse" style="cursor: pointer;">
+        <h2 class="mb-0">Comments</h2>
+        <i class="fa-light fa-square-chevron-down" style="color: #000000;"></i>
+    </div>
+    <div id="commentsCollapse" class="collapse" aria-labelledby="commentsHeading">
+        <div class="card-body">
+            {% if comments %}
+            <ul>
+                {% for comment in comments %}
+                <li>
+                    <p><strong>{{ comment.author }}</strong> - {{ comment.created_at|date:'Y-m-d H:i' }}</p>
+                    <p>{{ comment.content }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>No comments yet.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
 
 {% if user.is_authenticated %}
 <a href="{% url 'plans:add_comment' plan_id=plan.id %}" class="btn btn-primary">Add Comment</a>
 {% endif %}
-
 {% endblock %}
