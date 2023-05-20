@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-#0p9ky2(j*vm51@n(+4tg!zb1so&&nj(o37kni&z8aos739ucz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://git.heroku.com/milestone-project-4.git','localhost', '8000-alexzanotti-milestonepr-82nmkftc4sp.ws-eu97.gitpod.io']
+ALLOWED_HOSTS = ['https://milestone-project-4.herokuapp.com/','localhost', '8000-alexzanotti-milestonepr-82nmkftc4sp.ws-eu97.gitpod.io']
 
 
 # Application definition
