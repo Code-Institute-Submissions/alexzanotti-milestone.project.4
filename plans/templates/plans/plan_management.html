@@ -57,10 +57,10 @@
             <td colspan="3" class="hiddenRow">
                 <div class="accordion-body collapse" id="plan-detail-{{plan.id}}">
                     <p>Description: {{ plan.description }}</p>
-                    {% if plan.image %}
-                        <img src="{{ plan.image.url }}" class="img-thumbnail" alt="{{ plan.name }}">
+                    {% if plan.image_field %}
+                        <img src="{{ plan.image_field.url }}" class="img-thumbnail" alt="{{ plan.name }}">
                     {% else %}
-                        <img src="" class="img-thumbnail" alt="{{ plan.name }}">
+                        <img src="{{ MEDIA_URL }}health.jpeg" class="img-thumbnail" alt="{{ plan.name }}">
                     {% endif %}
                 </div>
             </td>

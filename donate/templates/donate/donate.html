@@ -8,14 +8,13 @@
 <link rel="stylesheet" href="{% static 'donate/css/donate.css' %}">
 {% endblock %}
 
-
 {% block content %}
 
-
 {% if request.user.is_authenticated %}
-{% if request.user.profile.donated %}
+{% if has_donated %}
 <!-- Authenticated and donated -->
 <p>Thank you for your donation! Please find the additional content below!</p>
+<!-- Add additional content here -->
 {% else %}
 <!-- Authenticated but not donated -->
 <p>Welcome, {{ request.user.username }}!</p>
@@ -35,11 +34,7 @@
 <!-- Not authenticated -->
 <p>Welcome, guest!</p>
 <p>Please <a href="{% url 'account_login' %}">Login</a> or <a href="{% url 'account_signup' %}">Register</a> to donate</p>
-
-
-
 {% endif %}
-
 
 {% endblock %}
 
