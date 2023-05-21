@@ -3,10 +3,10 @@
 
 {% block title %}Add Post{% endblock %}
 {% block image %}Add Post{% endblock %}
+{% block community %}active{% endblock %}
 
 {% block content %}
-<h2>Add Post</h2>
-<form method="post">
+<form method="post" class="add-post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="btn btn-primary">Add Post</button>

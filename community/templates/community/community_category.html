@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}Category Posts{% endblock %}
-{% block image %}{{ category.name }} Category Posts{% endblock %}
+{% block image %}Category Posts{% endblock %}
 {% block community %}active{% endblock %}
 
 
@@ -17,7 +17,7 @@
         <tr>
             <th>Title</th>
             <th>Author</th>
-            <th>Comments</th> 
+            <th class="break-word d-none d-sm-table-cell">Comments</th> 
             <th class="break-word d-none d-md-table-cell">Date Posted</th>
         </tr>
     </thead>
@@ -26,7 +26,7 @@
         <tr data-href="{% url 'community:post_detail' post.id %}">
             <td class="break-word">{{ post.title }}</td>
             <td class="break-word">{{ post.author.profile_user.username }}</td>
-            <td class="break-word">{{ post.comment_count }}</td>
+            <td class="break-word d-none d-sm-table-cell">{{ post.comment_count }}</td>
             <td class="break-word d-none d-md-table-cell">{{ post.created_at|date:'Y-m-d H:i' }}</td>
         </tr>
         {% empty %}

@@ -200,6 +200,52 @@ Community
     text-align: center;
 }
 
+/* Post Detail */
+
+
+#commentsHeading i {
+    padding: 10px;
+}
+
+.add-comment {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.post-detail-style {
+    margin: 30px;
+}
+
+#commentsCollapse div ul li {
+    list-style: none;
+}
+
+
+/* Add Post */
+
+.add-post h2 {
+    text-align: center;
+  }
+  
+.add-post {
+    margin-top: 30px;
+}
+
+.add-post form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .add-post .btn-primary {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+
 /* ==========================================================================
 Community Media Queries
    ========================================================================== */
@@ -215,19 +261,6 @@ Community Media Queries
         max-width: 80%;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ==========================================================================
 Donate
