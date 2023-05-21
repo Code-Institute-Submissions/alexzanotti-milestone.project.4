@@ -116,51 +116,38 @@
     {% endblock %}
 
     <!-- Footer -->
-    <footer class="text-center text-lg-start bg-light text-muted">
+    <footer class="text-center text-lg-start bg-light text-muted footer">
         <section class="">
             <div class="container text-center text-md-start mt-5">
                 <div class="row mt-3 main-footer">
 
                     <!-- column 1 -->
-                    <div class="col-md-12 col-lg-4 mx-auto mb-4">
+                    <div class="col-md-12 col-lg-6 mx-auto mb-4">
                         <!-- column header -->
-                        <h6 class="text-uppercase fw-bold mb-4">TEST</h6>
+                        <h6 class="text-uppercase fw-bold mb-4">About</h6>
                         <!--  column content-->
-                        <p>TESTESTESTTESTESTESTTESTESTESTTESTESTEST</p>
-                        <p>TESTESTESTTESTESTESTTESTESTESTTESTESTEST</p>
-                        <p>TESTESTESTTESTESTESTTESTESTESTTESTESTEST</p>
-                        <p>TESTESTESTTESTESTESTTESTESTESTTESTESTEST</p>
+                        <p>This website is a hub for fitness enthusiasts to share posts, comments, and plans about various health and
+                            fitness categories.</p>
+                        <p>Whether you're a beginner or an experienced athlete, this community is for you.</p>
                     </div>
                     <!-- column 2 -->
-                    <div class="col-md-12 col-lg-4 mx-auto mb-4">
+                    <div class="col-md-12 col-lg-6 mx-auto mb-4">
                         <!-- column header -->
-                        <h6 class="text-uppercase fw-bold mb-4">TESTESTEST</h6>
+                        <h6 class="text-uppercase fw-bold mb-4">Links</h6>
                         <!--  column content-->
-                        <p><a href="" class="">TEST</a></p>
-                        <p><a href="" class="">TEST</a></p>
-                        <p><a href="" class="">TEST</a></p>
-                        <p><a href="" class="">TEST</a></p>
+                        <p><a href="{% url 'home' %}">Home</a></p>
+                        <p><a href="{% url 'community:community' %}">Community</a></p>
+                        <p><a href="{% url 'plans:plans' %}">Plans</a></p>
+                        <p><a href="{% url 'contact' %}">Contact</a></p>
                     </div>
-                    <!-- column 3 -->
-
-                    <div class="col-md-12 col-lg-4 mx-auto mb-md-0 mb-4">
-                        <!-- column header -->
-                        <h6 class="text-uppercase fw-bold mb-4">TEST</h6>
-                        <!--  column content-->
-                        <p>TEST</p>
-                        <p>TEST</p>
-                        <p>TEST</p>
-                        <p>TEST</p>
-                    </div>
-
                 </div>
         </section>
         <!-- Footer bottom -->
-        <div class="text-center p-4 footer-bottom">TEST</div>
+        <div class="text-center p-4 footer-bottom">FITNESS</div>
     </footer>
 
 
-
+     
 
 
     <!-- bootstrap script-->

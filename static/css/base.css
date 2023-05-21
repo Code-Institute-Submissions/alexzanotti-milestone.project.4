@@ -107,6 +107,11 @@ h1,h2,h3,h4,h5,h6,p,li {
     text-decoration: none;
 }
 
+.footer {
+    padding-top: 5px;
+    margin-top: 20px;
+}
+
 .footer-bottom {
     background-color: #f8f9fa;
     border-top: 1px solid #dee2e6;
@@ -119,7 +124,6 @@ h1,h2,h3,h4,h5,h6,p,li {
 .fw-bold {
     font-weight: 700;
 }
-
 
 /* ==========================================================================
    Index
