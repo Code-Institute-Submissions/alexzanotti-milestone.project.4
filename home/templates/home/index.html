@@ -10,7 +10,8 @@
 <!-- About section -->
 <section id="about">
     <h1>About</h1>
-    <p>This website is a hub for fitness enthusiasts to share posts, comments, and plans about various health and fitness categories. Whether you're a beginner or an experienced athlete, this community is for you.</p>
+    <p>This website is a hub for fitness enthusiasts to share posts, comments, and plans about various health and
+        fitness categories. Whether you're a beginner or an experienced athlete, this community is for you.</p>
 </section>
 
 <!-- Sections -->
@@ -22,7 +23,8 @@
                 <img src="{{ MEDIA_URL }}health.jpeg" class="card-img-top" alt="Community">
                 <div class="card-body">
                     <h2 class="card-title">Community</h2>
-                    <p class="card-text">Join our community of fitness enthusiasts. Share posts, interact with other members, and grow together.</p>
+                    <p class="card-text">Join our community of fitness enthusiasts. Share posts, interact with other
+                        members, and grow together.</p>
                     <a class="btn btn-primary" href="{% url 'community:community' %}" role="button">View Posts</a>
                 </div>
             </div>
@@ -34,7 +36,8 @@
                 <img src="{{ MEDIA_URL }}health.jpeg" class="card-img-top" alt="Plans">
                 <div class="card-body">
                     <h2 class="card-title">Plans</h2>
-                    <p class="card-text">Discover an array of expertly-crafted fitness plans tailored to suit your unique goals and preferences. </p>
+                    <p class="card-text">Discover an array of expertly-crafted fitness plans tailored to suit your
+                        unique goals and preferences. </p>
                     <a class="btn btn-primary" href="{% url 'plans:plans' %}" role="button">View Plans</a>
                 </div>
             </div>
@@ -58,25 +61,26 @@
                 <img src="{{ MEDIA_URL }}health.jpeg" class="card-img-top" alt="Contact">
                 <div class="card-body">
                     <h2 class="card-title">Contact</h2>
-                    <p class="card-text">If you have any questions, comments, or feedback, feel free to reach out. We'd love to hear from you.</p>
+                    <p class="card-text">If you have any questions, comments, or feedback, feel free to reach out. We'd
+                        love to hear from you.</p>
                     <a class="btn btn-primary" href="{% url 'contact' %}" role="button">Contact Us</a>
                 </div>
             </div>
         </div>
-        
+
         <!-- Donate section -->
         <div class="col-sm-12 col-md-6 col-lg-3">
             <div class="card card-style">
                 <img src="{{ MEDIA_URL }}health.jpeg" class="card-img-top" alt="Donate">
                 <div class="card-body">
                     <h2 class="card-title">Donate</h2>
-                    <p class="card-text">Support our mission to make fitness accessible for everyone. Your donations help keep our community running.</p>
+                    <p class="card-text">Support our mission to make fitness accessible for everyone. Your donations
+                        help keep our community running.</p>
                     <a class="btn btn-primary" href="{% url 'donate' %}" role="button">Donate</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
-        
-        {% endblock %}
-        
+
+{% endblock %}
