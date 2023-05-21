@@ -55,7 +55,6 @@ h1,h2,h3,h4,h5,h6,p,li {
 .container {
     position: relative;
     text-align: center;
-    color: white;
     width: 100%;
 }
 
@@ -383,6 +382,24 @@ Plans
 /* ==========================================================================
 Community Media Queries
    ========================================================================== */
+
+#payment-form {
+   border-style: solid;
+   padding: 20px;
+   border-color: lightgray;
+}
+
+.container ul li {
+    list-style-position: inside;
+}
+
+#donation-success {
+    margin-top: 20px;
+}
+
+#donation {
+    margin-top: 20px;
+}
 
 /* ==========================================================================
 Community Media Queries

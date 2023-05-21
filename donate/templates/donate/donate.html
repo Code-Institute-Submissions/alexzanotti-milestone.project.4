@@ -3,6 +3,7 @@
 
 {% block title %}Donate{% endblock %}
 {% block image %}Donate{% endblock %}
+{% block donate %}active{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'donate/css/donate.css' %}">
@@ -10,24 +11,36 @@
 
 {% block content %}
 
+<div class="container" id="donation">
 {% if request.user.is_authenticated %}
 {% if has_donated %}
 <!-- Authenticated and donated -->
-<p>Thank you for your donation! Please find the additional content below!</p>
+<div id="donation-success">
+    <h3>Thanks for the Donation!</h3>
+    <p>Your donation allows us to:</p>
+    <ul>
+        <li>Continued operation and maintenance of the website</li>
+        <li>Development and updating of various health and fitness plans</li>
+        <li>Development and updating of the community forums</li>
+        <li>Provision of support and responsiveness to user queries and feedback</li>
+        <li>Enhancement of the website to make fitness more accessible for everyone</li>
+    </ul>
+    <a class="btn btn-primary" href="{% url 'home' %}" role="button">Return to the Homepage</a>
+</div>
 <!-- Add additional content here -->
 {% else %}
 <!-- Authenticated but not donated -->
 <p>Welcome, {{ request.user.username }}!</p>
-<p>Please consider making a donation to access more features.</p>
+<p>Please consider making a donation to the website</p>
 <form action="{% url 'donate' %}" method="POST" id="payment-form">
     {% csrf_token %}
-    <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+    <legend class="fieldset-label small text-black px-2 w-auto">Enter your Payment details below:</legend>
     <!-- A Stripe card element will go here -->
     <div class="mb-3" id="card-element"></div>
-
     <!-- Used to display form errors -->
     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
-    <input type="submit" value="Submit">
+    <h2>Total: £10</h2>
+    <input type="submit" value="Submit" class="btn btn-primary">
 </form>
 {% endif %}
 {% else %}
@@ -35,7 +48,7 @@
 <p>Welcome, guest!</p>
 <p>Please <a href="{% url 'account_login' %}">Login</a> or <a href="{% url 'account_signup' %}">Register</a> to donate</p>
 {% endif %}
-
+</div>
 {% endblock %}
 
 {% block endscripts %}

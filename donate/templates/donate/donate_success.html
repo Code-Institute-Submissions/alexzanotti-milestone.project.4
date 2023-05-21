@@ -8,6 +8,17 @@
 
 {% block content %}
 
-Thanks for the Donation!
+<div class="container" id="donation-success">
+<h3>Thanks for the Donation!</h3>
+<p>Your donation allows us to:</p>
+<ul>
+    <li>Continued operation and maintenance of the website</li>
+    <li>Development and updating of various health and fitness plans</li>
+    <li>Development and updating of the community forums</li>
+    <li>Provision of support and responsiveness to user queries and feedback</li>
+    <li>Enhancement of the website to make fitness more accessible for everyone</li>
+</ul>
+<a class="btn btn-primary" href="{% url 'home' %}" role="button">Return to the Homepage</a>
+</div>
 
 {% endblock %}
