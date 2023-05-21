@@ -37,3 +37,8 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 ---
 
 Happy coding!
+
+
+
+IMAGE TEST
+![alt text](https://milestone-project-4.s3.eu-west-2.amazonaws.com/media/health.jpeg "User Story 2")
