@@ -2,7 +2,7 @@
    Main
    ========================================================================== */
 
-* {
+h1,h2,h3,h4,h5,h6,p,li {
     color: #000000;
     font-family: 'Roboto', sans-serif;
 }
@@ -298,6 +298,24 @@ Plans
 
 .add-plan {
     text-align: center;
+}
+
+/* Plan Description */
+
+.add-plan-comment {
+    text-align: center;
+}
+
+.plan-detail-style {
+    margin: 30px;
+}
+
+#planCommentsHeading i {
+    padding: 10px;
+}
+
+#planCommentsCollapse div ul li {
+    list-style: none;
 }
 
 /* ==========================================================================

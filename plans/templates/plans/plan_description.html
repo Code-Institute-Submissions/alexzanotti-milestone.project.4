@@ -1,39 +1,41 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}{{ plan.name }} Plan{% endblock %}
-{% block image %}{{ plan.name }} Plan{% endblock %}
+{% block title %}Plan{% endblock %}
+{% block image %}Plan{% endblock %}
+{% block plans %}active{% endblock %}
 
 {% block content %}
-<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
-    <div class="col-md-6 px-0">
-        <h1 class="display-4">{{ plan.name }}</h1>
-        <p class="lead my-3">Category: {{ plan.category.name }}</p>
-        <p class="lead mb-0">Author: {{ plan.author }} | Posted: {{ plan.date_posted|date:'Y-m-d H:i' }}</p>
+<div class="card mb-4 shadow-sm bg-light plan-detail-style">
+    <div class="card-body">
+        <h2>{{ plan.name }}</h2>
+        <p class="card-text">Category: {{ plan.category.name }}</p>
+        <p class="card-text">Author: {{ plan.author }} | Posted: {{ plan.date_posted|date:'Y-m-d H:i' }}</p>
     </div>
 </div>
 
 {% if plan.image_field %}
-<div class="card mb-4 shadow-sm">
+<div class="card mb-4 shadow-sm bg-light plan-detail-style">
     <div class="card-body">
         <img src="{{ plan.image_field.url }}" class="card-img-top" alt="{{ plan.name }}">
     </div>
 </div>
 {% endif %}
 
-<div class="card mb-4 shadow-sm">
+<div class="card mb-4 shadow-sm bg-light plan-detail-style">
     <div class="card-body">
-        <h2>Plan Description:</h2>
+        <h2>Plan Description</h2>
         <p class="card-text">{{ plan.description }}</p>
     </div>
 </div>
 
-<div class="card mt-3">
-    <div class="card-header" id="commentsHeading" data-toggle="collapse" data-target="#commentsCollapse" aria-expanded="false" aria-controls="commentsCollapse" style="cursor: pointer;">
+<div class="card mb-4 shadow-sm bg-light plan-detail-style">
+    <div class="card-header d-flex justify-content" id="planCommentsHeading" data-toggle="collapse" data-target="#planCommentsCollapse"
+        aria-expanded="false" aria-controls="commentsCollapse" style="cursor: pointer;">
         <h2 class="mb-0">Comments</h2>
-        <i class="fa-light fa-square-chevron-down" style="color: #000000;"></i>
+        <i class="fa-solid fa-square-caret-down"></i>
     </div>
-    <div id="commentsCollapse" class="collapse" aria-labelledby="commentsHeading">
+    <div id="planCommentsCollapse" class="collapse" aria-labelledby="planCommentsHeading">
         <div class="card-body">
             {% if comments %}
             <ul>
@@ -51,7 +53,10 @@
     </div>
 </div>
 
+
 {% if user.is_authenticated %}
+<div class="add-plan-comment">
 <a href="{% url 'plans:add_comment' plan_id=plan.id %}" class="btn btn-primary">Add Comment</a>
+</div>
 {% endif %}
 {% endblock %}
