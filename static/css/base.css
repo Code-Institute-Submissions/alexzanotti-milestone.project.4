@@ -125,7 +125,7 @@
    Index
    ========================================================================== */
 
-.card-style  {
+.card-style {
     margin: 1em;
     text-align: center;
 }
@@ -141,10 +141,11 @@
    Index Media Queries
    ========================================================================== */
 
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
     #sections .col-sm-12 {
         margin-bottom: 1rem;
     }
+
     #about {
         max-width: 90%;
     }
@@ -154,6 +155,7 @@
     #sections .col-md-6 {
         margin-bottom: 1rem;
     }
+
     #about {
         max-width: 80%;
     }
@@ -223,34 +225,34 @@ Community
 
 /* Add Post */
 
-.add-post h2 {
+.add-post h2, .add-comment h2 {
     text-align: center;
-  }
-  
-.add-post {
+}
+
+.add-post, .add-comment {
     margin-top: 30px;
 }
 
-.add-post form {
+.add-post form, .add-comment form {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-  }
-  
-  .add-post .btn-primary {
+}
+
+.add-post .btn-primary, .add-comment .btn-primary {
     padding: 10px 20px;
     font-size: 1.2em;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
+}
+
 
 /* ==========================================================================
 Community Media Queries
    ========================================================================== */
 
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
     .categories {
         max-width: 90%;
     }
