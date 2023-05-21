@@ -181,12 +181,19 @@ Community
 }
 
 .table-style {
-    margin: 1rem;
+    margin: 0 auto;
     text-align: center;
 }
 
-.test table {
+.table-container {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.table-container table {
     width: auto;
+    margin: 0 auto;
 }
 
 .add-post {

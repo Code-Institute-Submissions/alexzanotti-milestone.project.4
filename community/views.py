@@ -18,8 +18,9 @@ def community(request):
 
 def community_category(request, category_id):
     category = get_object_or_404(Category, id=category_id)
-    posts = Post.objects.filter(category=category)
+    posts = Post.objects.filter(category=category).annotate(comment_count=Count('comments'))
     return render(request, 'community/community_category.html', {'category': category, 'posts': posts})
+
 
 
 def post_detail(request, post_id):
