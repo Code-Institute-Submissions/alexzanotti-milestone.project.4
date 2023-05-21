@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Contact Success{% endblock %}
+{% block image %}Contact Success{% endblock %}
+{% block contact %}active{% endblock %}
+
+{% block content %}
+
+<p>Thanks - we've received your contact form.</p>
+<a class="btn btn-primary" href="{% url 'home' %}" role="button">Return to the Homepage</a>
+
+{% endblock %}

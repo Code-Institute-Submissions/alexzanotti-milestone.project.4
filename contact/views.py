@@ -14,12 +14,13 @@ def contact(request):
             form.save()
             messages.success(
                 request, 'Your message has been sent successfully!')
-            return redirect('home')
+            return redirect('contact_success')
     else:
         form = ContactForm()
 
     context = {'form': form}
     return render(request, 'contact/contact.html', context)
+
 
 
 def contact_management(request):
@@ -59,3 +60,6 @@ def delete_contact_form(request, form_id):
     contact_form.delete()
     messages.success(request, "Contact form successfully deleted.")
     return redirect('contact_management')
+
+def contact_success(request):
+    return render(request, 'contact/contact_success.html')
