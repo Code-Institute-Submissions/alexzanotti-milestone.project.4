@@ -39,5 +39,48 @@ In order to pass this milestone project, the following requirements must be met:
 10. Deployment: Deploy the final version of your code to a hosting platform such as Heroku.
 11. Security: Make sure to not include any passwords or secret keys in the project repository. Make sure to turn off the Django DEBUG mode, which could expose secrets.
 
+# UX
 
+## User Stories
 
+### Index
+1. As a user, I want to visit the home page of the website so that I can learn about the website's purpose and content.
+
+### Contact
+2. As a user, I want to be able to fill out a contact form so that I can communicate with the website administrators.
+3. As a website administrator, I want to manage the contact forms that have been submitted so that I can respond to user inquiries.
+4. As a website administrator, I want to update and delete contact forms so that I can manage the information received from users.
+
+### Donate
+5. As a user, I want to be able to make a donation to the website so that I can support its operation and development.
+6. As a site administrator, I want to be able to display information about how the users donation has helped the running of the website
+
+### Community
+7. As a user, I want to view posts in the community section so that I can engage with the content and discussions.
+8. As a user, I want to comment on posts so that I can participate in discussions and share my thoughts.
+9. As a user, I want to create my own posts so that I can start discussions and share information with the community.
+10. As a user, I want to have a "My Posts" page where I can see all my posts and comments so that I can easily manage and review my contributions to the community.
+11. As a user, I want to edit my own posts and comments so that I can correct mistakes as needed.
+12. As a user, I want to delete my own posts and comments so that I can remove content as needed.
+13. As a site administrator, I want to view all categories in the community section so that I can oversee the topics being discussed.
+14. As a site administrator, I want to add, edit, or delete categories in the community section so that I can manage the structure and organization of discussions.
+15. As a site administrator, I want to view all posts and comments from users so that I can monitor the content being shared in the community.
+16. As a site administrator, I want to edit or delete posts and comments from users when necessary so that I can ensure the content aligns with community guidelines and standards.
+
+### Plans
+17. As a user, I want to view plans in the plans section so that I can explore and learn from other users' strategies.
+18. As a user, I want to view comments from other users so that I can learn from different thoughts and ideas.
+19. As a user, I want to comment on plans so that I can provide feedback, ask questions, or share my thoughts.
+20. As a user, I want to create my own plans so that I can structure my strategies and share them with the community.
+21. As a user, I want to have a "My Plans" page where I can see all my plans and comments so that I can easily manage and track my contributions.
+22. As a user, I want to edit and delete my own plans and comments so that I can update my strategies or remove content as needed.
+23. As a site administrator, I want to view all categories in the plans section so that I can oversee the variety of strategies being shared.
+24. As a site administrator, I want to add, edit, or delete categories in the plans section so that I can manage the structure and organization of strategies.
+25. As a site administrator, I want to view all plans and comments from users so that I can monitor the strategies and feedback being shared in the community.
+26. As a site administrator, I want to edit or delete plans and comments from users when necessary to ensure that the content aligns with community guidelines and standards.
+
+### Profile
+27. As a user, I want to be able to register an account so that I can participate in the community, create posts, plans, and comments.
+28. As a user, I want the website to provide error messages if I enter incorrect login information so that I can correct my input and successfully log in.
+29. As a registered user, I want to be able to log in to my account so that I can access my personalized features such as "My Profile", "My Posts" and "My Plans".
+30. As a registered user, I want to log out from my account to ensure that my account is secure when I'm not using the site.
