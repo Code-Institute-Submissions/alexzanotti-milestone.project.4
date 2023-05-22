@@ -264,6 +264,24 @@ Community
     margin: 5px;
 }
 
+/* My Posts */
+
+.my-posts-container {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;
+    padding-top: 20px;
+}
+
+#my-posts-add {
+    margin: 20px;
+}
+
+.my-posts-container table a {
+    margin: 5px;
+}
+
 /* ==========================================================================
 Community Media Queries
    ========================================================================== */
