@@ -408,6 +408,17 @@ Plans
     margin-right: 20px;
 }
 
+/* Contact Management */
+
+.contact-management-container {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;
+    padding-top: 20px;
+}
+
+
 /* ==========================================================================
 Community Media Queries
    ========================================================================== */
