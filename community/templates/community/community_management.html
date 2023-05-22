@@ -8,6 +8,11 @@
 {% block content %}
 <div class="community-management-container">
     <h2>Categories</h2>
+    <p>This table allows administrators to view all the different categories available in the community. It displays
+        each category's name.</p>
+    <p>Administrators also have the ability to edit or delete each category right from this table using the Edit and
+        Delete buttons.</p>
+    <p>Administrators also have the ability to edit each category by clicking into the row itself.</p>
     <a href="{% url 'community:add_category' %}" class="btn btn-primary mb-3">Add Category</a>
     <table class="table table-bordered">
         <thead class="thead-dark">
@@ -34,71 +39,86 @@
     </table>
 
     <h2>Posts</h2>
+    <p>This table allows administrators to view and manage the different posts in each category. It displays each post's
+        title, category, and author.</p>
+    <p>It also provides administrators the ability to view additional details about a post, such as its content, through
+        a collapsible accordion.</p>
+    <p>Similar to the categories table, administrators can also edit or delete posts right from this table using the
+        Edit and Delete buttons.</p>
+    <p>NOTE: the category and author columns will not be displayed for small and medium screen sizes, respectively.</p>
     <table class="table table-bordered">
-        <thead class="thead-dark">
-            <tr>
-                <th>Name</th>
-                <th class="d-none d-sm-table-cell">Category</th>
-                <th class="d-none d-md-table-cell">Author</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for post in posts %}
-            <tr data-toggle="collapse" data-target="#post-detail-{{post.id}}" class="accordion-toggle">
-                <td class="break-word">{{ post.title }}</td>
-                <td class="break-word d-none d-sm-table-cell">{{ post.category }}</td>
-                <td class="break-word d-none d-md-table-cell">{{ post.author }}</td>
-                <td>
-                    <a href="{% url 'community:edit_post' post.id %}" class="btn btn-primary">Edit</a>
-                    <a href="{% url 'community:delete_post' post.id %}" class="btn btn-danger">Delete</a>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3" class="hiddenRow">
-                    <div class="accordion-body collapse" id="post-detail-{{post.id}}">
-                        <p class="break-word">Content: {{ post.content }}</p>
-                        
-                    </div>
-                </td>
-            </tr>
-            {% empty %}
-            <tr>
-                <td colspan="5">No posts available.</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th class="d-none d-sm-table-cell">Category</th>
+                    <th class="d-none d-md-table-cell">Author</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in posts %}
+                <tr data-toggle="collapse" data-target="#post-detail-{{post.id}}" class="accordion-toggle">
+                    <td class="break-word">{{ post.title }}</td>
+                    <td class="break-word d-none d-sm-table-cell">{{ post.category }}</td>
+                    <td class="break-word d-none d-md-table-cell">{{ post.author }}</td>
+                    <td>
+                        <a href="{% url 'community:edit_post' post.id %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'community:delete_post' post.id %}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="hiddenRow">
+                        <div class="accordion-body collapse" id="post-detail-{{post.id}}">
+                            <p class="break-word">Content: {{ post.content }}</p>
+
+                        </div>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">No posts available.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
 
-    <h2>Comments</h2>
-    <table class="table table-bordered">
-        <thead class="thead-dark">
-            <tr>
-                <th>Content</th>
-                <th class="d-none d-sm-table-cell">Post</th>
-                <th class="d-none d-md-table-cell">Author</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for comment in comments %}
-            <tr data-href="{% url 'community:edit_comment' comment.id %}">
-                <td class="break-word">{{ comment.content }}</td>
-                <td class="break-word d-none d-sm-table-cell">{{ comment.post.title }}</td>
-                <td class="break-word d-none d-md-table-cell">{{ comment.author }}</td>
-                <td>
-                    <a href="{% url 'community:edit_comment' comment.id %}" class="btn btn-primary">Edit</a>
-                    <a href="{% url 'community:delete_comment' comment.id %}" class="btn btn-danger">Delete</a>
-                </td>
-            </tr>
-            {% empty %}
-            <tr>
-                <td colspan="4">No comments available.</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+        <h2>Comments</h2>
+        <p>This table allows administrators to view all the comments that have been made on various posts.</p>
+        <p>It displays the content of the comment, the title of the post the comment is associated with, and the author
+            of the comment.</p>
+        <p>Administrators can also manage these comments by editing or deleting them using the Edit and Delete buttons.
+        </p>
+        <p>Administrators also have the ability to edit each comment by clicking into the row itself.</p>
+        <p>NOTE: the post and author columns will not be displayed for small and medium screen sizes, respectively.</p>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Content</th>
+                    <th class="d-none d-sm-table-cell">Post</th>
+                    <th class="d-none d-md-table-cell">Author</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for comment in comments %}
+                <tr data-href="{% url 'community:edit_comment' comment.id %}">
+                    <td class="break-word">{{ comment.content }}</td>
+                    <td class="break-word d-none d-sm-table-cell">{{ comment.post.title }}</td>
+                    <td class="break-word d-none d-md-table-cell">{{ comment.author }}</td>
+                    <td>
+                        <a href="{% url 'community:edit_comment' comment.id %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'community:delete_comment' comment.id %}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4">No comments available.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 </div>
 {% endblock %}
 

@@ -2,12 +2,18 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+{% block image %}Contact Management{% endblock %}
 {% block title %}Contact Management{% endblock %}
+{% block profile %}active{% endblock %}
 
 {% block content %}
-<h1>Contact Management</h1>
-
-<table class="table table-striped table-bordered table-hover">
+<h2>Contact Forms</h2>
+<p>This table allows administrators to view all contact forms submitted through the system. It displays each form's
+    name, email, date of creation, last update, and status.</p>
+<p>Administrators also have the ability to delete each contact form right from this table using the Delete button. </p>
+<p>By clicking into the row, this will also take the site administrator into the relevant contact form's update page</p>
+<p>NOTE: the date of creation and last update columns will not be displayed for medium screen sizes and below</p>
+<table class="table table-bordered table-hover">
     <thead class="thead-dark">
         <tr>
             <th>Name</th>
@@ -27,7 +33,8 @@
             <td>{{ contact_form.updated_at }}</td>
             <td>{{ contact_form.status }}</td>
             <td>
-                <a href="{% url 'delete_contact_form' contact_form.id %}" class="btn btn-danger" onclick="event.stopPropagation();">Delete</a>
+                <a href="{% url 'delete_contact_form' contact_form.id %}" class="btn btn-danger"
+                    onclick="event.stopPropagation();">Delete</a>
             </td>
         </tr>
         {% endfor %}
@@ -38,10 +45,10 @@
 
 {% block endscripts %}
 <script>
-$(document).ready(function($) {
-    $('*[data-href]').on('click', function() {
-        window.location = $(this).data("href");
+    $(document).ready(function ($) {
+        $('*[data-href]').on('click', function () {
+            window.location = $(this).data("href");
+        });
     });
-});
 </script>
 {% endblock %}
