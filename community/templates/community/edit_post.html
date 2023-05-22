@@ -3,12 +3,27 @@
 
 {% block title %}Edit Post{% endblock %}
 {% block image %}Edit Post{% endblock %}
+{% block community %}active{% endblock %}
 
 {% block content %}
-<h1>Edit Post</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Update Post</button>
-</form>
+<div class="container" id="community-edit-post">
+    <div class="row">
+        <div class="col-12">
+            <form method="post" class="mb-3">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" class="btn btn-primary">Update Post</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
+In these examples, the Bootstrap container, row, and col classes are used to create a responsive grid system. The mb-3 class is used to add a bottom margin to the forms and the form-group class is used to structure the form fields. The button styling is provided by the btn and btn-primary classes. Adjust these classes and values according to your design preferences.
+
+
+
+
+
+

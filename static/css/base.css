@@ -86,7 +86,6 @@ h1,h2,h3,h4,h5,h6,p,li {
     color: crimson;
 }
 
-/* End Header Image */
 
 /* ==========================================================================
    Footer
@@ -203,6 +202,15 @@ Community
 
 .add-post {
     text-align: center;
+}
+
+
+#community-add-category,
+#add-post-margin,
+#community-edit-category,
+#community-edit-comment,
+#community-edit-post {
+    margin-top: 20px;
 }
 
 /* Post Detail */

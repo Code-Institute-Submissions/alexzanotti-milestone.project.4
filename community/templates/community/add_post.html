@@ -6,9 +6,17 @@
 {% block community %}active{% endblock %}
 
 {% block content %}
-<form method="post" class="add-post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Add Post</button>
-</form>
+<div class="container" id="add-post-margin">
+    <div class="row">
+        <div class="col-12">
+            <form method="post" class="mb-3">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" class="btn btn-primary">Add Post</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}

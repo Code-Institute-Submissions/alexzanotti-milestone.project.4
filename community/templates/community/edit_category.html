@@ -3,13 +3,20 @@
 
 {% block title %}Edit Category{% endblock %}
 {% block image %}Edit Category{% endblock %}
-
+{% block profile %}active{% endblock %}
 
 {% block content %}
-<h1>Edit Category</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Update Category</button>
-</form>
+<div class="container" id="community-edit-category">
+    <div class="row">
+        <div class="col-12">
+            <form method="post" class="mb-3">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" class="btn btn-primary">Update Category</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
