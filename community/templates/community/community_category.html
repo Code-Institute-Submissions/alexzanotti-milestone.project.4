@@ -25,7 +25,7 @@
         {% for post in posts %}
         <tr data-href="{% url 'community:post_detail' post.id %}">
             <td class="break-word">{{ post.title }}</td>
-            <td class="break-word">{{ post.author.profile_user.username }}</td>
+            <td class="break-word">{{ post.author.profile_user_name|default:post.author.profile_user.username }}</td>
             <td class="break-word d-none d-sm-table-cell">{{ post.comment_count }}</td>
             <td class="break-word d-none d-md-table-cell">{{ post.created_at|date:'Y-m-d H:i' }}</td>
         </tr>

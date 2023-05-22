@@ -61,7 +61,7 @@
                 <tr data-toggle="collapse" data-target="#post-detail-{{post.id}}" class="accordion-toggle">
                     <td class="break-word">{{ post.title }}</td>
                     <td class="break-word d-none d-sm-table-cell">{{ post.category }}</td>
-                    <td class="break-word d-none d-md-table-cell">{{ post.author }}</td>
+                    <td class="break-word d-none d-md-table-cell">{{ post.author.profile_user_name|default:post.author.profile_user.username }}</td>
                     <td>
                         <a href="{% url 'community:edit_post' post.id %}" class="btn btn-primary">Edit</a>
                         <a href="{% url 'community:delete_post' post.id %}" class="btn btn-danger">Delete</a>
@@ -106,7 +106,7 @@
                 <tr data-href="{% url 'community:edit_comment' comment.id %}">
                     <td class="break-word">{{ comment.content }}</td>
                     <td class="break-word d-none d-sm-table-cell">{{ comment.post.title }}</td>
-                    <td class="break-word d-none d-md-table-cell">{{ comment.author }}</td>
+                    <td class="break-word d-none d-md-table-cell">{{ comment.author.profile_user_name|default:comment.author.profile_user.username }}</td>
                     <td>
                         <a href="{% url 'community:edit_comment' comment.id %}" class="btn btn-primary">Edit</a>
                         <a href="{% url 'community:delete_comment' comment.id %}" class="btn btn-danger">Delete</a>
