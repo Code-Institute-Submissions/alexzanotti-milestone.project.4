@@ -3,27 +3,31 @@
 {% load crispy_forms_tags %}
 
 {% block title %}Update Contact Form{% endblock %}
+{% block image %}Update Contact Form{% endblock %}
+{% block contact %}active{% endblock %}
 
 {% block content %}
-<h2>Update Contact Form</h2>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Update Contact</button>
-</form>
-<a href="{% url 'contact_management' %}" class="btn btn-primary">Return to Contact Management</a>
+<div class="container mt-5">
+    <form method="POST" class="mb-4">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary mt-3">Update Contact</button>
+    </form>
+    <a href="{% url 'contact_management' %}" class="btn btn-secondary mb-5">Return to Contact Management</a>
 
-<h3>Comments</h3>
-{% for comment in comments %}
-<div>
-    <strong>{{ comment.author.username }}</strong> ({{ comment.created_at }}): {{ comment.text }}
+    <h3 class="mb-3">Comments</h3>
+    {% for comment in comments %}
+    <div class="card mb-2 p-3">
+        <strong>{{ comment.author.username }}</strong> <small class="text-muted">({{ comment.created_at }})</small>
+        <p class="mt-2">{{ comment.text }}</p>
+    </div>
+    {% endfor %}
+
+    <h4 class="mb-3">Add Comment</h4>
+    <form method="POST">
+        {% csrf_token %}
+        {{ comment_form|crispy }}
+        <button type="submit" class="btn btn-primary mt-3">Add Comment</button>
+    </form>
 </div>
-{% endfor %}
-
-<h4>Add Comment</h4>
-<form method="POST">
-    {% csrf_token %}
-    {{ comment_form.as_p }}
-    <button type="submit" class="btn btn-primary">Add Comment</button>
-</form>
 {% endblock %}
