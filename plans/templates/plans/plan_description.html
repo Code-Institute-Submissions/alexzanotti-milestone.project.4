@@ -41,7 +41,7 @@
             <ul>
                 {% for comment in comments %}
                 <li>
-                    <p><strong>{{ comment.author }}</strong> - {{ comment.created_at|date:'Y-m-d H:i' }}</p>
+                    <p><strong>{{ comment.author.profile_user_name|default:comment.author.profile_user.username }}</strong> - {{ comment.created_at|date:'Y-m-d H:i' }}</p>
                     <p>{{ comment.content }}</p>
                 </li>
                 {% endfor %}
