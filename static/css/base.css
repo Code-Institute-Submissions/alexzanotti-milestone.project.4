@@ -349,6 +349,24 @@ Plans
     margin: 5px;
 }
 
+/* My Plans */
+
+.my-plans-management-container {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;
+    padding-top: 20px;
+}
+
+.my-plans-management-container a {
+    margin: 5px;
+}
+
+#add-my-plan {
+    margin-bottom: 20px;
+}
+
 
 /* ==========================================================================
    Plans Media Queries
