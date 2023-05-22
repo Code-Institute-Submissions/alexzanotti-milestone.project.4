@@ -84,3 +84,66 @@ In order to pass this milestone project, the following requirements must be met:
 28. As a user, I want the website to provide error messages if I enter incorrect login information so that I can correct my input and successfully log in.
 29. As a registered user, I want to be able to log in to my account so that I can access my personalized features such as "My Profile", "My Posts" and "My Plans".
 30. As a registered user, I want to log out from my account to ensure that my account is secure when I'm not using the site.
+
+## User Story Images 
+
+### User Story 1
+![alt text](media/user_story_1.jpeg "User Story 1")
+### User Story 2
+![alt text](media/user_story_2.jpeg "User Story 2")
+### User Story 3
+![alt text](media/user_story_3.jpeg "User Story 3")
+### User Story 4
+![alt text](media/user_story_4.jpeg "User Story 4")
+### User Story 5
+![alt text](media/user_story_5.jpeg "User Story 5")
+### User Story 6
+![alt text](media/user_story_6.jpeg "User Story 6")
+### User Story 7
+![alt text](media/user_story_7.jpeg "User Story 7")
+### User Story 8
+![alt text](media/user_story_8.jpeg "User Story 8")
+### User Story 9
+![alt text](media/user_story_9.jpeg "User Story 9")
+### User Story 10
+![alt text](media/user_story_10.jpeg "User Story 10")
+### User Story 11
+![alt text](media/user_story_11.jpeg "User Story 11")
+### User Story 12
+![alt text](media/user_story_12.jpeg "User Story 12")
+### User Story 13
+![alt text](media/user_story_13.jpeg "User Story 13")
+### User Story 14
+![alt text](media/user_story_14.jpeg "User Story 14")
+### User Story 15
+![alt text](media/user_story_15.jpeg "User Story 15")
+### User Story 16
+![alt text](media/user_story_16.jpeg "User Story 16")
+### User Story 17
+![alt text](media/user_story_17.jpeg "User Story 17")
+### User Story 18
+![alt text](media/user_story_18.jpeg "User Story 18")
+### User Story 19
+![alt text](media/user_story_19.jpeg "User Story 19")
+### User Story 20
+![alt text](media/user_story_20.jpeg "User Story 20")
+### User Story 21
+![alt text](media/user_story_21.jpeg "User Story 21")
+### User Story 22
+![alt text](media/user_story_22.jpeg "User Story 22")
+### User Story 23
+![alt text](media/user_story_23.jpeg "User Story 23")
+### User Story 24
+![alt text](media/user_story_24.jpeg "User Story 24")
+### User Story 25
+![alt text](media/user_story_25.jpeg "User Story 25")
+### User Story 26
+![alt text](media/user_story_26.jpeg "User Story 26")
+### User Story 27
+![alt text](media/user_story_27.jpeg "User Story 27")
+### User Story 28
+![alt text](media/user_story_28.jpeg "User Story 28")
+### User Story 29
+![alt text](media/user_story_29.jpeg "User Story 29")
+### User Story 30
+![alt text](media/user_story_30.jpeg "User Story 30")
