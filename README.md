@@ -147,3 +147,140 @@ In order to pass this milestone project, the following requirements must be met:
 ![alt text](media/user_story_29.jpeg "User Story 29")
 ### User Story 30
 ![alt text](media/user_story_30.jpeg "User Story 30")
+
+## Development Planes
+
+### Strategy Plane
+The strategy incorporates the user story needs. This website will focus on the following target audience, divided into two main categories:
+
+* Fitness Enthusiasts who would like to view, contribute to and start discussions with the community
+* Fitness Enthusiasts who would like to view, contribute to and share fitness plans with the community
+
+#### Personality
+* Bright
+* Thoughtful
+* Diligent
+* Persistent
+* Rational
+
+#### Demographic
+* Age - 18-60
+* Gender - Male/Female
+* Education - Some College
+
+### Scope Plane
+
+The scope of this website is to create an engaging, interactive, and helpful online community for fitness enthusiasts. The website offers a set of functionalities that allow users to share and gain knowledge, create and follow fitness plans, and engage with other community members. 
+
+#### Functional Requirements
+
+1. **User Authentication:** Users can create accounts, log in, and manage their profiles. This feature ensures a personalized and secure user experience.
+2. **Community Posts:** Users have the ability to create, view, edit, and delete their own posts. They can also view posts made by others, fostering an environment of sharing and learning.
+3. **Fitness Plans:** Users can create and manage their own fitness plans. They also have the option to view fitness plans shared by other users, promoting mutual growth and inspiration within the community.
+4. **Commenting and Interaction:** Users can comment on posts and fitness plans, allowing for interaction and discussions. This fosters a sense of community and active engagement.
+5. **Search / Forum Categorisation Functionality:** Users can search for fitness plans, making it easier to find relevant content. Community posts are structured in tables, allowing categories to be easily selected
+
+#### Content Requirements
+
+1. **Profiles:** Information about the user, including their plans, posts, comments
+2. **Community Posts:** A variety of posts on topics related to fitness, health, diet, exercise routines, personal experiences, etc. 
+3. **Fitness Plans:** Detailed plans centred around the topic of health and fitness
+4. **Interactive Elements:** Comment sections to increase user engagement and interaction.
+5. **Contact Form** A contact form allows users to submit a query to the site administrators 
+6. **Donation Page** A donation page allows users to contribute to the running of the site.
+
+The scope of this website is to offer a user-friendly, engaging, and informative platform for fitness enthusiasts to learn, share, and grow together in their fitness journey. 
+
+### Structure Plane
+The structure of the website will be as follows:
+
+#### Home 
+#### Community
+##### Community Category
+###### Community Post
+###### Community Post Comment
+#### Plans
+##### Plans Description
+##### Plans Description Comment
+#### Profile
+##### Plan Management
+##### Post Management
+##### Community Management
+##### My Profile
+##### My Plans
+##### My Posts
+##### Register
+##### Login
+##### Logout
+##### Forgotten Password
+#### Donate
+#### Donate Success
+
+
+### Skeleton Plane
+
+#### Home
+The Home page is the landing page for your website, providing an overview of what the website is about and guiding users to the main features of the site.
+
+#### Community
+The Community page is a central hub where users can interact with each other. It includes the following:
+
+#### Community Category
+Each category in the Community section represents a different topic or area of interest. Clicking on a category takes the user to a list of posts in that category.
+
+#### Community Post
+Each post in a Community Category page represents a discussion or sharing of information about the category's topic. Clicking on a post takes the user to the post's page.
+
+#### Community Post Comment
+The comments on a Community Post page allow users to interact with the post, adding their own thoughts or responding to others.
+
+#### Plans
+The All Plans page lists all fitness plans available on the website.
+
+#### Plans Description
+Each plan in a Plans page includes a description of the plan and its details. Clicking on a plan takes the user to the plan's page.
+
+#### Plans Description Comment
+The comments on a Plans Description page allow users to share their experiences with the plan, ask questions, or provide feedback.
+
+#### Profile
+The Profile page is a personal hub for each user, including the following:
+
+#### Plan Management
+Allows administrators to manage the plans.
+
+#### Post Management
+Allows administrators to manage the community posts.
+
+#### Community Management
+Allows administrators to manage the contact forms submitted.
+
+#### My Profile
+Allows users to view and edit their personal information.
+
+#### My Plans
+Allows users to view the plans they've created or comments they've made
+
+#### My Posts
+Allows users to view the community posts they've created or comments they've made
+
+#### Register
+Allows new users to create an account.
+
+#### Login
+Allows existing users to log into their account.
+
+#### Logout
+Allows logged-in users to log out of their account.
+
+#### Donate
+The Donate page allows users to make a donation to support the website.
+
+#### Donate Success
+This page confirms that a user's donation was successful and thanks them for their support.
+
+### Surface Plane
+#### Colour Schemes
+#### Graphics
+
+# Features
