@@ -41,6 +41,3 @@ In order to pass this milestone project, the following requirements must be met:
 
 
 
-
-IMAGE TEST
-![alt text](https://milestone-project-4.s3.eu-west-2.amazonaws.com/media/health.jpeg "User Story 2")

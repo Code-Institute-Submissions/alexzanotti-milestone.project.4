@@ -6,6 +6,7 @@ from profiles.models import Profile
 from donate.models import Donation
 import os
 import stripe
+from .decorators import user_has_donated
 
 
 def donate(request):
@@ -64,6 +65,7 @@ def donate(request):
         return render(request, template, context)
 
 
+@user_has_donated
 def donate_success(request):
     """ A view to render the donation success page """
     return render(request, 'donate/donate_success.html')
