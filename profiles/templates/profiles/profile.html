@@ -7,11 +7,19 @@
 
 {% block content %}
 
-<h2>Update Profile</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Update Details</button>
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mt-5">Update Profile</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" class="btn btn-primary">Update Details</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
