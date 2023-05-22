@@ -6,107 +6,125 @@
 {% block image %}Plan Management{% endblock %}
 
 {% block content %}
-<h1>Plan Management</h1>
+<div class="plan-management-container">
+    <h2>Categories</h2>
+    <p>This table allows administrators to view all the different categories available in the system. It displays each
+        category's name and description.</p>
+    <p>Administrators also have the ability to edit or delete each category right from
+        this table using the Edit and Delete buttons.</p>
+    <p>By clicking into the row, this will also take the site administrator into the relevant edit category page</p>
+    <p>NOTE: the description column will not be displayed for medium screen sizes and below</p>
+    <a href="{% url 'plans:add_category' %}" class="btn btn-primary mb-3">Add Category</a>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th class="d-none d-sm-table-cell">Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for category in categories %}
+            <tr class="category-row" data-href="{% url 'plans:edit_category' category.id %}">
+                <td class="break-word">{{ category.name }}</td>
+                <td class="break-word d-none d-sm-table-cell">{{ category.description }}</td>
+                <td>
+                    <a href="{% url 'plans:edit_category' category.id %}" class="btn btn-primary">Edit</a>
+                    <form method="POST" action="{% url 'plans:delete_category' category.id %}" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
-<h2>Categories</h2>
-<table class="table table-bordered">
-    <thead class="thead-dark">
-        <tr>
-            <th>Name</th>
-            <th class="d-none d-sm-table-cell">Description</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for category in categories %}
-        <tr class="category-row" data-href="{% url 'plans:edit_category' category.id %}">
-            <td class="break-word">{{ category.name }}</td>
-            <td class="break-word d-none d-sm-table-cell">{{ category.description }}</td>
-            <td>
-                <a href="{% url 'plans:edit_category' category.id %}" class="btn btn-primary">Edit</a>
-                <form method="POST" action="{% url 'plans:delete_category' category.id %}" class="d-inline">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-<a href="{% url 'plans:add_category' %}" class="btn btn-primary mb-3">Add Category</a>
-
-<h2>Plans</h2>
-<table class="table table-bordered">
-    <thead class="thead-dark">
-        <tr>
-            <th>Name</th>
-            <th class="d-none d-sm-table-cell">Category</th>
-            <th class="d-none d-md-table-cell">Author</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for plan in plans %}
-        <tr data-toggle="collapse" data-target="#plan-detail-{{plan.id}}" class="accordion-toggle">
-            <td class="break-word">{{ plan.name }}</td>
-            <td class="break-word d-none d-sm-table-cell">{{ plan.category }}</td>
-            <td class="break-word d-none d-md-table-cell">{{ plan.author }}</td>
-            <td>
-                <a href="{% url 'plans:edit_plan' plan.id %}" class="btn btn-primary">Edit</a>
-                <a href="{% url 'plans:delete_plan' plan.id %}" class="btn btn-danger">Delete</a>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="3" class="hiddenRow">
-                <div class="accordion-body collapse" id="plan-detail-{{plan.id}}">
-                    <p>Description: {{ plan.description }}</p>
-                    {% if plan.image_field %}
+    <h2>Plans</h2>
+    <p>This table allows administrators to view and manage the different plans associated with each category. It
+        displays each plan's name and category. </p>
+    <p>It also provides administrators the ability to view additional details
+        about a plan, such as its description and image, through a collapsible accordion.</p>
+    <p>Similar to the categories table, administrators can also edit or delete plans right from this table using the
+        Edit and Delete buttons.</p>
+    <p>NOTE: the author column will not be displayed for medium screen sizes and the category will not display for small
+        screens</p>
+    <a href="{% url 'plans:add_plan' %}" class="btn btn-primary mb-3">Add Plan</a>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th class="d-none d-sm-table-cell">Category</th>
+                <th class="d-none d-md-table-cell">Author</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for plan in plans %}
+            <tr data-toggle="collapse" data-target="#plan-detail-{{plan.id}}" class="accordion-toggle">
+                <td class="break-word">{{ plan.name }}</td>
+                <td class="break-word d-none d-sm-table-cell">{{ plan.category }}</td>
+                <td class="break-word d-none d-md-table-cell">{{ plan.author }}</td>
+                <td>
+                    <a href="{% url 'plans:edit_plan' plan.id %}" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'plans:delete_plan' plan.id %}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="hiddenRow">
+                    <div class="accordion-body collapse" id="plan-detail-{{plan.id}}">
+                        <p>Description: {{ plan.description }}</p>
+                        {% if plan.image_field %}
                         <img src="{{ plan.image_field.url }}" class="img-thumbnail" alt="{{ plan.name }}">
-                    {% else %}
+                        {% else %}
                         <img src="{{ MEDIA_URL }}health.jpeg" class="img-thumbnail" alt="{{ plan.name }}">
-                    {% endif %}
-                </div>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-<a href="{% url 'plans:add_plan' %}" class="btn btn-primary mb-3">Add Plan</a>
+                        {% endif %}
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
-
-<h2>Comments</h2>
-<table class="table table-bordered">
-    <thead class="thead-dark">
-        <tr>
-            <th>Content</th>
-            <th class="d-none d-sm-table-cell">Plan</th>
-            <th class="d-none d-md-table-cell">Author</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for comment in comments %}
-        <tr>
-            <td class="break-word">{{ comment.content }}</td>
-            <td class="break-word d-none d-sm-table-cell">{{ comment.plan.name }}</td>
-            <td class="break-word d-none d-md-table-cell">{{ comment.author }}</td>
-            <td>
-                <a href="{% url 'plans:edit_comment' comment.id %}" class="btn btn-primary">Edit</a>
-                <a href="{% url 'plans:delete_comment' comment.id %}" class="btn btn-danger">Delete</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-
+    <h2>Comments</h2>
+    <p>This table allows administrators to view all the comments that have been made on various plans.</p>
+    <p>It displays the content of the comment, the name of the plan the comment is associated with, and the author of
+        the comment.</p>
+    <p>Administrators can also manage these comments by editing or deleting them using the Edit and Delete buttons.</p>
+    <p>NOTE: the author column will not be displayed for medium screen sizes and the plan will not display for small
+        screens</p>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Content</th>
+                <th class="d-none d-sm-table-cell">Plan</th>
+                <th class="d-none d-md-table-cell">Author</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for comment in comments %}
+            <tr class="category-row" data-href="{% url 'plans:edit_comment' comment.id %}">
+                <td class="break-word">{{ comment.content }}</td>
+                <td class="break-word d-none d-sm-table-cell">{{ comment.plan.name }}</td>
+                <td class="break-word d-none d-md-table-cell">{{ comment.author }}</td>
+                <td>
+                    <a href="{% url 'plans:edit_comment' comment.id %}" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'plans:delete_comment' comment.id %}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 
 {% endblock %}
 
 {% block endscripts %}
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('.category-row').css('cursor', 'pointer');
-        $('.category-row').click(function() {
+        $('.category-row').click(function () {
             window.location = $(this).data('href');
         });
     });
