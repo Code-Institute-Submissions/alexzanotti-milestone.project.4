@@ -70,7 +70,8 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ plan.name }}</h5>
                     <p class="card-text">Category: {{ plan.category }}</p>
-                    <p class="card-text">Author: {{ plan.author }}</p>
+                    <p class="card-text">Author: {{ plan.author.profile_user_name|default:plan.author.profile_user.username }}</p>
+                </p>
                 </div>
             </div>
         </a>

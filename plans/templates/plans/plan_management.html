@@ -65,7 +65,7 @@
             <tr data-toggle="collapse" data-target="#plan-detail-{{plan.id}}" class="accordion-toggle">
                 <td class="break-word">{{ plan.name }}</td>
                 <td class="break-word d-none d-sm-table-cell">{{ plan.category }}</td>
-                <td class="break-word d-none d-md-table-cell">{{ plan.author }}</td>
+                <td class="break-word d-none d-md-table-cell">{{ plan.author.profile_user_name|default:plan.author.profile_user.username }}</td>
                 <td>
                     <a href="{% url 'plans:edit_plan' plan.id %}" class="btn btn-primary">Edit</a>
                     <a href="{% url 'plans:delete_plan' plan.id %}" class="btn btn-danger">Delete</a>
@@ -108,7 +108,7 @@
             <tr class="category-row" data-href="{% url 'plans:edit_comment' comment.id %}">
                 <td class="break-word">{{ comment.content }}</td>
                 <td class="break-word d-none d-sm-table-cell">{{ comment.plan.name }}</td>
-                <td class="break-word d-none d-md-table-cell">{{ comment.author }}</td>
+                <td class="break-word d-none d-md-table-cell">{{ comment.author.profile_user_name|default:comment.author.profile_user.username }}</td>
                 <td>
                     <a href="{% url 'plans:edit_comment' comment.id %}" class="btn btn-primary">Edit</a>
                     <a href="{% url 'plans:delete_comment' comment.id %}" class="btn btn-danger">Delete</a>
