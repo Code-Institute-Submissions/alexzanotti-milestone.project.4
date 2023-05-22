@@ -49,20 +49,8 @@
                     <li class="nav-item {% block community %}{% endblock %}">
                         <a class="nav-link" href="{% url 'community:community' %}">Community</a>
                     </li>
-                    <li class="nav-item dropdown {% block plans %}{% endblock %}">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                            aria-expanded="false">
-                            Plans
-                        </a>
-                        <div class="dropdown-menu">
-                            <p>Categories:</p>
-                            {% for category in categories %}
-                            <a href="{% url 'plans:plans' %}?category={{ category.name }}" class="dropdown-item">
-                                {{ category.name }}</a>
-                            {% endfor %}
-                            <div class="dropdown-divider"></div>
-                            <a href="{% url 'plans:plans' %}" class="dropdown-item">All Plans</a>
-                        </div>
+                    <li class="nav-item {% block plans %}{% endblock %}">
+                        <a class="nav-link" href="{% url 'plans:plans' %}">Plans</a>
                     </li>
                     <li class="nav-item dropdown {% block profile %}{% endblock %}">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
