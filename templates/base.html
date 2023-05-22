@@ -64,7 +64,7 @@
                             <a href="{% url 'plans:plans' %}" class="dropdown-item">All Plans</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown {% block profile %}{% endblock %}">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                             aria-expanded="false">
                             Profile

@@ -250,6 +250,19 @@ Community
     cursor: pointer;
 }
 
+/* Community Management */
+
+.community-management-container {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;
+    padding-top: 20px;
+}
+
+.community-management-container table a {
+    margin: 5px;
+}
 
 /* ==========================================================================
 Community Media Queries
@@ -321,10 +334,7 @@ Plans
     list-style: none;
 }
 
-
-/* ==========================================================================
-Plan Management
-   ========================================================================== */
+/* Plan Management */
 
 .plan-management-container {
     position: relative;
