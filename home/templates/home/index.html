@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Fitness{% endblock %}
-{% block image %}Fitness{% endblock %}
+{% block title %}Database Fitness{% endblock %}
+{% block image %}Database Fitness{% endblock %}
 {% block home %}active{% endblock %}
 
 {% block content %}
@@ -10,8 +10,19 @@
 <!-- About section -->
 <section id="about">
     <h1>About</h1>
-    <p>This website is a hub for fitness enthusiasts to share posts, comments, and plans about various health and
-        fitness categories. Whether you're a beginner or an experienced athlete, this community is for you.</p>
+    <p>Welcome to our fitness hub, a dedicated platform for fitness enthusiasts to collaborate, learn, and grow. Here,
+        you have the opportunity to contribute your unique insights and experiences, engage with other users' posts, and
+        develop customized fitness plans that suit your individual goals.</p>
+    <p>In our <strong>Community</strong> section, you can share posts on diverse fitness topics and interact with
+        like-minded individuals. It's a space to learn from others and contribute your own knowledge to help others on
+        their fitness journey.</p>
+    <p>The <strong>Plans</strong> section allows you to discover a range of fitness plans crafted by our community
+        members, with options to suit a variety of fitness levels, goals, and preferences. You can also create your own
+        plans and share them with the community.</p>
+    <p>Our mission is to foster a supportive and knowledgeable community that encourages fitness growth for everyone,
+        regardless of where you are in your fitness journey. We are excited to have you here, and we can't wait to see
+        what you achieve!</p>
+</section>
 </section>
 
 <!-- Sections -->
@@ -20,11 +31,12 @@
         <!-- Community section -->
         <div class="col-sm-12 col-md-6 col-lg-3">
             <div class="card card-style">
-                <img src="{{ MEDIA_URL }}health.jpeg" class="card-img-top" alt="Community">
+                <img src="{{ MEDIA_URL }}community.jpeg" class="card-img-top" alt="Community">
                 <div class="card-body">
                     <h2 class="card-title">Community</h2>
-                    <p class="card-text">Join our community of fitness enthusiasts. Share posts, interact with other
-                        members, and grow together.</p>
+                    <p class="card-text">Our community section is where members share posts on a range of
+                        fitness-related topics. You can read what others have posted, interact with members by
+                        commenting, and grow together in your fitness journeys.</p>
                     <a class="btn btn-primary" href="{% url 'community:community' %}" role="button">View Posts</a>
                 </div>
             </div>
@@ -33,24 +45,13 @@
         <!-- Plans section -->
         <div class="col-sm-12 col-md-6 col-lg-3">
             <div class="card card-style">
-                <img src="{{ MEDIA_URL }}health.jpeg" class="card-img-top" alt="Plans">
+                <img src="{{ MEDIA_URL }}plans.jpeg" class="card-img-top" alt="Plans">
                 <div class="card-body">
                     <h2 class="card-title">Plans</h2>
-                    <p class="card-text">Discover an array of expertly-crafted fitness plans tailored to suit your
-                        unique goals and preferences. </p>
+                    <p class="card-text">In the plans section, you can discover a variety of expertly-crafted fitness
+                        plans tailored to suit your unique goals and preferences. You can also create your own plans and
+                        share them with the community.</p>
                     <a class="btn btn-primary" href="{% url 'plans:plans' %}" role="button">View Plans</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Profile section -->
-        <div class="col-sm-12 col-md-6 col-lg-3">
-            <div class="card card-style">
-                <img src="{{ MEDIA_URL }}health.jpeg" class="card-img-top" alt="Profile">
-                <div class="card-body">
-                    <h2 class="card-title">Profile</h2>
-                    <p class="card-text">Manage your account, track your progress, and more in your profile section.</p>
-                    <a class="btn btn-primary" href="{% url 'profile' %}" role="button">View Profile</a>
                 </div>
             </div>
         </div>
@@ -58,7 +59,7 @@
         <!-- Contact section -->
         <div class="col-sm-12 col-md-6 col-lg-3">
             <div class="card card-style">
-                <img src="{{ MEDIA_URL }}health.jpeg" class="card-img-top" alt="Contact">
+                <img src="{{ MEDIA_URL }}contact.png" class="card-img-top" alt="Contact">
                 <div class="card-body">
                     <h2 class="card-title">Contact</h2>
                     <p class="card-text">If you have any questions, comments, or feedback, feel free to reach out. We'd
@@ -71,7 +72,7 @@
         <!-- Donate section -->
         <div class="col-sm-12 col-md-6 col-lg-3">
             <div class="card card-style">
-                <img src="{{ MEDIA_URL }}health.jpeg" class="card-img-top" alt="Donate">
+                <img src="{{ MEDIA_URL }}donate.webp" class="card-img-top" alt="Donate">
                 <div class="card-body">
                     <h2 class="card-title">Donate</h2>
                     <p class="card-text">Support our mission to make fitness accessible for everyone. Your donations
