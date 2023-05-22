@@ -69,14 +69,15 @@ def plan_description(request, plan_id):
     return render(request, 'plans/plan_description.html', context)
 
 
-
+@login_required
 def plan_management(request):
     categories = Category.objects.all()
     plans = Plan.objects.all()
+    comments = Comment.objects.all()
 
-    return render(request, 'plans/plan_management.html', {'categories': categories, 'plans': plans})
+    return render(request, 'plans/plan_management.html', {'categories': categories, 'plans': plans, 'comments': comments})
 
-
+@login_required
 def add_category(request):
     if request.method == 'POST':
         form = CategoryForm(request.POST)
@@ -88,7 +89,7 @@ def add_category(request):
 
     return render(request, 'plans/add_category.html', {'form': form})
 
-
+@login_required
 def edit_category(request, category_id):
     category = get_object_or_404(Category, pk=category_id)
     if request.method == 'POST':
@@ -101,7 +102,7 @@ def edit_category(request, category_id):
 
     return render(request, 'plans/edit_category.html', {'form': form, 'category': category})
 
-
+@login_required
 def delete_category(request, category_id):
     if request.method == 'POST':
         category = get_object_or_404(Category, pk=category_id)
@@ -142,7 +143,7 @@ def edit_plan(request, plan_id):
         form = PlanForm(instance=plan)
     return render(request, 'plans/edit_plan.html', {'form': form, 'plan': plan})
 
-
+@login_required
 def delete_plan(request, plan_id):
     plan = get_object_or_404(Plan, pk=plan_id)
     plan.delete()
