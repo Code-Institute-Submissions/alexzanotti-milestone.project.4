@@ -335,7 +335,11 @@ Plans
 }
 
 .add-plan-margin, 
-#add-comment-margin {
+#add-comment-margin,
+#add-category-margin,
+#edit-category-margin,
+#edit-comment-margin,
+#edit-plan-margin {
     margin-top: 20px;
 }
 

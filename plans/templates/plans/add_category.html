@@ -4,13 +4,20 @@
 
 {% block title %}Add Category{% endblock %}
 {% block image %}Add Category{% endblock %}
+{% block profile %}active{% endblock %}
 
 {% block content %}
-
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Add Category</button>
-</form>
-
+<div class="container" id="add-category-margin">
+    <div class="row">
+        <div class="col-12">
+            <form method="post" class="mb-3">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" class="btn btn-primary">Add Category</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
