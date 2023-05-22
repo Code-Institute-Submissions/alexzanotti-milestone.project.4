@@ -4,14 +4,22 @@
 
 {% block title %}Add Plan{% endblock %}
 {% block image %}Add Plan{% endblock %}
+{% block plans %}active{% endblock %}
 
 {% block content %}
 
-<h1>Add Plan</h1>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Add Plan</button>
-</form>
+<div class="container add-plan-margin">
+    <div class="row">
+        <div class="col-12">
+            <form method="post" enctype="multipart/form-data" class="mb-4">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" class="btn btn-primary">Add Plan</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

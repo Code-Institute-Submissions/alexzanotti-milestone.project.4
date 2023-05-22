@@ -334,6 +334,11 @@ Plans
     text-align: center;
 }
 
+.add-plan-margin, 
+#add-comment-margin {
+    margin-top: 20px;
+}
+
 /* Plan Description */
 
 .add-plan-comment {

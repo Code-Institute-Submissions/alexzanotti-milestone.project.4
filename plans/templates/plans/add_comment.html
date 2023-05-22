@@ -4,12 +4,20 @@
 
 {% block title %}Add Comment{% endblock %}
 {% block image %}Add Comment{% endblock %}
+{% block plans %}active{% endblock %}
 
 {% block content %}
-<h2>Add Comment</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Add Comment</button>
-</form>
+<div class="container" id="add-comment-margin">
+    <div class="row">
+        <div class="col-12">
+            <form method="post" class="mb-3">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" class="btn btn-primary">Add Comment</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
