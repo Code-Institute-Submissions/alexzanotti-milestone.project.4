@@ -34,7 +34,7 @@
     <form method="GET" action="{% url 'plans:plans' %}" class="plans-style">
         <div class="input-group">
             <label for="q">Search:</label>
-            <input class="form-control" type="text" name="q" placeholder="Search for Plans">
+            <input class="form-control" type="text" name="q" id="q" placeholder="Search for Plans">
             <button class="btn" type="submit">
                 <i class="fas fa-search"></i>
             </button>
@@ -48,11 +48,8 @@
                 <option value="default" {% if current_sort_by == "default" %}selected{% endif %}>Default</option>
                 <option value="name_asc" {% if current_sort_by == "name_asc" %}selected{% endif %}>Name (A-Z)</option>
                 <option value="name_desc" {% if current_sort_by == "name_desc" %}selected{% endif %}>Name (Z-A)</option>
-                <option value="category_asc" {% if current_sort_by == "category_asc" %}selected{% endif %}>Category (A-Z)
-                </option>
-                <option value="category_desc" {% if current_sort_by == "category_desc" %}selected{% endif %}>Category
-                    (Z-A)
-                </option>
+                <option value="category_asc" {% if current_sort_by == "category_asc" %}selected{% endif %}>Category (A-Z)</option>
+                <option value="category_desc" {% if current_sort_by == "category_desc" %}selected{% endif %}>Category (Z-A)</option>
             </select>
         </div>
     </form>
@@ -71,7 +68,6 @@
                     <h5 class="card-title">{{ plan.name }}</h5>
                     <p class="card-text">Category: {{ plan.category }}</p>
                     <p class="card-text">Author: {{ plan.author.profile_user_name|default:plan.author.profile_user.username }}</p>
-                </p>
                 </div>
             </div>
         </a>

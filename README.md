@@ -575,7 +575,7 @@ This test type ensures that the application meets the requirements of the user s
 ### Automated Testing Procedure
 
 #### HTML Validator
-This automated test type checks the HTML code for errors and warnings. The HTML Validator tool (validator.w3.org) checks for proper markup, syntax errors, and other issues that can cause problems with the rendering of web pages. It provides a detailed report of errors and warnings, allowing developers to fix them quickly.
+This automated test type checks the HTML code for errors and warnings. The HTML Validator tool (validator.w3.org) checks for proper markup, syntax errors, and other issues that can cause problems with the rendering of web pages. It provides a detailed report of errors and warnings, allowing developers to fix them quickly. NOTE: the validator contain warning, derived from the Django templating language.
 
 | Test ID | Test Description | Expected Outcome | Status |
 |---------|------------------|------------------|--------|
