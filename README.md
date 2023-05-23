@@ -88,65 +88,65 @@ In order to pass this milestone project, the following requirements must be met:
 ## User Story Images 
 
 ### User Story 1
-![alt text](media/user_story_1.jpeg "User Story 1")
+![alt text](media/user_story_1.png "User Story 1")
 ### User Story 2
-![alt text](media/user_story_2.jpeg "User Story 2")
+![alt text](media/user_story_2.png "User Story 2")
 ### User Story 3
-![alt text](media/user_story_3.jpeg "User Story 3")
+![alt text](media/user_story_3.png "User Story 3")
 ### User Story 4
-![alt text](media/user_story_4.jpeg "User Story 4")
+![alt text](media/user_story_4.png "User Story 4")
 ### User Story 5
-![alt text](media/user_story_5.jpeg "User Story 5")
+![alt text](media/user_story_5.png "User Story 5")
 ### User Story 6
-![alt text](media/user_story_6.jpeg "User Story 6")
+![alt text](media/user_story_6.png "User Story 6")
 ### User Story 7
-![alt text](media/user_story_7.jpeg "User Story 7")
+![alt text](media/user_story_7.png "User Story 7")
 ### User Story 8
-![alt text](media/user_story_8.jpeg "User Story 8")
+![alt text](media/user_story_8.png "User Story 8")
 ### User Story 9
-![alt text](media/user_story_9.jpeg "User Story 9")
+![alt text](media/user_story_9.png "User Story 9")
 ### User Story 10
-![alt text](media/user_story_10.jpeg "User Story 10")
+![alt text](media/user_story_10.png "User Story 10")
 ### User Story 11
-![alt text](media/user_story_11.jpeg "User Story 11")
+![alt text](media/user_story_11.png "User Story 11")
 ### User Story 12
-![alt text](media/user_story_12.jpeg "User Story 12")
+![alt text](media/user_story_12.png "User Story 12")
 ### User Story 13
-![alt text](media/user_story_13.jpeg "User Story 13")
+![alt text](media/user_story_13.png "User Story 13")
 ### User Story 14
-![alt text](media/user_story_14.jpeg "User Story 14")
+![alt text](media/user_story_14.png "User Story 14")
 ### User Story 15
-![alt text](media/user_story_15.jpeg "User Story 15")
+![alt text](media/user_story_15.png "User Story 15")
 ### User Story 16
-![alt text](media/user_story_16.jpeg "User Story 16")
+![alt text](media/user_story_16.png "User Story 16")
 ### User Story 17
-![alt text](media/user_story_17.jpeg "User Story 17")
+![alt text](media/user_story_17.png "User Story 17")
 ### User Story 18
-![alt text](media/user_story_18.jpeg "User Story 18")
+![alt text](media/user_story_18.png "User Story 18")
 ### User Story 19
-![alt text](media/user_story_19.jpeg "User Story 19")
+![alt text](media/user_story_19.png "User Story 19")
 ### User Story 20
-![alt text](media/user_story_20.jpeg "User Story 20")
+![alt text](media/user_story_20.png "User Story 20")
 ### User Story 21
-![alt text](media/user_story_21.jpeg "User Story 21")
+![alt text](media/user_story_21.png "User Story 21")
 ### User Story 22
-![alt text](media/user_story_22.jpeg "User Story 22")
+![alt text](media/user_story_22.png "User Story 22")
 ### User Story 23
-![alt text](media/user_story_23.jpeg "User Story 23")
+![alt text](media/user_story_23.png "User Story 23")
 ### User Story 24
-![alt text](media/user_story_24.jpeg "User Story 24")
+![alt text](media/user_story_24.png "User Story 24")
 ### User Story 25
-![alt text](media/user_story_25.jpeg "User Story 25")
+![alt text](media/user_story_25.png "User Story 25")
 ### User Story 26
-![alt text](media/user_story_26.jpeg "User Story 26")
+![alt text](media/user_story_26.png "User Story 26")
 ### User Story 27
-![alt text](media/user_story_27.jpeg "User Story 27")
+![alt text](media/user_story_27.png "User Story 27")
 ### User Story 28
-![alt text](media/user_story_28.jpeg "User Story 28")
+![alt text](media/user_story_28.png "User Story 28")
 ### User Story 29
-![alt text](media/user_story_29.jpeg "User Story 29")
+![alt text](media/user_story_29.png "User Story 29")
 ### User Story 30
-![alt text](media/user_story_30.jpeg "User Story 30")
+![alt text](media/user_story_30.png "User Story 30")
 
 ## Development Planes
 
@@ -218,6 +218,22 @@ The structure of the website will be as follows:
 
 
 ### Skeleton Plane
+
+### Balsamiq Wireframe Images
+Below are the Wireframes created in Balsamiq for this project:
+* Home Page Wireframe
+![alt text](media/wireframe-home.png "Home Page Wireframe")
+* Community Wireframe
+![alt text](media/wireframe-community.png "Community Page Wireframe")
+* Plans Wireframe
+![alt text](media/wireframe-plans.png "Plans Page Wireframe")
+* Profile Page Wireframe
+![alt text](media/wireframe-profile.png "profile Page Wireframe")
+* Contact Page Wireframe
+![alt text](media/wireframe-contact.png "Contact Page Wireframe")
+* Donate Page Wireframe
+![alt text](media/wireframe-donate.png "donate Page Wireframe")
+
 
 #### Home
 The Home page is the landing page for your website, providing an overview of what the website is about and guiding users to the main features of the site.
@@ -382,26 +398,63 @@ This page confirms that a user's donation was successful and thanks them for the
 - At the start of each section, there's a "Add" button for adding new categories, plans, and comments. 
 - There's also a jjquery script included at the end of the page that makes table rows clickable, taking the administrator to the appropriate edit page when clicked.
 
+## My Plans
+
+- The {% load static %} tag loads the static template tags which are a collection of template tags for serving static files.
+- {% block title %}My Plans{% endblock %} specifies the title of the page as "My Plans".
+- {% block image %}My Plans{% endblock %} sets the title in the image header
+- {% block profile %}active{% endblock %} This block indicates the currently active page in the navigation bar.
+- The content block contains two sections, one for "Plans" and one for "Comments". 
+- In each section, there's an explanatory paragraph and a table. 
+- The table lists the respective items (plans/comments) and provides "Edit" and "Delete" buttons for each one. 
+- If there are no items to list, it displays a message to that effect.
+- A small jQuery script that adds a click event to any element with a "data-href" attribute, which makes the entire element clickable, redirecting the user to the URL specified in "data-href". 
+
+### Plans Forms
+- These template extends base.html, with the title, image, and profile blocks set to "Add Category", "Add Category", and "active", respectively.
+- In the content block, it provides a form to enable CRUD functionality, such as adding or edits plans/comments/categories. Django's form system automatically handles much of this (the form.as_p line), including rendering form fields for all the fields in the category model.
+
 ## My Profile
--
--
+- This contains a form for updating the user profile name. 
+- The form includes a single field rendered by {{ form.as_p }}.
+- This is then displayed when the user creates/comments on a plan/post.
 
 ## Contact
-
 - The contact page contains a form that the user is able to complete. It asked for their Name, Email and Message.
 - The "Submit" button is disabled until the user completes all fields. The color of the "Submit" button will slightly change when this occurs
 
 ## Contact Management
+- The page title and image block are set to "Contact Management".
+- The content block of the page contains a header, some descriptive text, and a table showing all submitted contact forms.
+- Each row in the table corresponds to a single contact form.
+- Columns include "Name", "Email", "Created", "Updated", "Status", and "Action".
+- Each row is also a link to an update page for the respective contact form.
+- There's also a delete button in the "Action" column that can stop the event propagation when clicked to avoid triggering the row's click event.
+- The page also includes a script at the end (inside the "endscripts" block). This script makes each row in the table clickable, redirecting to the URL stored in the "data-href" attribute of the row when clicked.
 
-## Contact Management
 ## Contact Update 
+- The page title and image block are set to "Update Contact Form".
+- The content block of the page contains:
+1. A form to update the contact form.
+2. A link to return to the "Contact Management" page.
+3. A list of comments associated with the contact form.
+4. A form to add a new comment to the contact form.
 
 ## Donate
+- The page title and image block are set to "Donate".
+- The content block of the page contains:
+1. A message thanking users who have donated.
+2. A donation form for users who have not donated yet.
+3. Instructions to login or register for users who are not authenticated.
+4. The page includes an additional CSS file located at 'donate/css/donate.css' and a JavaScript file located at 'donate/js/donate.js'.
+5. There are a few conditional blocks within the content that check the authentication and donation status of the user. These blocks render different HTML content depending on the user's status.
+
 ## Donate Success
-
-
-
-
+- The page title and image block are set to "Donate Success".
+- The content block of this page contains:
+1. A thank you message for the users who have made a donation.
+2. A list of how their donation helps the website.
+3. A button that redirects users to the homepage of the website.
 
 # Technologies Used
 
