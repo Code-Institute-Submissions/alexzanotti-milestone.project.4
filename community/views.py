@@ -5,7 +5,16 @@ from .forms import CategoryForm, PostForm, CommentForm
 from django.db.models import Count, Max
 from django.urls import reverse
 
+
 # Create your views here.
+
+
+def user_is_author(user, obj):
+    return obj.author == user.profile
+
+
+def user_can_edit(user, obj):
+    return user.is_superuser or user_is_author(user, obj)
 
 
 def community(request):
@@ -110,6 +119,8 @@ def edit_category(request, category_id):
 @login_required
 def edit_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
+    if not user_can_edit(request.user, post):
+        return redirect('home')
     if request.method == 'POST':
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
@@ -120,9 +131,11 @@ def edit_post(request, post_id):
     return render(request, 'community/edit_post.html', {'form': form, 'post': post})
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@login_required
 def edit_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
+    if not user_can_edit(request.user, comment):
+        return redirect('home')
     if request.method == 'POST':
         form = CommentForm(request.POST, instance=comment)
         if form.is_valid():
@@ -143,6 +156,8 @@ def delete_category(request, category_id):
 @login_required
 def delete_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
+    if not user_can_edit(request.user, post):
+        return redirect('home')
     post.delete()
     return redirect('community:community_management')
 
@@ -150,6 +165,8 @@ def delete_post(request, post_id):
 @login_required
 def delete_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
+    if not user_can_edit(request.user, comment):
+        return redirect('home')
     comment.delete()
     return redirect('community:community_management')
 
