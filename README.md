@@ -285,6 +285,123 @@ This page confirms that a user's donation was successful and thanks them for the
 
 # Features
 
+## Head
+- Each page of the website contains a relevant title
+- Meta Tags: It includes three meta tags that set the character encoding (UTF-8), the browser compatibility (edge version for Internet Explorer), and the viewport (width=device-width, initial-scale=1).
+- Static CSS File: There's a reference to a static CSS file named 'base.css' for defining the styles used across the website.
+- Bootstrap: It includes Bootstrap 4.6.2 for responsive design, grid layout and CSS components.
+- Google Fonts: There are preconnect links to the domains fonts.googleapis.com and fonts.gstatic.com, which are used to establish a network connection in advance, optimizing load times. A link to a specific Google Fonts stylesheet is also included, which is used to load various weights and styles of the Roboto font.
+- Font Awesome: It includes a script for loading Font Awesome, which is a toolkit for adding vector icons and social logos to a website.
+- Stripe: It includes a script for loading Stripe.js, a library provided by Stripe for handling online payments.
+
+## Header
+- Bootstrap is used to construct the header
+- It will be clear what page the user is on, as the color of the list item will be different
+- When hovering over a different list item, the color will change
+- Clicking on the brand name takes the user to the home page
+- For smaller screens, a vertical navbar (hamburger) is used, displaying the nav items in block
+- There is a image at the top of each page, which is fitness related and holds the page title.
+
+## Footer
+- Bootstrap is used to contruct the footer
+- About information is held on the left side of the page
+- Site Links are held on the right of the page
+- The site link change color when hovering
+- For smaller screens, the about section is displayed in block (From top to bottom: About, Site Links)
+
+## Home
+- The home page contains introductory text, describing the website and it's purpose
+- There are cards displayed for each section of the website, that provide an image and a brief summary and a button to click (taking the user to that section of the website).
+- a responsive design ensures that as the screen size is reduced, the number of cards held on the horizontal axis also reduces.
+
+## Community
+- The community page contains an introduction to the purpose of the page and how the sub-pages within the community page is structured
+- A table is presented, which indicated the category of post, the number of posts for the category and the latest post date/time
+- When the user clicks into a row, it will take the user to the relevant Community Category page.
+- Title: The title for the page is set to "Community" using the title block from the base template.
+- Image: Similarly, the image block from the base template is set to display "Community".
+- Community Active: The "community" block is set to "active", enabling the current active class in the navigation menu.
+- An introductory section describing the content of the page.
+- A responsive table which displays categories of posts. If the user is authenticated, they are provided with a button to add a post.
+- The columns within the table are: category name, description, number of posts, latest post
+- A JavaScript script is included which makes entire table rows clickable, redirecting to a URL determined by a data-href attribute.
+
+### Community Category
+- Title: The title for the page is set to "Category Posts" using the title block from the base template.
+- Image: Similarly, the image block from the base template is set to display "Category Posts". The specific usage of this block will depend on how it's defined in "base.html".
+- Community Active: The "community" block is set to "active", enabling the current active class in the navigation menu.
+- A paragraph describing the posts for a specific category.
+- A responsive table which displays posts in the selected category. Each row corresponds to a post, displaying its title, author, number of comments, and the date it was posted. 
+- If no posts are available in the category, a message indicating this is displayed. 
+- If the user is authenticated, they are provided with a button to add a post.
+- A JavaScript script is included which makes entire table rows clickable, redirecting to a URL determined by a data-href attribute.
+
+### Community Post
+- Title: The title of the page is set to "Post".
+- Image: The image block is set to "Post". Its specific use depends on how it's defined in the base template.
+- Community Active: The "community" block is set to "active", enabling the current active class in the navigation menu.
+- Details of the post: This includes the post's title, the category of the post, and the author's name, and the date it was posted.
+- Post Content: This section includes the content of the post.
+- Comments: This section includes an interactive comments section that collapses and expands when clicked. For each comment, it shows the author and the date it was created. If no comments are available, it shows a message "No comments yet".
+- Add Comment: If the user is authenticated, they will see a button allowing them to add a comment to the post.
+
+### Community Management
+- This template extends base.html, with the title, image, and profile blocks set to "Community Management", "Community Management", and "active", respectively.
+- In the content block, it presents management interfaces for categories, posts, and comments. Administrators can add, edit, and delete categories; view post details, edit, and delete posts; view comment details, edit, and delete comments. Note that some columns in these tables will not display for small and medium screen sizes to optimize for mobile viewing.
+- At the end of the template, it includes a script that allows table rows to be clickable by assigning a URL to them.
+
+### My Posts
+- This template extends base.html, with the title, image, and profile blocks set to "My Posts", "My Posts", and "active", respectively.
+- In the content block, it displays a list of posts and comments made by the current user. For each post and comment, it shows relevant details (like title, category, date, etc.) and options to edit or delete. Similar to the previous tables mentioned, some columns in these tables will not display for small and medium screen sizes.
+- At the end of the template, it includes a script that allows table rows to be clickable by assigning a URL to them.
+
+### Community Forms
+- This template extends base.html, with the title, image, and profile blocks set to "Add Category", "Add Category", and "active", respectively.
+- In the content block, it provides a form to enable CRUD functionality, such as adding or edits posts/comments/categories. Django's form system automatically handles much of this (the form.as_p line), including rendering form fields for all the fields in the category model.
+
+## Plans
+- This webpage is titled "Plans" and it extends from the base layout. It contains introductory text about the fitness plans offered on the site, along with details on how to use search and sorting functionalities.
+- If the user is logged in, they will see an "Add Plan" button, otherwise they'll be prompted to login or register to contribute. 
+- There is a search bar for searching plans and a dropdown for sorting them. 
+- All the available fitness plans are listed in a row-based card layout with an image, name, category and the author. If no image is provided for a plan, a default image is used.
+- the number of cards decreases horizontally as the screen size reduces, to enable a more responsive design
+
+## Plans Description
+- This webpage is titled "Plan" and it extends from the base layout. 
+- It provides detailed information about a single fitness plan, including its name, category, author, and the date it was posted. 
+- If there's an image associated with the plan, it's displayed on the page.
+- There's a section for the plan's description, and another collapsible section for displaying comments about the plan. 
+- If there are no comments, a message saying "No comments yet." is displayed. 
+- If the user is logged in, they can see an "Add Comment" button for adding comments to the plan.
+
+## Plan Management 
+- This webpage is titled "Plan Management" and it extends from the base layout. It's a page intended for administrators, containing tables for managing categories, plans, and comments.
+- For each category, administrators can see its name and description, and buttons for editing and deleting the category. 
+- Similar details are provided for plans, along with an accordion feature to view more information about a plan. 
+- The comments table displays the content of each comment, the plan it's associated with, and the author. Administrators can also edit and delete comments.
+- At the start of each section, there's a "Add" button for adding new categories, plans, and comments. 
+- There's also a jjquery script included at the end of the page that makes table rows clickable, taking the administrator to the appropriate edit page when clicked.
+
+## My Profile
+-
+-
+
+## Contact
+
+- The contact page contains a form that the user is able to complete. It asked for their Name, Email and Message.
+- The "Submit" button is disabled until the user completes all fields. The color of the "Submit" button will slightly change when this occurs
+
+## Contact Management
+
+## Contact Management
+## Contact Update 
+
+## Donate
+## Donate Success
+
+
+
+
 
 # Technologies Used
 
