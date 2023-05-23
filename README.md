@@ -286,6 +286,34 @@ This page confirms that a user's donation was successful and thanks them for the
 # Features
 
 
+# Technologies Used
+
+## Main Technologies Used
+### HTML5
+### CSS3
+### Javascript
+### Python+Django
+### PostgreSQL
+### Stripe
+
+## Frameworks, Libraries & Programs Used
+### Amazon Web Services
+Amazon Web Services was used to serve media and static files in the production environment of this project.
+### Bootstrap
+Bootstrap was used in the media page to assist with enabling a responsive design
+### jQuery 
+jQuery was sparingly used within the project
+### Google Fonts
+Google fonts was used to import the fonts Barlow, Chivo Mono, Lato, Oswald & Quantico into the style.css file.
+### Font Awesome
+Font Awesome was used to assist with the styling of the website, such as providing a caret icon for the comments section, to denote that there was a dropdown.
+### GitPod
+GitPod was used for writing code, commiting, and then pushing to GitHub.
+### GitHub
+GitHub was used as the repository for the code.
+### Balsamiq
+Balsamiq was used to create the wireframes during the design of the project.
+
 # Deployment
 
 ## ElephantSQL Database hosting
@@ -348,6 +376,7 @@ The following sites were used:
 * Font Awesome
 * https://beautifier.io/
 * https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+* https://peps.python.org/pep-0008/
 * Jquery
 * JSHint
 * Stack Overflow
