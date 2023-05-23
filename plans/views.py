@@ -8,6 +8,10 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 # Create your views here.
 
 
+def check_superuser(user):
+    return user.is_superuser
+
+
 def plans(request):
     """ A view to render the plans page """
 
@@ -69,6 +73,7 @@ def plan_description(request, plan_id):
     return render(request, 'plans/plan_description.html', context)
 
 
+@user_passes_test(check_superuser)
 @login_required
 def plan_management(request):
     categories = Category.objects.all()
@@ -77,6 +82,8 @@ def plan_management(request):
 
     return render(request, 'plans/plan_management.html', {'categories': categories, 'plans': plans, 'comments': comments})
 
+
+@user_passes_test(check_superuser)
 @login_required
 def add_category(request):
     if request.method == 'POST':
@@ -89,6 +96,8 @@ def add_category(request):
 
     return render(request, 'plans/add_category.html', {'form': form})
 
+
+@user_passes_test(check_superuser)
 @login_required
 def edit_category(request, category_id):
     category = get_object_or_404(Category, pk=category_id)
@@ -102,6 +111,8 @@ def edit_category(request, category_id):
 
     return render(request, 'plans/edit_category.html', {'form': form, 'category': category})
 
+
+@user_passes_test(check_superuser)
 @login_required
 def delete_category(request, category_id):
     if request.method == 'POST':
@@ -134,6 +145,8 @@ def add_plan(request):
 @login_required
 def edit_plan(request, plan_id):
     plan = get_object_or_404(Plan, id=plan_id)
+    if request.user.profile != plan.author and not request.user.is_superuser:
+        return redirect('home')
     if request.method == 'POST':
         form = PlanForm(request.POST, request.FILES, instance=plan)
         if form.is_valid():
@@ -146,6 +159,8 @@ def edit_plan(request, plan_id):
 @login_required
 def delete_plan(request, plan_id):
     plan = get_object_or_404(Plan, pk=plan_id)
+    if request.user.profile != plan.author and not request.user.is_superuser:
+        return redirect('home')
     plan.delete()
     messages.success(request, 'Plan deleted successfully!')
     return redirect('plans:plan_management')
@@ -176,6 +191,8 @@ def add_comment(request, plan_id):
 @login_required
 def edit_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
+    if request.user.profile != comment.author and not request.user.is_superuser:
+        return redirect('home')
     if request.method == 'POST':
         form = CommentForm(request.POST, instance=comment)
         if form.is_valid():
@@ -189,6 +206,8 @@ def edit_comment(request, comment_id):
 @login_required
 def delete_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
+    if request.user.profile != comment.author and not request.user.is_superuser:
+        return redirect('home')
     comment.delete()
     return redirect('plans:plan_management')
 
