@@ -284,3 +284,78 @@ This page confirms that a user's donation was successful and thanks them for the
 #### Graphics
 
 # Features
+
+
+# Deployment
+
+## ElephantSQL Database hosting
+1. Log in to ElephantSQL.com to access your dashboard
+2. Click “Create New Instance”
+3. Set up your plan (Free)
+4. Select “Select Region”
+5. Select a data center near youThen click “Review”
+6. Check your details are correct and then click “Create instance”
+7. Return to the ElephantSQL dashboard and click on the database instance name for this project
+8. In the URL section, clicking the copy icon will copy the database URL to your clipboard
+9. The URL is then used when setting up the Heroku App
+
+
+## Deployment on Heroku
+1. To deploy on Heroku, the following steps were taken:
+2. Set Up A New Heroku App
+3. Give your app a name and select the region closest to you
+4. In the setting tab, add the config var DATABASE_URL, and for the value, copy in your database url from ElephantSQL.
+5. Connect Git Remote
+6. Add A Requirements.txt file
+7. Add A Procfile file
+8. Connect App to Github
+9. Set Up The Environment Variables in Heroku
+10. Enable The Automatic Deployment
+
+## Project preparation in your IDE
+1. In the terminal, install dj_database_url and psycopg2
+2. Update your requirements.txt file
+3. In your settings.py file, import dj_database_url underneath the import os
+4. Connect to the new ElephantSQL database in the settings.py file
+5. Run the Makemigrations and Migrate commands in the terminal
+
+## Amazon Web Services Setup
+1. create AWS account
+2. AWS management console
+3. Search for S3 service
+4. Create new bucket
+5. Select Region
+6. Allow bucket to be public
+7. Ensure settings are configured: 
+    * Enable static website hosting
+    * Cross-origin resource sharing (CORS) Configuration
+    * Bucket Policy
+    * Access control list (ACL) 
+8. Setup Identify and Access Management (IAM)
+    * Create group
+    * Create policy
+    * Attach policy
+    * Create User
+    * Download CSV, containing keys
+    * Add user to Group
+9. Django to S3, by adding config vars to Heroku and adding to settings.py file (including media and static urls).
+
+# Credits
+
+The following sites were used:
+* Bootstrap
+* Code Institute
+* Font Awesome
+* https://beautifier.io/
+* https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+* Jquery
+* JSHint
+* Stack Overflow
+* W3Schools
+* www.freeformatter.com
+* Youtube
+
+# Acknowledgements
+I would like to thank all parties within the credits section
+
+I would also like to thank my mentor, Koko, for her invaluable help and guidance throughout the project.
