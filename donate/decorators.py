@@ -1,4 +1,4 @@
-from django.http import HttpResponseForbidden
+from django.shortcuts import redirect
 from donate.models import Donation
 
 def user_has_donated(function):
@@ -8,9 +8,9 @@ def user_has_donated(function):
             if donation.donated:
                 return function(request, *args, **kwargs)
             else:
-                return HttpResponseForbidden()
+                return redirect('donate') 
         except Donation.DoesNotExist:
-            return HttpResponseForbidden()
+            return redirect('donate') 
     wrap.__doc__ = function.__doc__
     wrap.__name__ = function.__name__
     return wrap
