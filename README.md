@@ -96,13 +96,17 @@ In order to pass this milestone project, the following requirements must be met:
 ### User Story 4
 ![alt text](media/user_story_4.png "User Story 4")
 ### User Story 5
-![alt text](media/user_story_5.png "User Story 5")
+![alt text](media/user_story_5_1.png "User Story 5 - First")
+![alt text](media/user_story_5_2.png "User Story 5 - Second")
 ### User Story 6
 ![alt text](media/user_story_6.png "User Story 6")
 ### User Story 7
-![alt text](media/user_story_7.png "User Story 7")
+![alt text](media/user_story_7_1.png "User Story 7 - First")
+![alt text](media/user_story_7_2.png "User Story 7 - Second")
+![alt text](media/user_story_7_3.png "User Story 7 - Third")
 ### User Story 8
-![alt text](media/user_story_8.png "User Story 8")
+![alt text](media/user_story_8_1.png "User Story 8 - First")
+![alt text](media/user_story_8_2.png "User Story 8 - Second")
 ### User Story 9
 ![alt text](media/user_story_9.png "User Story 9")
 ### User Story 10
@@ -114,11 +118,14 @@ In order to pass this milestone project, the following requirements must be met:
 ### User Story 13
 ![alt text](media/user_story_13.png "User Story 13")
 ### User Story 14
-![alt text](media/user_story_14.png "User Story 14")
+![alt text](media/user_story_14_1.png "User Story 14 - First")
+![alt text](media/user_story_14_2.png "User Story 14 - Second")
+![alt text](media/user_story_14_3.png "User Story 14 - Third")
 ### User Story 15
 ![alt text](media/user_story_15.png "User Story 15")
 ### User Story 16
-![alt text](media/user_story_16.png "User Story 16")
+![alt text](media/user_story_16_1.png "User Story 16 - First")
+![alt text](media/user_story_16_2.png "User Story 16 - Second")
 ### User Story 17
 ![alt text](media/user_story_17.png "User Story 17")
 ### User Story 18
