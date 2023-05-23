@@ -9,6 +9,10 @@ from django.urls import reverse
 # Create your views here.
 
 
+def check_superuser(user):
+    return user.is_superuser
+
+
 def user_is_author(user, obj):
     return obj.author == user.profile
 
@@ -78,7 +82,7 @@ def add_comment(request, post_id):
     return render(request, 'community/add_comment.html', context)
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@user_passes_test(check_superuser, login_url='home')
 def community_management(request):
     categories = Category.objects.all()
     posts = Post.objects.all()
@@ -91,7 +95,7 @@ def community_management(request):
     return render(request, 'community/community_management.html', context)
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@user_passes_test(check_superuser, login_url='home')
 def add_category(request):
     if request.method == 'POST':
         form = CategoryForm(request.POST)
@@ -103,7 +107,7 @@ def add_category(request):
     return render(request, 'community/add_category.html', {'form': form})
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@user_passes_test(check_superuser, login_url='home')
 def edit_category(request, category_id):
     category = get_object_or_404(Category, id=category_id)
     if request.method == 'POST':
@@ -146,7 +150,7 @@ def edit_comment(request, comment_id):
     return render(request, 'community/edit_comment.html', {'form': form, 'comment': comment})
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@user_passes_test(check_superuser, login_url='home')
 def delete_category(request, category_id):
     category = get_object_or_404(Category, id=category_id)
     category.delete()

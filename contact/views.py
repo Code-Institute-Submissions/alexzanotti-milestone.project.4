@@ -2,9 +2,14 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .forms import ContactForm, UpdateContactForm, CommentForm
 from django.contrib import messages
 from .models import Contact, Comment
+from django.contrib.auth.decorators import user_passes_test
 
 
 # Create your views here.
+
+
+def check_superuser(user):
+    return user.is_superuser
 
 
 def contact(request):
@@ -14,7 +19,8 @@ def contact(request):
             form.save()
             messages.success(
                 request, 'Your message has been sent successfully!')
-            return redirect('contact_success')
+            request.session['contact_form_submitted'] = True 
+        return redirect('contact_success')
     else:
         form = ContactForm()
 
@@ -22,12 +28,13 @@ def contact(request):
     return render(request, 'contact/contact.html', context)
 
 
-
+@user_passes_test(check_superuser, login_url='home')
 def contact_management(request):
     contact_forms = Contact.objects.all()
     return render(request, 'contact/contact_management.html', {'contact_forms': contact_forms})
 
 
+@user_passes_test(check_superuser, login_url='home')
 def update_contact_form(request, contact_id):
     contact = get_object_or_404(Contact, id=contact_id)
     comments = Comment.objects.filter(contact=contact)
@@ -55,11 +62,17 @@ def update_contact_form(request, contact_id):
     return render(request, 'contact/update_contact_form.html', context)
 
 
+@user_passes_test(check_superuser, login_url='home')
 def delete_contact_form(request, form_id):
     contact_form = get_object_or_404(Contact, id=form_id)
     contact_form.delete()
     messages.success(request, "Contact form successfully deleted.")
     return redirect('contact_management')
 
+
 def contact_success(request):
+    if not request.session.get('contact_form_submitted', False):
+        return redirect('home')  
+
+    del request.session['contact_form_submitted']
     return render(request, 'contact/contact_success.html')

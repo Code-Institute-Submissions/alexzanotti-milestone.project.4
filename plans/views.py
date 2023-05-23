@@ -73,7 +73,7 @@ def plan_description(request, plan_id):
     return render(request, 'plans/plan_description.html', context)
 
 
-@user_passes_test(check_superuser)
+@user_passes_test(check_superuser, login_url='home')
 @login_required
 def plan_management(request):
     categories = Category.objects.all()
@@ -83,7 +83,7 @@ def plan_management(request):
     return render(request, 'plans/plan_management.html', {'categories': categories, 'plans': plans, 'comments': comments})
 
 
-@user_passes_test(check_superuser)
+@user_passes_test(check_superuser, login_url='home')
 @login_required
 def add_category(request):
     if request.method == 'POST':
@@ -97,7 +97,7 @@ def add_category(request):
     return render(request, 'plans/add_category.html', {'form': form})
 
 
-@user_passes_test(check_superuser)
+@user_passes_test(check_superuser, login_url='home')
 @login_required
 def edit_category(request, category_id):
     category = get_object_or_404(Category, pk=category_id)
@@ -112,7 +112,7 @@ def edit_category(request, category_id):
     return render(request, 'plans/edit_category.html', {'form': form, 'category': category})
 
 
-@user_passes_test(check_superuser)
+@user_passes_test(check_superuser, login_url='home')
 @login_required
 def delete_category(request, category_id):
     if request.method == 'POST':
