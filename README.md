@@ -505,6 +505,97 @@ GitHub was used as the repository for the code.
 ### Balsamiq
 Balsamiq was used to create the wireframes during the design of the project.
 
+## Testing Procedure
+For the implementation of both automated and manual testing, an explanation is provided for each sub-section of testing, followed by a table of the test results.
+### Manual Testing Procedure
+
+#### Browser testing
+In this test, the application is tested on various web browsers to ensure that it is working properly across different browsers and their versions. Testers check for compatibility issues with different browsers and ensure that the application's functionalities are consistent across different browsers.
+
+| Test ID | Test Description | Expected Outcome | Status |
+|---------|------------------|-----------------|--------|
+| 1       | Automated Cross-Browser Testing | The website should function correctly and display as intended on all tested browsers (Safari, Edge, Chrome, Explorer) |   Pass |
+| 2       | Manual Functionality Testing on Safari, Edge, Chrome, Explorer | All website features (forms, buttons, links, navigation, etc.) should work as expected. |  Pass |
+| 3       | Manual Layout and Design Testing on Safari, Edge, Chrome, Explorer | The website's layout and design (text, images, colors, styles, responsive design, etc.) should appear correctly. |  Pass |
+
+#### Data Management
+This test type ensures that the application's data management functions work correctly. Testers verify that the data is being stored, retrieved, and manipulated properly. They also check that the CRUD functionality is working correctly. 
+
+| Test ID | Test Description | Expected Outcome | Status |
+|---------|------------------|------------------|--------|
+| 1       | Data Storage, Retrieval, and Manipulation | The application's data should be properly stored, retrieved, and manipulated. | Pass |
+| 2       | CRUD Functionality for Applicants/Applications and Listings | The application should correctly implement Create, Read, Update, and Delete functionality for each of the various data schemas | Pass |
+
+#### Functionality/Usability/Interactvity 
+This test type assesses the application's functionality, usability, and interactivity. Testers check if all features and functionalities are working as intended, if the application is user-friendly, and if user interaction is smooth, as specified in the features section of the README.
+
+| Test ID | Test Description | Expected Outcome | Status |
+|---------|------------------|------------------|--------|
+| 1       | Functionality Test | All features and functionalities should work as intended. | Pass |
+| 2       | Usability Test | The application should be user-friendly. | Pass |
+| 3       | Interactivity Test | User interaction with the application should be smooth. | Pass |
+
+#### Heroku Deployment
+This test type focuses on the deployment of the application on the Heroku platform. Testers check if the application is successfully deployed and accessible on the Heroku platform. They also ensure that this matches the development version.
+
+| Test ID | Test Description | Expected Outcome | Status |
+|---------|------------------|------------------|--------|
+| 1       | Heroku Deployment Test | The application should be successfully deployed and accessible on the Heroku platform, matching the development version. | Pass |
+
+#### Lighthouse
+This test type uses Google's Lighthouse tool to assess the application's performance, accessibility, best practices, and SEO. Testers use the tool to generate a report and check for any issues or recommendations.
+
+| Test ID | Test Description | Expected Outcome | Status |
+|---------|------------------|------------------|--------|
+| 1       | Lighthouse Performance, Accessibility, Best Practices, and SEO Test | The Lighthouse tool should generate a report without any major issues | Pass |
+
+#### PEP8 Compliance
+PEP 8 is a set of guidelines and recommendations for writing clean, readable, and maintainable Python code. It covers topics such as naming conventions, code layout, function and class design, and documentation. Adhering to PEP 8 helps improve the consistency and quality of Python code, making it easier to understand, debug, and collaborate on.
+
+| Test ID | Test Description | Expected Outcome | Status |
+|---------|------------------|------------------|--------|
+| 1       | PEP 8 Compliance Test | The Python code in the application should adhere to the guidelines and recommendations in PEP 8. | Pass |
+
+#### Responsiveness
+This test type checks the application's responsiveness across different screen sizes and devices. Testers ensure that the application's layout adjusts correctly to different screen sizes and that all features are accessible on different devices, as specified in the features section of the README.
+
+| Test ID | Test Description | Expected Outcome | Status |
+|---------|------------------|------------------|--------|
+| 1       | Responsiveness Test Across Different Screen Sizes | The application's layout should adjust correctly to different screen sizes. | Pass |
+| 2       | Responsiveness Test Across Different Devices | The application's layout should adjust correctly for different devices (e.g. Mac and Windows Laptops). | Pass |
+
+#### User Story Validation
+This test type ensures that the application meets the requirements of the user stories. Testers verify that all user stories are addressed and implemented correctly. They also ensure that the application's functionalities are in line with the user's needs and expectations.
+
+| Test ID | Test Description | Expected Outcome | Status |
+|---------|------------------|------------------|--------|
+| 1       | User Story Validation Test | All user stories should be addressed and implemented correctly. The application's functionalities should align with the user's needs and expectations. | Pass |
+
+
+### Automated Testing Procedure
+
+#### HTML Validator
+This automated test type checks the HTML code for errors and warnings. The HTML Validator tool (validator.w3.org) checks for proper markup, syntax errors, and other issues that can cause problems with the rendering of web pages. It provides a detailed report of errors and warnings, allowing developers to fix them quickly.
+
+| Test ID | Test Description | Expected Outcome | Status |
+|---------|------------------|------------------|--------|
+| 1       | HTML Validation Test | The HTML Validator tool should return a report with no errors | Pass |
+
+#### CSS Validator
+This automated test type checks the CSS code for errors and warnings. The CSS Validator tool (jigsaw.w3.org/css-validator/) checks for syntax errors, compliance with CSS standards, and other issues that can cause problems with the appearance and layout of web pages. It provides a detailed report of errors and warnings, allowing developers to fix them quickly.
+
+| Test ID | Test Description | Expected Outcome | Status |
+|---------|------------------|------------------|--------|
+| 1       | CSS Validation Test | The CSS Validator tool should return a report with no errors or warnings. | Pass |
+
+#### Javascript Validator
+This automated test type checks the JavaScript code for errors and warnings. The JSHint tool (JSHint) checks for syntax errors, potential bugs, and other issues that can cause problems with the functionality of web pages. It provides a detailed report of errors and warnings, allowing developers to fix them quickly.
+
+| Test ID | Test Description | Expected Outcome | Status |
+|---------|------------------|------------------|--------|
+| 1       | JavaScript Validation Test | The JSHint tool should return a report with no errors or warnings. | Pass |
+
+
 # Deployment
 
 ## ElephantSQL Database hosting
