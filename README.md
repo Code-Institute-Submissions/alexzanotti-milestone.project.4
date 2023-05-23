@@ -81,8 +81,9 @@ In order to pass this milestone project, the following requirements must be met:
 
 ### Profile
 27. As a user, I want to be able to register an account so that I can participate in the community, create posts, plans, and comments.
-28. As a user, I want the website to provide error messages if I enter incorrect login information so that I can correct my input and successfully log in.
-29. As a registered user, I want to be able to log in to my account so that I can access my personalized features such as "My Profile", "My Posts" and "My Plans".
+28. As a registered user, I want to be able to log in to my account so that I can access my personalized features such as "My Profile", "My Posts" and "My Plans".
+29. As a user, I want the website to provide error messages if I enter incorrect login information so that I can correct my input and successfully log in.
+
 30. As a registered user, I want to log out from my account to ensure that my account is secure when I'm not using the site.
 
 ## User Story Images 
@@ -127,27 +128,40 @@ In order to pass this milestone project, the following requirements must be met:
 ![alt text](media/user_story_16_1.png "User Story 16 - First")
 ![alt text](media/user_story_16_2.png "User Story 16 - Second")
 ### User Story 17
-![alt text](media/user_story_17.png "User Story 17")
+![alt text](media/user_story_17_1.png "User Story 17 - First")
+![alt text](media/user_story_17_2.png "User Story 17 - Second")
+![alt text](media/user_story_17_3.png "User Story 17 - Third")
 ### User Story 18
 ![alt text](media/user_story_18.png "User Story 18")
 ### User Story 19
 ![alt text](media/user_story_19.png "User Story 19")
 ### User Story 20
-![alt text](media/user_story_20.png "User Story 20")
+![alt text](media/user_story_20_1.png "User Story 20 - First")
+![alt text](media/user_story_20_2.png "User Story 20 - Second")
 ### User Story 21
 ![alt text](media/user_story_21.png "User Story 21")
 ### User Story 22
-![alt text](media/user_story_22.png "User Story 22")
+![alt text](media/user_story_22_1.png "User Story 22 - First")
+![alt text](media/user_story_22_2.png "User Story 22 - Second")
 ### User Story 23
 ![alt text](media/user_story_23.png "User Story 23")
 ### User Story 24
-![alt text](media/user_story_24.png "User Story 24")
+![alt text](media/user_story_24_1.png "User Story 24 - First")
+![alt text](media/user_story_24_2.png "User Story 24 - Second")
+![alt text](media/user_story_24_3.png "User Story 24 - Third")
 ### User Story 25
-![alt text](media/user_story_25.png "User Story 25")
+![alt text](media/user_story_25_1.png "User Story 25 - First")
+![alt text](media/user_story_25_2.png "User Story 25 - Second")
 ### User Story 26
-![alt text](media/user_story_26.png "User Story 26")
+![alt text](media/user_story_26_1.png "User Story 26 - First")
+![alt text](media/user_story_26_2.png "User Story 26 - Second")
+![alt text](media/user_story_26_3.png "User Story 26 - Third")
 ### User Story 27
-![alt text](media/user_story_27.png "User Story 27")
+![alt text](media/user_story_27_1.png "User Story 27 - First")
+![alt text](media/user_story_27_2.png "User Story 27 - Second")
+![alt text](media/user_story_27_3.png "User Story 27 - Third")
+![alt text](media/user_story_27_4.png "User Story 27 - Fourth")
+![alt text](media/user_story_27_5.png "User Story 27 - Fifth")
 ### User Story 28
 ![alt text](media/user_story_28.png "User Story 28")
 ### User Story 29
