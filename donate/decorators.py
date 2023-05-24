@@ -1,6 +1,7 @@
 from django.shortcuts import redirect
 from donate.models import Donation
 
+
 def user_has_donated(function):
     def wrap(request, *args, **kwargs):
         try:

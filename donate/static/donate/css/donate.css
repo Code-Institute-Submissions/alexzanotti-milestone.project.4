@@ -1,37 +1,50 @@
+/* Class: StripeElement and stripe-style-input */
 .StripeElement,
 .stripe-style-input {
-    box-sizing: border-box;
-    height: 40px;
-    padding: 10px 12px;
-    border: 1px solid transparent;
-    border-radius: 0px;
-    background-color: white;
-    box-shadow: 0 1px 3px 0 #e6ebf1;
-    -webkit-transition: box-shadow 150ms ease;
-    transition: box-shadow 150ms ease;
+    /* Box model properties */
+    box-sizing: border-box; 
+    height: 42px; 
+    padding: 11px 13px; 
+    
+    /* Border properties */
+    border: 1px solid #d4d4d4;
+    border-radius: 4px; 
+    
+    /* Background properties */
+    background-color: #f9f9f9; 
+    
+    /* Box shadow and transition properties */
+    box-shadow: 0 2px 4px 0 #e0e0e0; 
+    -webkit-transition: box-shadow 200ms ease;
+    transition: box-shadow 200ms ease; 
 }
 
+/* Class: StripeElement--focus, stripe-style-input on focus or active */
 .StripeElement--focus,
 .stripe-style-input:focus,
 .stripe-style-input:active {
-    box-shadow: 0 1px 3px 0 #cfd7df;
+    box-shadow: 0 2px 4px 0 #b0b0b0; 
 }
 
+/* Class: StripeElement--webkit-autofill */
 .StripeElement--webkit-autofill {
-    background-color: #fefde5 !important;
+    background-color: #fff8e1 !important;
 }
 
+/* Class: stripe-style-input with placeholder */
 .stripe-style-input::placeholder {
-    color: #aab7c4;
+    color: #a0a0a0; 
 }
 
+/* Class: fieldset-label */
 .fieldset-label {
     position: relative;
-    right: .5rem;
+    right: .6rem; 
 }
 
+/* ID: payment-form with class form-control, and ID: card-element */
 #payment-form .form-control,
 #card-element {
-    color: #000;
-    border: 1px solid #000;
+    color: #101010; 
+    border: 1px solid #303030; 
 }

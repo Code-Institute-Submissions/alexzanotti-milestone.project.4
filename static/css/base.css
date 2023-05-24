@@ -204,7 +204,6 @@ Community
     text-align: center;
 }
 
-
 #community-add-category,
 #add-post-margin,
 #community-edit-category,
@@ -214,7 +213,6 @@ Community
 }
 
 /* Post Detail */
-
 
 #commentsHeading i {
     padding: 10px;
@@ -232,7 +230,6 @@ Community
 #commentsCollapse div ul li {
     list-style: none;
 }
-
 
 /* Add Post */
 
@@ -402,12 +399,9 @@ Plans
     margin-bottom: 20px;
 }
 
-
 /* ==========================================================================
    Plans Media Queries
    ========================================================================== */
-
-   
 
 @media (max-width: 768px) {
     #plans-section .col-12 {
@@ -441,7 +435,6 @@ Plans
     }
 }
 
-
 /* ==========================================================================
    Contact 
    ========================================================================== */
@@ -473,7 +466,7 @@ Plans
 
 
 /* ==========================================================================
-Community Media Queries
+   Donate
    ========================================================================== */
 
 #payment-form {

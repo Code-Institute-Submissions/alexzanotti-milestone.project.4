@@ -180,4 +180,3 @@ def my_posts(request):
     user_posts = Post.objects.filter(author=request.user.profile)
     user_comments = Comment.objects.filter(author=request.user.profile)
     return render(request, 'community/my_posts.html', {'posts': user_posts, 'comments': user_comments})
-
