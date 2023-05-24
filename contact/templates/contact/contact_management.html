@@ -2,10 +2,13 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+
+<!-- block image/title/active -->
 {% block image %}Contact Management{% endblock %}
 {% block title %}Contact Management{% endblock %}
 {% block profile %}active{% endblock %}
 
+<!-- block content -->
 {% block content %}
 <div class="contact-management-container">
     <h2>Contact Forms</h2>
@@ -16,6 +19,7 @@
     <p>By clicking into the row, this will also take the site administrator into the relevant contact form's update
         page, where the status can be updated and comments added</p>
     <p>NOTE: the email, date of creation and last update columns will not be displayed as the screen size decreases.</p>
+    <!-- table of contact forms raised -->
     <table class="table table-bordered table-hover">
         <thead class="thead-dark">
             <tr>
