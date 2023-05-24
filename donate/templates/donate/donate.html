@@ -1,14 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- block image/title/active -->
 {% block title %}Donate{% endblock %}
 {% block image %}Donate{% endblock %}
 {% block donate %}active{% endblock %}
 
+<!-- block extra css -->
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'donate/css/donate.css' %}">
 {% endblock %}
 
+<!-- block content -->
 {% block content %}
 
 <div class="container" id="donation">
@@ -32,11 +35,12 @@
     <p>Welcome, {{ request.user.username }}!</p>
     <p>Please consider making a donation of £10, to help with the continued operation and maintenance of the
         website</p>
+    <!-- stripe payment form -->
     <form action="{% url 'donate' %}" method="POST" id="payment-form">
         {% csrf_token %}
         <fieldset>
             <legend class="fieldset-label small text-black px-2 w-auto">Enter your Payment details below:</legend>
-            <!-- A Stripe card element will go here -->
+            <!-- Stripe card element -->
             <div class="mb-3" id="card-element"></div>
             <!-- Used to display form errors -->
             <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
