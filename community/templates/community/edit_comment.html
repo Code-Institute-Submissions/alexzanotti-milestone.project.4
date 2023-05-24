@@ -1,14 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- block tags for title/image/active class -->
 {% block title %}Edit Comment{% endblock %}
 {% block image %}Edit Comment{% endblock %}
 {% block profile %}active{% endblock %}
 
+<!-- block content -->
 {% block content %}
 <div class="container" id="community-edit-comment">
     <div class="row">
         <div class="col-12">
+            <!-- form to edit comment -->
             <form method="post" class="mb-3">
                 {% csrf_token %}
                 <div class="form-group">

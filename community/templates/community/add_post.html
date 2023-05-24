@@ -1,14 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- block tags for title/image/active class -->
 {% block title %}Add Post{% endblock %}
 {% block image %}Add Post{% endblock %}
 {% block community %}active{% endblock %}
 
+<!-- block content -->
 {% block content %}
 <div class="container" id="add-post-margin">
     <div class="row">
         <div class="col-12">
+            <!-- form to add post -->
             <form method="post" class="mb-3">
                 {% csrf_token %}
                 <div class="form-group">

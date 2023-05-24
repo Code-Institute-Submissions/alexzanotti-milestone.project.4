@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- block tags for title/image/active class -->
 {% block title %}Category Posts{% endblock %}
 {% block image %}Category Posts{% endblock %}
 {% block community %}active{% endblock %}
 
-
+<!-- block content -->
 {% block content %}
 <section class="categories">
     <h3>Please find posts for the {{ category.name }} category below:</h3>

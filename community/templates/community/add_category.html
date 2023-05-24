@@ -1,14 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- block tags for title/image/active class -->
 {% block title %}Add Category{% endblock %}
 {% block image %}Add Category{% endblock %}
 {% block profile %}active{% endblock %}
 
+<!-- block content -->
 {% block content %}
 <div class="container" id="community-add-category">
     <div class="row">
         <div class="col-12">
+            <!-- form to add category -->
             <form method="post" class="mb-3">
                 {% csrf_token %}
                 <div class="form-group">
