@@ -8,6 +8,7 @@
 
 <!-- block content -->
 {% block content %}
+<!-- category/author div -->
 <div class="card mb-4 shadow-sm bg-light plan-detail-style">
     <div class="card-body">
         <h2>{{ plan.name }}</h2>
@@ -15,7 +16,7 @@
         <p class="card-text">Author: {{ plan.author.profile_user_name|default:plan.author.profile_user.username }} | Posted: {{ plan.date_posted|date:'Y-m-d H:i' }}</p>
     </div>
 </div>
-
+<!-- image div -->
 {% if plan.image_field %}
 <div class="card mb-4 shadow-sm bg-light plan-detail-style">
     <div class="card-body">
@@ -23,14 +24,14 @@
     </div>
 </div>
 {% endif %}
-
+<!-- description div -->
 <div class="card mb-4 shadow-sm bg-light plan-detail-style">
     <div class="card-body">
         <h2>Plan Description</h2>
         <p class="card-text">{{ plan.description }}</p>
     </div>
 </div>
-
+<!-- comments div -->
 <div class="card mb-4 shadow-sm bg-light plan-detail-style">
     <div class="card-header d-flex justify-content" id="planCommentsHeading" data-toggle="collapse" data-target="#planCommentsCollapse"
         aria-expanded="false" aria-controls="planCommentsCollapse" role="button" style="cursor: pointer;">

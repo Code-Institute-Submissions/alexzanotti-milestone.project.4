@@ -30,7 +30,7 @@
         to <a href="{% url 'account_login' %}">Login</a> or <a href="{% url 'account_signup' %}">Register</a></p>
     {% endif %}
 </div>
-
+<!-- search input -->
 <div class="search-container bg-light">
     <form method="GET" action="{% url 'plans:plans' %}" class="plans-style">
         <div class="input-group">
@@ -41,7 +41,7 @@
             </button>
         </div>
     </form>
-
+    <!-- sort form -->
     <form method="GET" action="{% url 'plans:plans' %}" class="plans-style">
         <div class="input-group">
             <label for="sort_by">Sort by:</label>
@@ -55,6 +55,7 @@
         </div>
     </form>
 </div>
+<!-- plans cards div -->
 <div class="row" id="plans-section">
     {% for plan in plans %}
     <div class="col-12 col-md-6 col-lg-4 col-xl-3">
