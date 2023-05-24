@@ -6,7 +6,7 @@ In this project, a full-stack site based around business logic used to control a
 
 # Value provided:
 1. By authenticating on the site, users can advance their own goals. Before authenticating, the site makes it clear how those goals would be furthered by the site.
-2. The site owner is able to make money by providing a donation mechanism to the users.
+2. The site owner is able to make money by providing a donation mechanism.
 3. There is no way for a regular user to bypass the site's mechanisms and derive all of the value available to paid users without paying.
 
 # Project Requirements
@@ -210,8 +210,6 @@ The scope of this website is to create an engaging, interactive, and helpful onl
 5. **Contact Form** A contact form allows users to submit a query to the site administrators 
 6. **Donation Page** A donation page allows users to contribute to the running of the site.
 
-The scope of this website is to offer a user-friendly, engaging, and informative platform for fitness enthusiasts to learn, share, and grow together in their fitness journey. 
-
 ### Structure Plane
 The structure of the website will be as follows:
 
@@ -219,10 +217,8 @@ The structure of the website will be as follows:
 #### Community
 ##### Community Category
 ###### Community Post
-###### Community Post Comment
 #### Plans
 ##### Plans Description
-##### Plans Description Comment
 #### Profile
 ##### Plan Management
 ##### Post Management
@@ -237,36 +233,21 @@ The structure of the website will be as follows:
 #### Donate
 #### Donate Success
 
+There will also be pages to enables CRUD functionlity, such as add/edit plans/posts/comments.
 
 ### Skeleton Plane
-
-### Balsamiq Wireframe Images
-Below are the Wireframes created in Balsamiq for this project:
-* Home Page Wireframe
-![alt text](media/wireframe-home.png "Home Page Wireframe")
-* Community Wireframe
-![alt text](media/wireframe-community.png "Community Page Wireframe")
-* Plans Wireframe
-![alt text](media/wireframe-plans.png "Plans Page Wireframe")
-* Profile Page Wireframe
-![alt text](media/wireframe-profile.png "profile Page Wireframe")
-* Contact Page Wireframe
-![alt text](media/wireframe-contact.png "Contact Page Wireframe")
-* Donate Page Wireframe
-![alt text](media/wireframe-donate.png "donate Page Wireframe")
-
 
 #### Home
 The Home page is the landing page for your website, providing an overview of what the website is about and guiding users to the main features of the site.
 
 #### Community
-The Community page is a central hub where users can interact with each other. It includes the following:
+The Community page provides a central place for users to see the various sub-categories of community posts.
 
 #### Community Category
-Each category in the Community section represents a different topic or area of interest. Clicking on a category takes the user to a list of posts in that category.
+Each category in the Community section represents a different topic or area of interest.
 
 #### Community Post
-Each post in a Community Category page represents a discussion or sharing of information about the category's topic. Clicking on a post takes the user to the post's page.
+Each post in a Community Category page represents a discussion or sharing of information about the category's topic.
 
 #### Community Post Comment
 The comments on a Community Post page allow users to interact with the post, adding their own thoughts or responding to others.
@@ -275,7 +256,7 @@ The comments on a Community Post page allow users to interact with the post, add
 The All Plans page lists all fitness plans available on the website.
 
 #### Plans Description
-Each plan in a Plans page includes a description of the plan and its details. Clicking on a plan takes the user to the plan's page.
+Each plan in a Plans page includes a description of the plan and its details. 
 
 #### Plans Description Comment
 The comments on a Plans Description page allow users to share their experiences with the plan, ask questions, or provide feedback.
@@ -316,18 +297,42 @@ The Donate page allows users to make a donation to support the website.
 #### Donate Success
 This page confirms that a user's donation was successful and thanks them for their support.
 
+#### Balsamiq Wireframe Images
+Below are the Wireframes created in Balsamiq for this project:
+* Home Page Wireframe
+![alt text](media/wireframe-home.png "Home Page Wireframe")
+* Community Wireframe
+![alt text](media/wireframe-community.png "Community Page Wireframe")
+* Plans Wireframe
+![alt text](media/wireframe-plans.png "Plans Page Wireframe")
+* Profile Page Wireframe
+![alt text](media/wireframe-profile.png "profile Page Wireframe")
+* Contact Page Wireframe
+![alt text](media/wireframe-contact.png "Contact Page Wireframe")
+* Donate Page Wireframe
+![alt text](media/wireframe-donate.png "donate Page Wireframe")
+
 ### Surface Plane
 #### Colour Schemes
+
+Black font was used predominantly used in the construction of this website.
+A crimson font was selected to provide a title to the pages, over the background image.
+The headers and footers feature a grey colour scheme. 
+For tables on the website, the bootstrap thead-dark styling was applied.
+Buttons were generally using the bootstrap primary colour scheme.
+
 #### Graphics
+
+The graphics for this website were derived from google images and are centred around the topic of health and fitness, or pertain to the topical context (such as an email graphic supporting the contact us card on the home page)
 
 # Features
 
 ## Head
 - Each page of the website contains a relevant title
-- Meta Tags: It includes three meta tags that set the character encoding (UTF-8), the browser compatibility (edge version for Internet Explorer), and the viewport (width=device-width, initial-scale=1).
 - Static CSS File: There's a reference to a static CSS file named 'base.css' for defining the styles used across the website.
-- Bootstrap: It includes Bootstrap 4.6.2 for responsive design, grid layout and CSS components.
-- Google Fonts: There are preconnect links to the domains fonts.googleapis.com and fonts.gstatic.com, which are used to establish a network connection in advance, optimizing load times. A link to a specific Google Fonts stylesheet is also included, which is used to load various weights and styles of the Roboto font.
+- A Bootstrap 4.6.2 script is included for responsive design, grid layout and CSS components etc.
+- Google Fonts: There are preconnect links to the domains fonts.googleapis.com and fonts.gstatic.com, which are used to establish a network connection in advance, optimizing load times. 
+- A link to a specific Google Fonts stylesheet is also included, which is used to load various weights and styles of the Roboto font.
 - Font Awesome: It includes a script for loading Font Awesome, which is a toolkit for adding vector icons and social logos to a website.
 - Stripe: It includes a script for loading Stripe.js, a library provided by Stripe for handling online payments.
 
@@ -336,7 +341,7 @@ This page confirms that a user's donation was successful and thanks them for the
 - It will be clear what page the user is on, as the color of the list item will be different
 - When hovering over a different list item, the color will change
 - Clicking on the brand name takes the user to the home page
-- For smaller screens, a vertical navbar (hamburger) is used, displaying the nav items in block
+- For smaller screens, a vertical navbar (hamburger) is used, displaying the nav items when selected
 - There is a image at the top of each page, which is fitness related and holds the page title.
 
 ## Footer
@@ -361,7 +366,8 @@ This page confirms that a user's donation was successful and thanks them for the
 - An introductory section describing the content of the page.
 - A responsive table which displays categories of posts. If the user is authenticated, they are provided with a button to add a post.
 - The columns within the table are: category name, description, number of posts, latest post
-- A JavaScript script is included which makes entire table rows clickable, redirecting to a URL determined by a data-href attribute.
+- Note that some columns in these tables will not display for small and medium screen sizes to optimize for mobile viewing.
+- A jquery script is included which makes entire table rows clickable, redirecting to a URL determined by a data-href attribute.
 
 ### Community Category
 - Title: The title for the page is set to "Category Posts" using the title block from the base template.
@@ -369,9 +375,10 @@ This page confirms that a user's donation was successful and thanks them for the
 - Community Active: The "community" block is set to "active", enabling the current active class in the navigation menu.
 - A paragraph describing the posts for a specific category.
 - A responsive table which displays posts in the selected category. Each row corresponds to a post, displaying its title, author, number of comments, and the date it was posted. 
+- Note that some columns in these tables will not display for small and medium screen sizes to optimize for mobile viewing.
 - If no posts are available in the category, a message indicating this is displayed. 
 - If the user is authenticated, they are provided with a button to add a post.
-- A JavaScript script is included which makes entire table rows clickable, redirecting to a URL determined by a data-href attribute.
+- A jquery script is included which makes entire table rows clickable, redirecting to a URL determined by a data-href attribute.
 
 ### Community Post
 - Title: The title of the page is set to "Post".
@@ -384,23 +391,29 @@ This page confirms that a user's donation was successful and thanks them for the
 
 ### Community Management
 - This template extends base.html, with the title, image, and profile blocks set to "Community Management", "Community Management", and "active", respectively.
-- In the content block, it presents management interfaces for categories, posts, and comments. Administrators can add, edit, and delete categories; view post details, edit, and delete posts; view comment details, edit, and delete comments. Note that some columns in these tables will not display for small and medium screen sizes to optimize for mobile viewing.
+- In the content block, it presents management interfaces for categories, posts, and comments. 
+- Administrators can add, edit, and delete categories; view post details, edit, and delete posts; view comment details, edit, and delete comments. 
+- Note that some columns in these tables will not display for small and medium screen sizes to optimize for mobile viewing.
 - At the end of the template, it includes a script that allows table rows to be clickable by assigning a URL to them.
 
 ### My Posts
 - This template extends base.html, with the title, image, and profile blocks set to "My Posts", "My Posts", and "active", respectively.
-- In the content block, it displays a list of posts and comments made by the current user. For each post and comment, it shows relevant details (like title, category, date, etc.) and options to edit or delete. Similar to the previous tables mentioned, some columns in these tables will not display for small and medium screen sizes.
+- In the content block, it displays a list of posts and comments made by the current user. 
+- For each post and comment, it shows relevant details (like title, category, date, etc.) and options to edit or delete. 
+- Similar to the previous tables mentioned, some columns in these tables will not display for small and medium screen sizes.
 - At the end of the template, it includes a script that allows table rows to be clickable by assigning a URL to them.
 
 ### Community Forms
 - This template extends base.html, with the title, image, and profile blocks set to "Add Category", "Add Category", and "active", respectively.
-- In the content block, it provides a form to enable CRUD functionality, such as adding or edits posts/comments/categories. Django's form system automatically handles much of this (the form.as_p line), including rendering form fields for all the fields in the category model.
+- In the content block, it provides a form to enable CRUD functionality, such as adding or edits posts/comments/categories. 
+- Django's form system automatically handles much of this (the form.as_p line), including rendering form fields for all the fields in the category model.
 
 ## Plans
 - This webpage is titled "Plans" and it extends from the base layout. It contains introductory text about the fitness plans offered on the site, along with details on how to use search and sorting functionalities.
 - If the user is logged in, they will see an "Add Plan" button, otherwise they'll be prompted to login or register to contribute. 
 - There is a search bar for searching plans and a dropdown for sorting them. 
-- All the available fitness plans are listed in a row-based card layout with an image, name, category and the author. If no image is provided for a plan, a default image is used.
+- All the available fitness plans are listed in a row-based card layout with an image, name, category and the author. 
+- If no image is provided for a plan, a default image is used.
 - the number of cards decreases horizontally as the screen size reduces, to enable a more responsive design
 
 ## Plans Description
@@ -416,12 +429,11 @@ This page confirms that a user's donation was successful and thanks them for the
 - For each category, administrators can see its name and description, and buttons for editing and deleting the category. 
 - Similar details are provided for plans, along with an accordion feature to view more information about a plan. 
 - The comments table displays the content of each comment, the plan it's associated with, and the author. Administrators can also edit and delete comments.
-- At the start of each section, there's a "Add" button for adding new categories, plans, and comments. 
-- There's also a jjquery script included at the end of the page that makes table rows clickable, taking the administrator to the appropriate edit page when clicked.
+- At the start of each section, there's a "Add" button for adding new categories and plans.
+- There's also a jquery script included at the end of the page that makes table rows clickable, taking the administrator to the appropriate edit page when clicked.
 
 ## My Plans
 
-- The {% load static %} tag loads the static template tags which are a collection of template tags for serving static files.
 - {% block title %}My Plans{% endblock %} specifies the title of the page as "My Plans".
 - {% block image %}My Plans{% endblock %} sets the title in the image header
 - {% block profile %}active{% endblock %} This block indicates the currently active page in the navigation bar.
@@ -429,11 +441,12 @@ This page confirms that a user's donation was successful and thanks them for the
 - In each section, there's an explanatory paragraph and a table. 
 - The table lists the respective items (plans/comments) and provides "Edit" and "Delete" buttons for each one. 
 - If there are no items to list, it displays a message to that effect.
-- A small jQuery script that adds a click event to any element with a "data-href" attribute, which makes the entire element clickable, redirecting the user to the URL specified in "data-href". 
+- A jQuery script that adds a click event to any element with a "data-href" attribute, which makes the entire element clickable, redirecting the user to the URL specified in "data-href". 
 
 ### Plans Forms
-- These template extends base.html, with the title, image, and profile blocks set to "Add Category", "Add Category", and "active", respectively.
-- In the content block, it provides a form to enable CRUD functionality, such as adding or edits plans/comments/categories. Django's form system automatically handles much of this (the form.as_p line), including rendering form fields for all the fields in the category model.
+- The title, image, and profile blocks set to "Add Category", "Add Category", and "active", respectively.
+- In the content block, it provides a form to enable CRUD functionality, such as adding or edits plans/comments/categories. 
+- The forms are rendered by {{ form.as_p }}.
 
 ## My Profile
 - This contains a form for updating the user profile name. 
@@ -441,14 +454,15 @@ This page confirms that a user's donation was successful and thanks them for the
 - This is then displayed when the user creates/comments on a plan/post.
 
 ## Contact
-- The contact page contains a form that the user is able to complete. It asked for their Name, Email and Message.
-- The "Submit" button is disabled until the user completes all fields. The color of the "Submit" button will slightly change when this occurs
+- The contact page contains a form that the user is able to complete. It asks for their Name, Email and Message.
+- The "Submit" button is disabled until the user completes all fields. This is ensured by a javascript script.
 
 ## Contact Management
 - The page title and image block are set to "Contact Management".
 - The content block of the page contains a header, some descriptive text, and a table showing all submitted contact forms.
 - Each row in the table corresponds to a single contact form.
 - Columns include "Name", "Email", "Created", "Updated", "Status", and "Action".
+- Note that some columns in these tables will not display for small and medium screen sizes to optimize for mobile viewing.
 - Each row is also a link to an update page for the respective contact form.
 - There's also a delete button in the "Action" column that can stop the event propagation when clicked to avoid triggering the row's click event.
 - The page also includes a script at the end (inside the "endscripts" block). This script makes each row in the table clickable, redirecting to the URL stored in the "data-href" attribute of the row when clicked.
@@ -493,9 +507,9 @@ Amazon Web Services was used to serve media and static files in the production e
 ### Bootstrap
 Bootstrap was used in the media page to assist with enabling a responsive design
 ### jQuery 
-jQuery was sparingly used within the project
+jQuery was sparingly used within the project to enable clickable table rows
 ### Google Fonts
-Google fonts was used to import the fonts Barlow, Chivo Mono, Lato, Oswald & Quantico into the style.css file.
+Google fonts was used to import the fonts Roboto.
 ### Font Awesome
 Font Awesome was used to assist with the styling of the website, such as providing a caret icon for the comments section, to denote that there was a dropdown.
 ### GitPod
@@ -533,7 +547,7 @@ This test type assesses the application's functionality, usability, and interact
 |---------|------------------|------------------|--------|
 | 1       | Functionality Test | All features and functionalities should work as intended. | Pass |
 | 2       | Usability Test | The application should be user-friendly. | Pass |
-| 3       | Interactivity Test | User interaction with the application should be smooth. | Pass |
+| 3       | Interactivity Test | A user's input to interactive features should be actuated  | Pass |
 
 #### Heroku Deployment
 This test type focuses on the deployment of the application on the Heroku platform. Testers check if the application is successfully deployed and accessible on the Heroku platform. They also ensure that this matches the development version.
@@ -548,13 +562,6 @@ This test type uses Google's Lighthouse tool to assess the application's perform
 | Test ID | Test Description | Expected Outcome | Status |
 |---------|------------------|------------------|--------|
 | 1       | Lighthouse Performance, Accessibility, Best Practices, and SEO Test | The Lighthouse tool should generate a report without any major issues | Pass |
-
-#### PEP8 Compliance
-PEP 8 is a set of guidelines and recommendations for writing clean, readable, and maintainable Python code. It covers topics such as naming conventions, code layout, function and class design, and documentation. Adhering to PEP 8 helps improve the consistency and quality of Python code, making it easier to understand, debug, and collaborate on.
-
-| Test ID | Test Description | Expected Outcome | Status |
-|---------|------------------|------------------|--------|
-| 1       | PEP 8 Compliance Test | The Python code in the application should adhere to the guidelines and recommendations in PEP 8. | Pass |
 
 #### Responsiveness
 This test type checks the application's responsiveness across different screen sizes and devices. Testers ensure that the application's layout adjusts correctly to different screen sizes and that all features are accessible on different devices, as specified in the features section of the README.
@@ -579,21 +586,21 @@ This automated test type checks the HTML code for errors and warnings. The HTML 
 
 | Test ID | Test Description | Expected Outcome | Status |
 |---------|------------------|------------------|--------|
-| 1       | HTML Validation Test | The HTML Validator tool should return a report with no errors | Pass |
+| 1       | HTML Validation Test | The HTML Validator tool should return a report with no errors. | Pass |
 
 #### CSS Validator
-This automated test type checks the CSS code for errors and warnings. The CSS Validator tool (jigsaw.w3.org/css-validator/) checks for syntax errors, compliance with CSS standards, and other issues that can cause problems with the appearance and layout of web pages. It provides a detailed report of errors and warnings, allowing developers to fix them quickly.
+This automated test type checks the CSS code for errors and warnings. The CSS Validator tool (jigsaw.w3.org/css-validator/) checks for syntax errors, compliance with CSS standards, and other issues that can cause problems with the appearance and layout of web pages.
 
 | Test ID | Test Description | Expected Outcome | Status |
 |---------|------------------|------------------|--------|
-| 1       | CSS Validation Test | The CSS Validator tool should return a report with no errors or warnings. | Pass |
+| 1       | CSS Validation Test | The CSS Validator tool should return a report with no errors. | Pass |
 
 #### Javascript Validator
-This automated test type checks the JavaScript code for errors and warnings. The JSHint tool (JSHint) checks for syntax errors, potential bugs, and other issues that can cause problems with the functionality of web pages. It provides a detailed report of errors and warnings, allowing developers to fix them quickly.
+This automated test type checks the JavaScript code for errors and warnings. The JSHint tool (JSHint) checks for syntax errors, potential bugs, and other issues that can cause problems with the functionality of web pages.
 
 | Test ID | Test Description | Expected Outcome | Status |
 |---------|------------------|------------------|--------|
-| 1       | JavaScript Validation Test | The JSHint tool should return a report with no errors or warnings. | Pass |
+| 1       | JavaScript Validation Test | The JSHint tool should return a report with no errors. | Pass |
 
 
 # Deployment
