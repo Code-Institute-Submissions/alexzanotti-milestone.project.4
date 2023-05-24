@@ -74,7 +74,7 @@
             <tr>
                 <td colspan="3" class="hiddenRow">
                     <div class="accordion-body collapse" id="plan-detail-{{plan.id}}">
-                        <p>Description: {{ plan.description }}</p>
+                        <p class="break-word">Description: {{ plan.description }}</p>
                         {% if plan.image_field %}
                         <img src="{{ plan.image_field.url }}" class="img-thumbnail" alt="{{ plan.name }}">
                         {% else %}
